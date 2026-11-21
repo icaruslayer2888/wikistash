@@ -1,0 +1,23 @@
+name = "wikistash"
+compatibility_date = "2024-04-01"
+pages_build_output_dir = "out"
+
+# ==============================================================================
+# Cloudflare D1 Database Binding (Persistent SQLite at $0/Month with 0 Pausing)
+#
+# Free Tier Limits:
+# - 5 million read units / month
+# - 100,000 write units / month (our daily batch of 50 articles uses ~1,500/mo!)
+# - 5 GB storage (our full text JSON averages ~3 KB/article -> room for 1M+ articles)
+# - Crucial Benefit vs Supabase/Neon: D1 NEVER pauses or sleeps from inactivity!
+#
+# Setup Instructions:
+# 1. Run: npx wrangler d1 create wikistash-db
+# 2. Paste the returned database_id below
+# 3. Apply schema: npx wrangler d1 execute wikistash-db --file=migrations/0001_init.sql
+# ==============================================================================
+
+[[d1_databases]]
+binding = "DB"
+database_name = "wikistash-db"
+database_id = "00000000-0000-0000-0000-000000000000" # Replace with your real D1 Database ID from `wrangler d1 create`

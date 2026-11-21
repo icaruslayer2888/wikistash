@@ -1,0 +1,49 @@
+{
+  "name": "wikistash",
+  "version": "1.0.0",
+  "private": true,
+  "description": "WikiStash — $0/Month Self-Updating AI Micro-Learning App",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "ingest": "tsx scripts/ingest-daily.ts",
+    "ingest:dry-run": "tsx scripts/ingest-daily.ts --dry-run --limit=3",
+    "ingest:mock": "tsx scripts/ingest-daily.ts --mock",
+    "export:feed": "tsx scripts/export-feed.ts",
+    "d1:migrate": "wrangler d1 execute wikistash-db --file=migrations/0001_init.sql",
+    "d1:migrate:local": "wrangler d1 execute wikistash-db --local --file=migrations/0001_init.sql"
+  },
+  "dependencies": {
+    "@google/genai": "^3.6.1",
+    "clsx": "^2.1.1",
+    "framer-motion": "^11.11.11",
+    "lucide-react": "^0.453.0",
+    "next": "^14.2.24",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwind-merge": "^2.5.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.6",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "autoprefixer": "^10.4.20",
+    "dotenv": "^16.4.5",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.14",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3",
+    "wrangler": "^3.80.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@cloudflare/workerd-windows-64",
+      "esbuild",
+      "protobufjs",
+      "sharp",
+      "workerd"
+    ]
+  }
+}

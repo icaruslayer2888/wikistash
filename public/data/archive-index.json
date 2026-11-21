@@ -1,0 +1,52 @@
+[
+  {
+    "wikipedia_page_id": 10565,
+    "published_date": "2026-11-21",
+    "article_title": "Fermi Paradox",
+    "category": "Science & Tech",
+    "read_time_minutes": 3,
+    "hook": "Given that there are billions of Earth-like planets in our galaxy alone, why hasn't a single extraterrestrial civilization made contact?",
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Arecibo_message.svg/320px-Arecibo_message.svg.png",
+    "idea_cards_count": 4
+  },
+  {
+    "wikipedia_page_id": 19416,
+    "published_date": "2026-11-21",
+    "article_title": "Marcus Aurelius & Stoicism",
+    "category": "Psychology & Philosophy",
+    "read_time_minutes": 4,
+    "hook": "The most powerful man in the ancient world wrote a private diary reminding himself not to let absolute power corrupt his soul.",
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Bust_of_Marcus_Aurelius_%28Glyptothek%29.jpg/320px-Bust_of_Marcus_Aurelius_%28Glyptothek%29.jpg",
+    "idea_cards_count": 4
+  },
+  {
+    "wikipedia_page_id": 17873,
+    "published_date": "2026-11-20",
+    "article_title": "Library of Alexandria",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "The greatest repository of ancient wisdom didn't vanish in a single fiery catastrophe, but slowly decayed through bureaucratic neglect.",
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Ancientlibraryalex.jpg/320px-Ancientlibraryalex.jpg",
+    "idea_cards_count": 3
+  },
+  {
+    "wikipedia_page_id": 147820,
+    "published_date": "2026-11-20",
+    "article_title": "Availability Heuristic",
+    "category": "Psychology & Philosophy",
+    "read_time_minutes": 3,
+    "hook": "People fear shark attacks more than falling coconuts simply because gruesome shark encounters make better television news.",
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Daniel_Kahneman_%283283944884%29.jpg/320px-Daniel_Kahneman_%283283944884%29.jpg",
+    "idea_cards_count": 3
+  },
+  {
+    "wikipedia_page_id": 30737,
+    "published_date": "2026-11-19",
+    "article_title": "Tragedy of the Commons",
+    "category": "Society & Economics",
+    "read_time_minutes": 4,
+    "hook": "When individuals act in purely rational self-interest with shared resources, collective ruin becomes the mathematically inevitable result.",
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Sheep_grazing_on_a_pasture.jpg/320px-Sheep_grazing_on_a_pasture.jpg",
+    "idea_cards_count": 3
+  }
+]

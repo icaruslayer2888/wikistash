@@ -1,0 +1,214 @@
+[
+  {
+    "wikipedia_page_id": 10565,
+    "published_date": "2026-11-21",
+    "article_title": "Fermi Paradox",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Fermi_paradox",
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Arecibo_message.svg/320px-Arecibo_message.svg.png",
+    "category": "Science & Tech",
+    "read_time_minutes": 3,
+    "hook": "Given that there are billions of Earth-like planets in our galaxy alone, why hasn't a single extraterrestrial civilization made contact?",
+    "idea_cards": [
+      {
+        "card_number": 1,
+        "title": "The Cosmic Math Puzzle",
+        "insight": "The Milky Way holds between 100 and 400 billion stars, many of which are billions of years older than our Sun. If even a minuscule fraction spawned intelligent life capable of interstellar flight, our galaxy should have been fully colonized millions of years ago.",
+        "key_takeaway": "Takeaway: High probability estimates collide violently with zero observable physical evidence."
+      },
+      {
+        "card_number": 2,
+        "title": "The Great Filter Barrier",
+        "insight": "Physicist Robin Hanson postulated that evolutionary progress faces an insurmountable barrier somewhere between pre-cellular chemistry and interstellar colonization. If the filter lies behind us, humanity is extraordinarily rare; if it lies ahead, catastrophic extinction may await us.",
+        "key_takeaway": "Mental Model: The Great Filter — what separates cosmic silence from technological survival."
+      },
+      {
+        "card_number": 3,
+        "title": "The Zoo Hypothesis",
+        "insight": "Proposed by John Ball in 1973, this conjecture suggests advanced extraterrestrials are deliberately avoiding contact to allow Earth to evolve naturally, akin to wildlife biologists observing an untouched national park reserve from an imperceptible distance.",
+        "key_takeaway": "Mental Model: Non-interference protocols may be the universal norm for hyper-advanced intelligence."
+      },
+      {
+        "card_number": 4,
+        "title": "Cosmic Scale Temporal Mismatch",
+        "insight": "Humanity has had radio capability for barely a century, an infinitesimal blink in the 13.8 billion-year age of the cosmos. Two galactic civilizations might each flourish for 100,000 years yet miss one another by tens of millions of years in cosmological time.",
+        "key_takeaway": "Takeaway: Space is vast, but cosmic time synchronization is an even harsher bottleneck."
+      }
+    ],
+    "quiz": {
+      "question": "What is the core premise of Robin Hanson's 'Great Filter' hypothesis?",
+      "options": [
+        "Planetary atmospheres inevitably filter out radio transmissions over long distances",
+        "An evolutionary bottleneck exists that prevents almost all life from achieving interstellar travel",
+        "Alien civilizations actively filter and censor human scientific breakthroughs"
+      ],
+      "correct_index": 1,
+      "explanation": "The Great Filter hypothesizes that an extremely difficult barrier prevents prebiotic matter from developing into expanding, interstellar civilizations."
+    }
+  },
+  {
+    "wikipedia_page_id": 19416,
+    "published_date": "2026-11-21",
+    "article_title": "Marcus Aurelius & Stoicism",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Marcus_Aurelius",
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Bust_of_Marcus_Aurelius_%28Glyptothek%29.jpg/320px-Bust_of_Marcus_Aurelius_%28Glyptothek%29.jpg",
+    "category": "Psychology & Philosophy",
+    "read_time_minutes": 4,
+    "hook": "The most powerful man in the ancient world wrote a private diary reminding himself not to let absolute power corrupt his soul.",
+    "idea_cards": [
+      {
+        "card_number": 1,
+        "title": "The Dichotomy of Control",
+        "insight": "Stoicism hinges on distinguishing what is within our volition (our judgements, intentions, and reactions) from what lies outside it (external outcomes, health, reputation, and other people's actions). Suffering arises entirely from mistaking the latter for the former.",
+        "key_takeaway": "Mental Model: The Dichotomy of Control — focus 100% of energy strictly on your response, 0% on uncontrollable conditions."
+      },
+      {
+        "card_number": 2,
+        "title": "Meditations Was A Private Mirror",
+        "insight": "Marcus Aurelius never intended 'Meditations' for publication; its original title in Greek was simply 'To Himself'. It was a personal cognitive recalibration tool, written on the front lines of plague, rebellion, and war to combat arrogance and despair.",
+        "key_takeaway": "Takeaway: Daily private journaling is not self-indulgence, but an armor of psychological hygiene."
+      },
+      {
+        "card_number": 3,
+        "title": "Amor Fati: Loving Adversity",
+        "insight": "Rather than merely tolerating misfortune, Marcus viewed every obstacle as fuel for virtue. Like a roaring fire that consumes whatever is thrown into it, the trained mind converts setbacks into immediate moral training ground.",
+        "key_takeaway": "Takeaway: 'The impediment to action advances action. What stands in the way becomes the way.'"
+      },
+      {
+        "card_number": 4,
+        "title": "Memento Mori & Cosmic Perspective",
+        "insight": "Marcus continually visualized the brevity of human fame and the vastness of deep time. Remembering that emperors and beggars share the same inevitable fate dissolved petty anxieties and anchored him in present duty.",
+        "key_takeaway": "Mental Model: Memento Mori — death isn't a threat to be feared, but the ultimate clarifier of today's priorities."
+      }
+    ],
+    "quiz": {
+      "question": "What core distinction forms the foundational bedrock of Stoic philosophy?",
+      "options": [
+        "Between physical pleasure and intellectual enlightenment",
+        "Between what is within our power and what is beyond our control",
+        "Between political duty to Rome and private loyalty to the gods"
+      ],
+      "correct_index": 1,
+      "explanation": "Stoicism divides everything into things within our volition (thoughts, reactions, virtues) and things outside it (external circumstances, outcomes, others' opinions)."
+    }
+  },
+  {
+    "wikipedia_page_id": 17873,
+    "published_date": "2026-11-20",
+    "article_title": "Library of Alexandria",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Library_of_Alexandria",
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Ancientlibraryalex.jpg/320px-Ancientlibraryalex.jpg",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "The greatest repository of ancient wisdom didn't vanish in a single fiery catastrophe, but slowly decayed through bureaucratic neglect.",
+    "idea_cards": [
+      {
+        "card_number": 1,
+        "title": "Aggressive Global Knowledge Acquisition",
+        "insight": "The Ptolemaic rulers pursued universal knowledge with ruthless administrative mandate. Every ship docking at Alexandria was searched by law: any books found were seized, copied by scribes, and frequently the original was kept while only the copy was returned.",
+        "key_takeaway": "Takeaway: Knowledge monopolies in antiquity were built on aggressive state-sponsored acquisition policies."
+      },
+      {
+        "card_number": 2,
+        "title": "The Mouseion: The First Think Tank",
+        "insight": "The library was not merely a warehouse of papyrus scrolls; it was part of a larger research institute called the Mouseion. Scholars like Eratosthenes (who accurately calculated Earth's circumference) received royal stipends, free room and board, and exemption from taxes.",
+        "key_takeaway": "Mental Model: Institutional funding combined with intellectual cross-pollination generates explosive scientific breakthroughs."
+      },
+      {
+        "card_number": 3,
+        "title": "The Myth of Single Destruction",
+        "insight": "Popular myth blames Julius Caesar or later religious zealots for destroying the entire library overnight. In reality, the library suffered partial burns, successive expulsions of scholars by paranoid tyrants, and centuries of budget starvation until it gradually ceased to exist.",
+        "key_takeaway": "Takeaway: Civilizational archives rarely fall to one cataclysm; slow cultural defunding and apathy are far deadlier."
+      }
+    ],
+    "quiz": {
+      "question": "How did the Library of Alexandria routinely acquire rare manuscripts from visiting merchant ships?",
+      "options": [
+        "By paying gold tariffs higher than standard market prices",
+        "By confiscating original scrolls, copying them, and often returning only the copy",
+        "By bartering Egyptian grain in exchange for foreign scrolls"
+      ],
+      "correct_index": 1,
+      "explanation": "Under Ptolemaic decree, all ships entering Alexandria had their books seized; scribes copied them, and the library frequently kept the originals while returning copies to travelers."
+    }
+  },
+  {
+    "wikipedia_page_id": 147820,
+    "published_date": "2026-11-20",
+    "article_title": "Availability Heuristic",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Availability_heuristic",
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Daniel_Kahneman_%283283944884%29.jpg/320px-Daniel_Kahneman_%283283944884%29.jpg",
+    "category": "Psychology & Philosophy",
+    "read_time_minutes": 3,
+    "hook": "People fear shark attacks more than falling coconuts simply because gruesome shark encounters make better television news.",
+    "idea_cards": [
+      {
+        "card_number": 1,
+        "title": "Ease of Recall Equals Reality",
+        "insight": "Identified by Amos Tversky and Daniel Kahneman in 1973, this cognitive bias causes people to assess the frequency or probability of an event based on how easily concrete examples come to mind. Vivid, emotionally charged memories trick our brain into overestimating risk.",
+        "key_takeaway": "Mental Model: Availability Heuristic — memory salience is routinely substituted for statistical probability."
+      },
+      {
+        "card_number": 2,
+        "title": "Media Amplification Loop",
+        "insight": "Because news media focuses disproportionately on rare, dramatic tragedies (plane crashes, terrorist attacks, rare animal attacks), consumers subconsciously perceive these hazards as imminent threats while ignoring ubiquitous mundane risks like heart disease or car crashes.",
+        "key_takeaway": "Takeaway: Sensational journalism hacks human risk assessment by flooding the brain with emotionally vivid exemplars."
+      },
+      {
+        "card_number": 3,
+        "title": "De-biasing Through Base Rates",
+        "insight": "To neutralize the availability bias in decision-making, Kahneman recommends deliberately querying actuarial base-rate statistics rather than relying on gut recall or recent anecdotal evidence.",
+        "key_takeaway": "Rule of Thumb: Whenever an outcome feels 'frequent', force yourself to calculate the denominator."
+      }
+    ],
+    "quiz": {
+      "question": "What mental shortcut does the availability heuristic describe?",
+      "options": [
+        "Choosing whatever product is available in greatest physical quantity",
+        "Judging the likelihood of an event based on how easily examples are retrieved from memory",
+        "Accepting the first solution offered by a colleague because of time pressure"
+      ],
+      "correct_index": 1,
+      "explanation": "The availability heuristic operates on the rule: 'if you can think of it easily, it must be important and frequent.'"
+    }
+  },
+  {
+    "wikipedia_page_id": 30737,
+    "published_date": "2026-11-19",
+    "article_title": "Tragedy of the Commons",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Tragedy_of_the_commons",
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Sheep_grazing_on_a_pasture.jpg/320px-Sheep_grazing_on_a_pasture.jpg",
+    "category": "Society & Economics",
+    "read_time_minutes": 4,
+    "hook": "When individuals act in purely rational self-interest with shared resources, collective ruin becomes the mathematically inevitable result.",
+    "idea_cards": [
+      {
+        "card_number": 1,
+        "title": "The Asymmetric Incentive Trap",
+        "insight": "Formulated by ecologist Garrett Hardin in 1968, the dilemma describes a shared pasture where each herdsman gains +1 direct profit for adding another cow, while the cost of overgrazing is distributed among all herdsmen. Rational self-interest drives everyone to over-exploit until the pasture collapses.",
+        "key_takeaway": "Mental Model: Privatized gains paired with socialized losses always lead to resource exhaustion."
+      },
+      {
+        "card_number": 2,
+        "title": "Modern Commons in Crisis",
+        "insight": "The commons extends far beyond medieval grazing fields: overfishing in international waters, atmospheric greenhouse gas emissions, antibiotic resistance, and even digital spam all follow identical tragedy dynamics when access is open and unregulated.",
+        "key_takeaway": "Takeaway: Open-access resources with zero accountability mechanisms create self-destructive extraction races."
+      },
+      {
+        "card_number": 3,
+        "title": "Elinor Ostrom's Nobel Breakthrough",
+        "insight": "Political scientist Elinor Ostrom challenged Hardin's grim conclusion by documenting hundreds of real-world indigenous communities that sustainably managed commons without top-down state control or full privatization, using clear boundary rules, graduated sanctions, and communal monitoring.",
+        "key_takeaway": "Mental Model: Ostrom's 8 Principles — polycentric governance and local social trust can overcome collective action dilemmas."
+      }
+    ],
+    "quiz": {
+      "question": "What Nobel Prize-winning insight did Elinor Ostrom demonstrate regarding the tragedy of the commons?",
+      "options": [
+        "Free markets and privatization are the only mathematically sound solutions to overgrazing",
+        "Communities can self-govern shared resources sustainably through local rules and monitoring without state coercion",
+        "The tragedy only occurs in agrarian economies and does not apply to modern industrial societies"
+      ],
+      "correct_index": 1,
+      "explanation": "Elinor Ostrom won the 2009 Nobel Prize in Economics for proving that communities can successfully self-manage common pool resources through participatory institutional rules."
+    }
+  }
+]
