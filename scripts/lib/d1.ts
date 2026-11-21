@@ -34,6 +34,10 @@ export interface D1Config {
   databaseId: string;
 }
 
+export interface ExportFeedResult {
+  latestCount: number;
+}
+
 interface D1QueryResult<T = Record<string, unknown>> {
   results?: T[];
   success?: boolean;
@@ -64,9 +68,10 @@ export function getD1Config(): D1Config {
 
 async function queryD1<T = Record<string, unknown>>(
   sql: string,
-  params: Array<string | number | null> = []
+  params: Array<string | number | null> = [],
+  overrideConfig?: D1Config
 ): Promise<D1QueryResult<T>> {
-  const { apiToken, accountId, databaseId } = getD1Config();
+  const { apiToken, accountId, databaseId } = overrideConfig ?? getD1Config();
   const endpoint = `https://api.cloudflare.com/client/v4/accounts/${accountId}/d1/database/${databaseId}/query`;
 
   const res = await fetch(endpoint, {
@@ -92,9 +97,11 @@ async function queryD1<T = Record<string, unknown>>(
   return data.result?.[0] || { results: [] };
 }
 
-export async function getExistingPageIdsFromD1(): Promise<Set<number>> {
+export async function getExistingPageIdsFromD1(overrideConfig?: D1Config): Promise<Set<number>> {
   const result = await queryD1<{ wikipedia_page_id: number }>(
-    'SELECT wikipedia_page_id FROM articles'
+    'SELECT wikipedia_page_id FROM articles',
+    [],
+    overrideConfig
   );
   const ids = new Set<number>();
   for (const row of result.results || []) {
@@ -105,7 +112,10 @@ export async function getExistingPageIdsFromD1(): Promise<Set<number>> {
   return ids;
 }
 
-export async function insertArticlesToD1(digests: ArticleDigest[]): Promise<number> {
+export async function insertArticlesToD1(
+  digests: ArticleDigest[],
+  overrideConfig?: D1Config
+): Promise<number> {
   if (digests.length === 0) return 0;
 
   let inserted = 0;
@@ -139,7 +149,8 @@ export async function insertArticlesToD1(digests: ArticleDigest[]): Promise<numb
         item.read_time_minutes,
         item.hook,
         digestPayload,
-      ]
+      ],
+      overrideConfig
     );
 
     const changes = res.meta?.changes ?? 1;
@@ -151,7 +162,12 @@ export async function insertArticlesToD1(digests: ArticleDigest[]): Promise<numb
   return inserted;
 }
 
-export async function exportStaticFeedsFromD1(): Promise<number> {
+export async function exportFeedFromD1(
+  overrideConfig?: D1Config,
+  limit: number = 50
+): Promise<ExportFeedResult> {
+  const safeLimit = Number.isFinite(limit) && limit > 0 ? Math.min(Math.floor(limit), 500) : 50;
+
   const result = await queryD1<{
     wikipedia_page_id: number;
     published_date: string;
@@ -174,7 +190,10 @@ export async function exportStaticFeedsFromD1(): Promise<number> {
       hook,
       digest_json
     FROM articles
-    ORDER BY published_date DESC, wikipedia_page_id DESC`
+    ORDER BY published_date DESC, wikipedia_page_id DESC
+    LIMIT ?`,
+    [safeLimit],
+    overrideConfig
   );
 
   const rows = result.results || [];
@@ -209,7 +228,8 @@ export async function exportStaticFeedsFromD1(): Promise<number> {
   await fs.mkdir(outDir, { recursive: true });
   await fs.writeFile(path.join(outDir, 'latest.json'), JSON.stringify(feed, null, 2), 'utf8');
   console.log(`Exported ${feed.length} articles to public/data/latest.json.`);
-  return feed.length;
+
+  return { latestCount: feed.length };
 }
 
-export const exportFeedFromD1 = exportStaticFeedsFromD1;
+export const exportStaticFeedsFromD1 = exportFeedFromD1;
