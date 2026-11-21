@@ -1,174 +1,90 @@
-import dotenv from 'dotenv';
-import path from 'path';
-import { collectWikipediaCandidates } from './lib/wikipedia';
-import { batchSummarizeArticles, summarizeArticleWithGemini } from './lib/gemini';
-import { getD1Config, getExistingPageIds, insertArticlesToD1, exportFeedFromD1 } from './lib/d1';
-import { ArticleDigest, WikipediaCandidate } from './lib/types';
+import { fetchQualityWikipediaArticles } from './lib/wikipedia';
+import { batchSummarizeArticles } from './lib/gemini';
+import {
+  getExistingPageIdsFromD1,
+  insertArticlesToD1,
+  exportStaticFeedsFromD1,
+  isD1Configured,
+} from './lib/d1';
 
-// Load environment variables from .env or .env.local
-dotenv.config({ path: path.resolve(process.cwd(), '.env.local') });
-dotenv.config({ path: path.resolve(process.cwd(), '.env') });
-
-function parseArgs() {
-  const args = process.argv.slice(2);
+function parseArgs(argv: string[]): { limit: number; dryRun: boolean } {
   let limit = 50;
-  let isDryRun = false;
-  let isMock = false;
-  let customDate = new Date().toISOString().split('T')[0];
+  let dryRun = false;
 
-  for (const arg of args) {
+  for (const arg of argv) {
     if (arg.startsWith('--limit=')) {
-      const parsed = parseInt(arg.split('=')[1], 10);
-      if (!isNaN(parsed) && parsed > 0) limit = parsed;
+      const parsed = Number.parseInt(arg.split('=')[1], 10);
+      if (!Number.isNaN(parsed) && parsed > 0) {
+        limit = Math.min(parsed, 100);
+      }
     } else if (arg === '--dry-run') {
-      isDryRun = true;
-    } else if (arg === '--mock') {
-      isMock = true;
-    } else if (arg.startsWith('--date=')) {
-      customDate = arg.split('=')[1];
+      dryRun = true;
     }
   }
 
-  return { limit, isDryRun, isMock, customDate };
-}
-
-/**
- * Generate a synthetic mock digest when running in mock mode or when Gemini API key is missing.
- */
-function createMockDigest(candidate: WikipediaCandidate, targetDate: string): ArticleDigest {
-  const words = candidate.extractText.split(/\s+/);
-  const categories = [
-    'Science & Tech',
-    'History & Culture',
-    'Psychology & Philosophy',
-    'Biography',
-    'Nature & Space',
-    'Society & Economics',
-  ] as const;
-  const category = categories[Math.abs(candidate.pageId) % categories.length];
-
-  return {
-    wikipedia_page_id: candidate.pageId,
-    published_date: targetDate,
-    article_title: candidate.title,
-    wikipedia_url: candidate.url,
-    thumbnail_url: candidate.thumbnailUrl,
-    category,
-    read_time_minutes: Math.max(2, Math.min(6, Math.round(words.length / 250))),
-    hook: `${candidate.title} challenges our conventional assumptions through ${candidate.description.toLowerCase()}.`,
-    idea_cards: [
-      {
-        card_number: 1,
-        title: `The Essence of ${candidate.title.slice(0, 20)}`,
-        insight: words.slice(0, 45).join(' ') + '...',
-        key_takeaway: `Takeaway: Understanding ${candidate.title} reveals hidden structural patterns in ${category}.`,
-      },
-      {
-        card_number: 2,
-        title: 'Core Mechanisms & Impact',
-        insight: words.slice(45, 90).join(' ') + '...',
-        key_takeaway: 'Mental Model: First principles reasoning clarifies complex emergent phenomena.',
-      },
-      {
-        card_number: 3,
-        title: 'Modern Relevance & Synthesis',
-        insight: words.slice(90, 135).join(' ') + '...',
-        key_takeaway: 'Takeaway: Historical insights directly inform present technological and cultural shifts.',
-      },
-    ],
-    quiz: {
-      question: `What fundamental principle is central to ${candidate.title}?`,
-      options: [
-        `The dynamics of ${category.toLowerCase()}`,
-        'Random thermal fluctuation without systemic cause',
-        'Standard equilibrium theory in isolation',
-      ],
-      correct_index: 0,
-      explanation: `${candidate.title} primarily exemplifies core principles of ${category.toLowerCase()}.`,
-    },
-  };
+  return { limit, dryRun };
 }
 
 async function main() {
-  const { limit, isDryRun, isMock, customDate } = parseArgs();
-  const d1Config = getD1Config();
-  const apiKey = process.env.GEMINI_API_KEY;
+  const { limit, dryRun } = parseArgs(process.argv.slice(2));
+  const publishDate = new Date().toISOString().slice(0, 10);
+  const d1Enabled = isD1Configured();
+  const geminiKey = process.env.GEMINI_API_KEY?.trim() || '';
 
-  console.log('='.repeat(70));
+  console.log('======================================================================');
   console.log('⚡ WikiStash — Daily AI Ingestion Pipeline');
-  console.log('='.repeat(70));
+  console.log('======================================================================');
   console.log(`Target Count     : ${limit} articles`);
-  console.log(`Publish Date     : ${customDate}`);
-  console.log(`Dry Run Mode     : ${isDryRun ? 'YES (Preview only)' : 'NO'}`);
-  console.log(`Mock Mode        : ${isMock ? 'YES (Bypassing Gemini)' : 'NO'}`);
-  console.log(`Cloudflare D1    : ${d1Config.accountId ? 'Configured (HTTP API)' : d1Config.isLocal ? 'Local Wrangler' : 'Static Fallback'}`);
-  console.log(`Gemini API Key   : ${apiKey ? 'Configured (Live AI)' : isMock ? 'Mocked' : 'Missing (Will use Mock Mode)'}`);
-  console.log('='.repeat(70));
+  console.log(`Publish Date     : ${publishDate}`);
+  console.log(`Dry Run Mode     : ${dryRun ? 'YES' : 'NO'}`);
+  console.log(`Cloudflare D1    : ${d1Enabled ? 'Configured (HTTP API)' : 'Not Configured'}`);
+  console.log(`Gemini API Key   : ${geminiKey ? 'Configured (Live AI)' : 'Missing (Fallback Mode)'}`);
+  console.log('======================================================================');
 
-  // 1. Fetch existing Page IDs to prevent duplicates
-  console.log('\n[1/4] Checking existing Wikipedia page IDs for deduplication...');
-  const excludedIds = await getExistingPageIds(d1Config);
-  console.log(`Found ${excludedIds.size} already stored articles. Zero duplicates guaranteed.`);
+  console.log('[1/4] Checking existing Wikipedia page IDs for deduplication...');
+  const existingIds = d1Enabled && !dryRun ? await getExistingPageIdsFromD1() : new Set<number>();
+  console.log(`Found ${existingIds.size} already stored articles. Zero duplicates guaranteed.`);
 
-  // 2. Fetch quality-filtered Wikipedia candidates
-  console.log(`\n[2/4] Fetching ${limit} quality-filtered Wikipedia articles (min 450 words)...`);
-  const candidates = await collectWikipediaCandidates(limit, excludedIds, (collected, attempts) => {
-    process.stdout.write(`\rSampling articles: ${collected}/${limit} valid found (${attempts} attempts)`);
-  });
-  console.log(`\nSuccessfully collected ${candidates.length} high-signal Wikipedia articles.`);
+  console.log(`[2/4] Fetching ${limit} quality-filtered Wikipedia articles (min 450 words)...`);
+  const candidates = await fetchQualityWikipediaArticles(limit, existingIds, 450);
+  console.log(`Successfully collected ${candidates.length} high-signal Wikipedia articles.`);
 
   if (candidates.length === 0) {
-    console.log('No new articles found. Exiting.');
+    console.warn('No new candidate articles collected. Skipping summarization and DB writes.');
     return;
   }
 
-  if (isDryRun) {
-    console.log('\n[DRY RUN SUMMARY]');
-    candidates.forEach((c, idx) => {
-      console.log(`  ${idx + 1}. [${c.pageId}] ${c.title} (${c.wordCount} words) - ${c.description}`);
-    });
-    console.log('\nDry run complete. No database writes or AI requests executed.');
-    return;
-  }
-
-  // 3. Summarize articles with Gemini
-  console.log(`\n[3/4] Summarizing articles into Deepstash-style micro-learning cards...`);
-  let digests: ArticleDigest[] = [];
-
-  if (apiKey && !isMock) {
-    console.log('Processing via Gemini Free Tier Guardrails: Small batches of 2 concurrent with 4-second delay...');
-    digests = await batchSummarizeArticles(
-      candidates,
-      customDate,
-      apiKey,
-      process.env.GEMINI_MODEL,
-      (completed, total, currentTitle) => {
-        console.log(`[${completed}/${total}] Summarized: "${currentTitle}"`);
-      }
-    );
-  } else {
-    console.log('Using high-fidelity structured mock generator (No GEMINI_API_KEY required)...');
-    digests = candidates.map((cand) => createMockDigest(cand, customDate));
-  }
-
+  console.log('[3/4] Summarizing articles into Deepstash-style micro-learning cards...');
+  const digests = await batchSummarizeArticles(candidates, publishDate, geminiKey);
   console.log(`Successfully generated ${digests.length} ArticleDigest records.`);
 
-  // 4. Save to Cloudflare D1 and Export Feed
-  console.log(`\n[4/4] Inserting into Cloudflare D1 and exporting static CDN feed...`);
-  const inserted = await insertArticlesToD1(digests, d1Config);
-  console.log(`Inserted ${inserted} new records.`);
+  if (dryRun) {
+    console.log('[4/4] Dry-run enabled: skipping Cloudflare D1 writes and static feed export.');
+    return;
+  }
 
-  const exportResult = await exportFeedFromD1(d1Config, 50);
-  console.log(`Feed exported successfully:`);
-  console.log(`  - public/data/latest.json        (${exportResult.latestCount} articles)`);
-  console.log(`  - public/data/archive-index.json (${exportResult.archiveCount} historical articles)`);
+  console.log('[4/4] Inserting into Cloudflare D1 and exporting static CDN feed...');
+  if (!d1Enabled) {
+    throw new Error('Cloudflare D1 environment variables are not configured; aborting ingest.');
+  }
 
-  console.log('\n' + '='.repeat(70));
+  const insertedCount = await insertArticlesToD1(digests);
+  console.log(`Inserted ${insertedCount} new records.`);
+
+  if (insertedCount === 0) {
+    throw new Error(
+      `D1 write guard triggered: ${digests.length} digests were generated, but 0 rows were inserted into D1.`
+    );
+  }
+
+  await exportStaticFeedsFromD1();
+
+  console.log('======================================================================');
   console.log('🎉 WikiStash daily ingestion completed successfully!');
-  console.log('='.repeat(70));
+  console.log('======================================================================');
 }
 
 main().catch((err) => {
-  console.error('\nFatal error in ingestion pipeline:', err);
+  console.error('❌ Ingestion pipeline failed:', err);
   process.exit(1);
 });
