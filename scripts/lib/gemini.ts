@@ -1,7 +1,7 @@
 import { GoogleGenAI, Type } from '@google/genai';
 import { ArticleDigest, WikipediaCandidate } from './types';
 
-const DEFAULT_MODEL = 'gemini-2.5-flash';
+const DEFAULT_MODEL = 'gemini-3.8-flash';
 
 const ideaCardSchema = {
   type: Type.OBJECT,
@@ -146,11 +146,13 @@ ${contentSnippet}
 
   let lastError: unknown = null;
   const maxRetries = 4;
+  let activeModel = modelName || process.env.GEMINI_MODEL || DEFAULT_MODEL;
+  const fallbackModels = ['gemini-3.8-flash', 'gemini-2.0-flash', 'gemini-1.5-flash'];
 
   for (let attempt = 0; attempt <= maxRetries; attempt++) {
     try {
       const response = await ai.models.generateContent({
-        model: modelName,
+        model: activeModel,
         contents: [
           { role: 'user', parts: [{ text: `${systemInstruction}\n\n${prompt}` }] },
         ],
@@ -193,6 +195,21 @@ ${contentSnippet}
       return parsed;
     } catch (err: any) {
       lastError = err;
+      const isNotFound =
+        err?.status === 404 ||
+        err?.message?.includes('404') ||
+        err?.message?.includes('no longer available') ||
+        err?.message?.includes('NOT_FOUND');
+
+      if (isNotFound) {
+        const nextModel = fallbackModels.find((m) => m !== activeModel);
+        if (nextModel) {
+          console.warn(`[Gemini Model Unavailable] "${activeModel}" is not available. Auto-falling back to "${nextModel}"...`);
+          activeModel = nextModel;
+          continue;
+        }
+      }
+
       const isRateLimit =
         err?.status === 429 ||
         err?.message?.includes('429') ||
