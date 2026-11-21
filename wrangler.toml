@@ -20,4 +20,5 @@ pages_build_output_dir = "out"
 [[d1_databases]]
 binding = "DB"
 database_name = "wikistash-db"
-database_id = "00000000-0000-0000-0000-000000000000" # Replace with your real D1 Database ID from `wrangler d1 create`
+database_id = "b59dd07b-f3bd-4c57-b688-02b746172842"
+ # Replace with your real D1 Database ID from `wrangler d1 create`
