@@ -1,8 +1,8 @@
 import { GoogleGenAI, Type } from '@google/genai';
 import { ArticleDigest, WikipediaCandidate } from './types';
-import { summarizeArticleWithGroq } from './groq';
 
-const DEFAULT_MODEL = 'gemini-2.5-flash';
+const PRIMARY_MODEL = 'gemini-2.5-flash';
+const FALLBACK_MODEL = 'gemini-2.5-flash-lite';
 
 const ideaCardSchema = {
   type: Type.OBJECT,
@@ -166,7 +166,7 @@ export async function summarizeArticleWithGemini(
   candidate: WikipediaCandidate,
   targetDate: string,
   apiKey: string,
-  modelName: string = process.env.GEMINI_MODEL || DEFAULT_MODEL
+  modelName?: string
 ): Promise<ArticleDigest> {
   const ai = new GoogleGenAI({ apiKey });
 
@@ -199,7 +199,7 @@ ${contentSnippet}
 `;
 
   const maxRetries = 4;
-  const activeModel = modelName || process.env.GEMINI_MODEL || DEFAULT_MODEL;
+  let activeModel = modelName || process.env.GEMINI_MODEL || PRIMARY_MODEL;
 
   for (let attempt = 0; attempt <= maxRetries; attempt++) {
     try {
@@ -244,16 +244,19 @@ ${contentSnippet}
 
       return parsed;
     } catch (err: any) {
-      if (
-        err?.status === 400 ||
-        err?.status === 401 ||
-        err?.status === 403 ||
-        err?.status === 404
-      ) {
+      // Fail fast on bad API key or invalid schema
+      if (err?.status === 400 || err?.status === 401 || err?.status === 403) {
         console.error(
           `[Gemini Fatal Config Error (${err.status})] Model="${activeModel}" -> ${err?.message || err}`
         );
         break;
+      }
+
+      // If the configured model isn't found (404), immediately switch to FALLBACK_MODEL
+      if (err?.status === 404 && activeModel !== FALLBACK_MODEL) {
+        console.warn(`[Model 404] "${activeModel}" unavailable. Switching to "${FALLBACK_MODEL}"...`);
+        activeModel = FALLBACK_MODEL;
+        continue;
       }
 
       const isCapacityIssue =
@@ -264,23 +267,14 @@ ${contentSnippet}
         err?.message?.includes('high demand') ||
         err?.message?.includes('Spikes in demand');
 
-      if ((isCapacityIssue || attempt >= 2) && process.env.GROQ_API_KEY) {
-        console.warn(`[Failover to Groq] Routing "${candidate.title}" to Groq...`);
-        try {
-          const groqDigest = await summarizeArticleWithGroq(
-            candidate,
-            targetDate,
-            process.env.GROQ_API_KEY
-          );
-          console.log(`[Groq Success] "${candidate.title}" summarized via Groq fallback!`);
-          return groqDigest;
-        } catch (groqErr: any) {
-          console.warn(`[Groq Fallback Warning]`, groqErr?.message || groqErr);
-        }
-      }
-
       if (isCapacityIssue && attempt < maxRetries) {
-        const waitMs = Math.min(14000, 4000 * Math.pow(1.6, attempt)) + Math.floor(Math.random() * 1500);
+        // Switch to FALLBACK_MODEL after first 503 spike so we don't stay stuck on a congested model
+        if (activeModel !== FALLBACK_MODEL) {
+          console.warn(`[503 High Demand on ${activeModel}] Switching immediately to "${FALLBACK_MODEL}"...`);
+          activeModel = FALLBACK_MODEL;
+          continue;
+        }
+        const waitMs = Math.min(12000, 3000 * Math.pow(1.5, attempt)) + Math.floor(Math.random() * 1000);
         console.warn(`[Gemini 503 High Demand] Cooling down for ${Math.round(waitMs / 1000)}s (attempt ${attempt + 1}/${maxRetries})...`);
         await new Promise((resolve) => setTimeout(resolve, waitMs));
         continue;
@@ -307,14 +301,6 @@ ${contentSnippet}
     }
   }
 
-  if (process.env.GROQ_API_KEY) {
-    try {
-      return await summarizeArticleWithGroq(candidate, targetDate, process.env.GROQ_API_KEY);
-    } catch (e: any) {
-      console.warn(`[Final Fallback Failed]`, e?.message || e);
-    }
-  }
-
   console.warn(`[Graceful Recovery] "${candidate.title}" fell back to algorithmic digest.`);
   return createFallbackDigest(candidate, targetDate);
 }
@@ -328,7 +314,7 @@ export async function batchSummarizeArticles(
 ): Promise<ArticleDigest[]> {
   const results: ArticleDigest[] = [];
   const PACING_DELAY_MS = 3500;
-  const resolvedModel = modelName || process.env.GEMINI_MODEL || DEFAULT_MODEL;
+  const resolvedModel = modelName || process.env.GEMINI_MODEL || PRIMARY_MODEL;
 
   console.log(`Using Gemini model: "${resolvedModel}" (${candidates.length} articles queued)`);
 
