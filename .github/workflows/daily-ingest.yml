@@ -79,7 +79,9 @@ jobs:
           NEXT_TELEMETRY_DISABLED: 1
 
       - name: 🚀 Deploy Static Site to Cloudflare Pages ($0/mo Unlimited Traffic)
-        run: npx wrangler pages deploy out --project-name=wikistash --branch=main
+        run: |
+          npx wrangler pages project create wikistash --production-branch=main || true
+          npx wrangler pages deploy out --project-name=wikistash --branch=main --commit-dirty=true
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
