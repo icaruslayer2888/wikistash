@@ -1,178 +1,138 @@
 import { WikipediaCandidate } from './types';
 
-const USER_AGENT = 'WikiStashBot/1.0 (https://github.com/wikistash; contact@wikistash.app)';
-const MIN_WORD_COUNT = 450;
+const WIKI_SUMMARY_URL = 'https://en.wikipedia.org/api/rest_v1/page/random/summary';
+const WIKI_QUERY_URL = 'https://en.wikipedia.org/w/api.php';
+const USER_AGENT = 'WikiStashBot/1.0 (https://wikistash.pages.dev; contact@wikistash.app)';
 
-interface WikipediaRandomSummary {
-  type?: string;
-  title: string;
-  displaytitle?: string;
-  pageid: number;
-  extract?: string;
-  description?: string;
-  thumbnail?: {
-    source: string;
-    width: number;
-    height: number;
-  };
-  content_urls?: {
-    desktop?: {
-      page: string;
+const BLOCKED_TITLE_PREFIXES = [
+  'List of ',
+  'Lists of ',
+  'Index of ',
+  'Outline of ',
+  'Category:',
+  'Template:',
+  'Portal:',
+  'Wikipedia:',
+  'File:',
+  'Draft:',
+  'Help:',
+];
+
+function isLowSignalCandidate(title: string, description: string): boolean {
+  if (!title || !description.trim()) return true;
+  if (BLOCKED_TITLE_PREFIXES.some((prefix) => title.startsWith(prefix))) return true;
+  const descLower = description.toLowerCase();
+  if (descLower.includes('disambiguation') || descLower.includes('wikimedia list article')) {
+    return true;
+  }
+  return false;
+}
+
+function countWords(text: string): number {
+  return text.trim().split(/\s+/).filter(Boolean).length;
+}
+
+async function fetchFullArticleExtract(pageId: number): Promise<string> {
+  const params = new URLSearchParams({
+    action: 'query',
+    pageids: String(pageId),
+    prop: 'extracts',
+    explaintext: '1',
+    exsectionformat: 'plain',
+    format: 'json',
+    origin: '*',
+  });
+
+  const res = await fetch(`${WIKI_QUERY_URL}?${params.toString()}`, {
+    headers: { 'User-Agent': USER_AGENT },
+  });
+
+  if (!res.ok) {
+    throw new Error(`Wikipedia extracts API error: ${res.status} ${res.statusText}`);
+  }
+
+  const data = (await res.json()) as {
+    query?: {
+      pages?: Record<string, { extract?: string }>;
     };
   };
+
+  return data.query?.pages?.[String(pageId)]?.extract?.trim() || '';
 }
 
-interface WikipediaQueryResponse {
-  query?: {
-    pages?: {
-      [key: string]: {
-        pageid: number;
-        title: string;
-        extract?: string;
-      };
-    };
-  };
-}
-
-/**
- * Fetch a single candidate random summary from Wikipedia REST API.
- */
-async function fetchRandomSummary(): Promise<WikipediaRandomSummary | null> {
-  try {
-    const res = await fetch('https://en.wikipedia.org/api/rest_v1/page/random/summary', {
-      headers: {
-        'User-Agent': USER_AGENT,
-        'Accept': 'application/json',
-      },
-    });
-
-    if (!res.ok) {
-      return null;
-    }
-
-    return (await res.json()) as WikipediaRandomSummary;
-  } catch {
-    return null;
-  }
-}
-
-/**
- * Fetch full plain text extract from Wikipedia Action API to verify word count >= 450.
- */
-async function fetchFullExtract(pageId: number): Promise<{ extract: string; wordCount: number } | null> {
-  try {
-    const url = `https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&pageids=${pageId}&format=json&origin=*`;
-    const res = await fetch(url, {
-      headers: {
-        'User-Agent': USER_AGENT,
-        'Accept': 'application/json',
-      },
-    });
-
-    if (!res.ok) {
-      return null;
-    }
-
-    const data = (await res.json()) as WikipediaQueryResponse;
-    const page = data.query?.pages?.[String(pageId)];
-    const extract = page?.extract || '';
-    const words = extract.trim().split(/\s+/).filter(Boolean);
-
-    return {
-      extract,
-      wordCount: words.length,
-    };
-  } catch {
-    return null;
-  }
-}
-
-/**
- * Quality filter rules:
- * 1. Reject disambiguation pages
- * 2. Reject lists and index catalogues
- * 3. Reject missing or too short descriptions
- * 4. Reject previously stored wikipedia_page_id's
- * 5. Reject articles under 450 words
- */
-export async function getValidWikipediaCandidate(
-  excludedIds: Set<number>
-): Promise<WikipediaCandidate | null> {
-  const summary = await fetchRandomSummary();
-  if (!summary || !summary.pageid) return null;
-
-  // 1. Check excluded IDs
-  if (excludedIds.has(summary.pageid)) {
-    return null;
-  }
-
-  // 2. Reject disambiguation
-  if (summary.type === 'disambiguation') {
-    return null;
-  }
-
-  // 3. Reject list / index / glossary titles and descriptions
-  const title = summary.title || '';
-  const desc = summary.description || '';
-
-  const isListTitle = /^(List of|Lists of|Index of|Glossary of|Timeline of|Bibliography of|Outline of)/i.test(title);
-  if (isListTitle) return null;
-
-  const isListDesc = /wikimedia list|disambiguation page|index of/i.test(desc);
-  if (isListDesc) return null;
-
-  // 4. Reject missing or stub description
-  if (!desc || desc.trim().length < 8) {
-    return null;
-  }
-
-  // 5. Verify >= 450 words via action=query&prop=extracts&explaintext=1
-  const fullExtractData = await fetchFullExtract(summary.pageid);
-  if (!fullExtractData || fullExtractData.wordCount < MIN_WORD_COUNT) {
-    return null;
-  }
-
-  const wikiUrl = summary.content_urls?.desktop?.page || `https://en.wikipedia.org/wiki/${encodeURIComponent(title.replace(/ /g, '_'))}`;
-  const thumbnailUrl = summary.thumbnail?.source || null;
-
-  return {
-    pageId: summary.pageid,
-    title,
-    url: wikiUrl,
-    thumbnailUrl,
-    description: desc,
-    extractText: fullExtractData.extract,
-    wordCount: fullExtractData.wordCount,
-  };
-}
-
-/**
- * Collects a specified number of high-quality Wikipedia candidates.
- * Rate-friendly with backoff and retry.
- */
-export async function collectWikipediaCandidates(
-  targetCount: number = 50,
-  excludedIds: Set<number> = new Set(),
-  onProgress?: (collected: number, attempts: number) => void
+export async function fetchQualityWikipediaArticles(
+  targetCount: number,
+  excludedPageIds: Set<number> = new Set(),
+  minWords: number = 450
 ): Promise<WikipediaCandidate[]> {
-  const candidates: WikipediaCandidate[] = [];
-  const currentExcluded = new Set(excludedIds);
+  const collected: WikipediaCandidate[] = [];
+  const seenIds = new Set<number>(excludedPageIds);
+  const maxAttempts = Math.max(250, targetCount * 8);
+
   let attempts = 0;
-  const maxAttempts = targetCount * 12; // allow enough sampling for quality filters
 
-  while (candidates.length < targetCount && attempts < maxAttempts) {
+  while (collected.length < targetCount && attempts < maxAttempts) {
     attempts++;
-    const candidate = await getValidWikipediaCandidate(currentExcluded);
 
-    if (candidate) {
-      candidates.push(candidate);
-      currentExcluded.add(candidate.pageId);
-      if (onProgress) onProgress(candidates.length, attempts);
+    try {
+      const summaryRes = await fetch(WIKI_SUMMARY_URL, {
+        headers: { 'User-Agent': USER_AGENT },
+      });
+
+      if (!summaryRes.ok) {
+        await new Promise((r) => setTimeout(r, 250));
+        continue;
+      }
+
+      const summary = (await summaryRes.json()) as {
+        pageid?: number;
+        title?: string;
+        description?: string;
+        content_urls?: { desktop?: { page?: string } };
+        thumbnail?: { source?: string };
+      };
+
+      const pageId = summary.pageid;
+      const title = summary.title?.trim() || '';
+      const description = summary.description?.trim() || '';
+
+      if (!pageId || seenIds.has(pageId) || isLowSignalCandidate(title, description)) {
+        await new Promise((r) => setTimeout(r, 80));
+        continue;
+      }
+
+      seenIds.add(pageId);
+
+      const extractText = await fetchFullArticleExtract(pageId);
+      if (countWords(extractText) < minWords) {
+        await new Promise((r) => setTimeout(r, 80));
+        continue;
+      }
+
+      const url =
+        summary.content_urls?.desktop?.page ||
+        `https://en.wikipedia.org/?curid=${pageId}`;
+
+      collected.push({
+        pageId,
+        title,
+        description,
+        url,
+        thumbnailUrl: summary.thumbnail?.source || null,
+        extractText,
+      });
+
+      if (collected.length % 5 === 0 || collected.length === targetCount) {
+        console.log(`Sampling articles: ${collected.length}/${targetCount} valid found (${attempts} attempts)`);
+      }
+
+      // Polite pacing to avoid Wikimedia throttling
+      await new Promise((r) => setTimeout(r, 120));
+    } catch (err) {
+      console.warn(`[Wiki Sampling Warning] Attempt ${attempts}: ${(err as Error)?.message || err}`);
+      await new Promise((r) => setTimeout(r, 250));
     }
-
-    // Gentle pacing to respect Wikipedia API policies (100ms)
-    await new Promise((r) => setTimeout(r, 120));
   }
 
-  return candidates;
+  return collected;
 }
