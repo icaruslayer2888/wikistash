@@ -1,5 +1,6 @@
 import { GoogleGenAI, Type } from '@google/genai';
 import { ArticleDigest, WikipediaCandidate } from './types';
+import { summarizeArticleWithGroq } from './groq';
 
 const DEFAULT_MODEL = 'gemini-3.8-flash';
 
@@ -266,6 +267,22 @@ ${contentSnippet}
         err?.message?.includes('high demand') ||
         err?.message?.includes('Spikes in demand');
 
+      // Instant Failover to Groq if configured
+      if ((isCapacityIssue || attempt >= 2) && process.env.GROQ_API_KEY) {
+        console.warn(`[Failover to Groq] Google AI Studio busy. Routing "${candidate.title}" to Groq (Llama 3.3 70B)...`);
+        try {
+          const groqDigest = await summarizeArticleWithGroq(
+            candidate,
+            targetDate,
+            process.env.GROQ_API_KEY
+          );
+          console.log(`[Groq Success] "${candidate.title}" summarized in <1s via Groq fallback!`);
+          return groqDigest;
+        } catch (groqErr: any) {
+          console.warn(`[Groq Fallback Warning] Groq attempt failed:`, groqErr?.message || groqErr);
+        }
+      }
+
       if (isCapacityIssue && attempt < maxRetries) {
         // High demand is temporary per Google: back off with jitter to allow the traffic spike to clear
         const waitMs = Math.min(14000, 4000 * Math.pow(1.6, attempt)) + Math.floor(Math.random() * 1500);
@@ -292,6 +309,16 @@ ${contentSnippet}
         await new Promise((resolve) => setTimeout(resolve, 3000 + Math.random() * 1000));
         continue;
       }
+    }
+  }
+
+  // Final attempt with Groq if available before algorithmic fallback
+  if (process.env.GROQ_API_KEY) {
+    try {
+      console.warn(`[Final Fallback] Attempting Groq summarization for "${candidate.title}"...`);
+      return await summarizeArticleWithGroq(candidate, targetDate, process.env.GROQ_API_KEY);
+    } catch (e: any) {
+      console.warn(`[Final Fallback Failed] Groq error:`, e?.message || e);
     }
   }
 
