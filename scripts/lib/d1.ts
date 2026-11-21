@@ -1,122 +1,206 @@
-import { fetchQualityWikipediaArticles } from './lib/wikipedia';
-import { batchSummarizeArticles } from './lib/gemini';
-import * as d1 from './lib/d1';
+import fs from 'node:fs/promises';
+import path from 'node:path';
 
-function parseArgs(argv: string[]): { limit: number; dryRun: boolean } {
-  let limit = 50;
-  let dryRun = false;
-
-  for (const arg of argv) {
-    if (arg.startsWith('--limit=')) {
-      const parsed = Number.parseInt(arg.split('=')[1], 10);
-      if (!Number.isNaN(parsed) && parsed > 0) {
-        limit = Math.min(parsed, 100);
-      }
-    } else if (arg === '--dry-run') {
-      dryRun = true;
-    }
-  }
-
-  return { limit, dryRun };
+export interface IdeaCard {
+  card_number: number;
+  title: string;
+  insight: string;
+  key_takeaway: string;
 }
 
-function checkD1Configured(): boolean {
-  return Boolean(
-    process.env.CLOUDFLARE_API_TOKEN?.trim() &&
-      process.env.CLOUDFLARE_ACCOUNT_ID?.trim() &&
-      process.env.CLOUDFLARE_D1_DATABASE_ID?.trim()
-  );
+export interface QuizData {
+  question: string;
+  options: string[];
+  correct_index: number;
+  explanation: string;
 }
 
-async function main() {
-  const { limit, dryRun } = parseArgs(process.argv.slice(2));
-  const publishDate = new Date().toISOString().slice(0, 10);
-  const d1Enabled = checkD1Configured();
-  const geminiKey = process.env.GEMINI_API_KEY?.trim() || '';
+export interface ArticleDigest {
+  wikipedia_page_id: number;
+  published_date: string;
+  article_title: string;
+  wikipedia_url: string;
+  thumbnail_url: string | null;
+  category: string;
+  read_time_minutes: number;
+  hook: string;
+  idea_cards: IdeaCard[];
+  quiz: QuizData;
+}
 
-  console.log('======================================================================');
-  console.log('⚡ WikiStash — Daily AI Ingestion Pipeline');
-  console.log('======================================================================');
-  console.log(`Target Count     : ${limit} articles`);
-  console.log(`Publish Date     : ${publishDate}`);
-  console.log(`Dry Run Mode     : ${dryRun ? 'YES' : 'NO'}`);
-  console.log(`Cloudflare D1    : ${d1Enabled ? 'Configured (HTTP API)' : 'Not Configured'}`);
-  console.log(`Gemini API Key   : ${geminiKey ? 'Configured (Live AI)' : 'Missing (Fallback Mode)'}`);
-  console.log('======================================================================');
+interface D1QueryResult<T = Record<string, unknown>> {
+  results?: T[];
+  success?: boolean;
+  meta?: {
+    changes?: number;
+  };
+}
 
-  console.log('[1/4] Checking existing Wikipedia page IDs for deduplication...');
-  const getExistingIds =
-    (d1 as any).getExistingPageIdsFromD1 ||
-    (d1 as any).fetchExistingPageIds ||
-    (d1 as any).getExistingWikipediaPageIds;
+interface D1ApiResponse<T = Record<string, unknown>> {
+  success: boolean;
+  errors?: Array<{ message?: string; code?: number }>;
+  result?: Array<D1QueryResult<T>>;
+}
 
-  const existingIds: Set<number> =
-    d1Enabled && !dryRun && typeof getExistingIds === 'function'
-      ? await getExistingIds()
-      : new Set<number>();
-  console.log(`Found ${existingIds.size} already stored articles. Zero duplicates guaranteed.`);
+function getD1Config() {
+  const apiToken = process.env.CLOUDFLARE_API_TOKEN?.trim();
+  const accountId = process.env.CLOUDFLARE_ACCOUNT_ID?.trim();
+  const databaseId = process.env.CLOUDFLARE_D1_DATABASE_ID?.trim();
 
-  console.log(`[2/4] Fetching ${limit} quality-filtered Wikipedia articles (min 450 words)...`);
-  const candidates = await fetchQualityWikipediaArticles(limit, existingIds, 450);
-  console.log(`Successfully collected ${candidates.length} high-signal Wikipedia articles.`);
-
-  if (candidates.length === 0) {
-    console.warn('No new candidate articles collected. Skipping summarization and DB writes.');
-    return;
-  }
-
-  console.log('[3/4] Summarizing articles into Deepstash-style micro-learning cards...');
-  const digests = await batchSummarizeArticles(candidates, publishDate, geminiKey);
-  console.log(`Successfully generated ${digests.length} ArticleDigest records.`);
-
-  if (dryRun) {
-    console.log('[4/4] Dry-run enabled: skipping Cloudflare D1 writes and static feed export.');
-    return;
-  }
-
-  console.log('[4/4] Inserting into Cloudflare D1 and exporting static CDN feed...');
-  if (!d1Enabled) {
-    throw new Error('Cloudflare D1 environment variables are not configured; aborting ingest.');
-  }
-
-  const insertFn = (d1 as any).insertArticlesToD1 || (d1 as any).upsertArticlesToD1;
-  if (typeof insertFn !== 'function') {
-    throw new Error(`Could not find insert function in scripts/lib/d1.ts. Exports found: ${Object.keys(d1).join(', ')}`);
-  }
-
-  const insertResult = await insertFn(digests);
-  const insertedCount =
-    typeof insertResult === 'number'
-      ? insertResult
-      : typeof insertResult?.inserted === 'number'
-        ? insertResult.inserted
-        : digests.length;
-
-  console.log(`Inserted ${insertedCount} new records.`);
-
-  if (insertedCount === 0) {
+  if (!apiToken || !accountId || !databaseId) {
     throw new Error(
-      `D1 write guard triggered: ${digests.length} digests were generated, but 0 rows were inserted into D1.`
+      'Missing Cloudflare D1 credentials. Ensure CLOUDFLARE_API_TOKEN, CLOUDFLARE_ACCOUNT_ID, and CLOUDFLARE_D1_DATABASE_ID are set.'
     );
   }
 
-  const exportFn =
-    (d1 as any).exportStaticFeedsFromD1 ||
-    (d1 as any).exportFeedFiles ||
-    (d1 as any).exportStaticFeed;
-
-  if (typeof exportFn === 'function') {
-    await exportFn();
-  } else {
-    console.warn(`No export function matched in scripts/lib/d1.ts (${Object.keys(d1).join(', ')}).`);
-  }
-
-  console.log('======================================================================');
-  console.log('🎉 WikiStash daily ingestion completed successfully!');
-  console.log('======================================================================');
+  return { apiToken, accountId, databaseId };
 }
 
-main().catch((err) => {
-  console.error('❌ Ingestion pipeline failed:', err);
-  process.exit(1);
-});
+async function queryD1<T = Record<string, unknown>>(
+  sql: string,
+  params: Array<string | number | null> = []
+): Promise<D1QueryResult<T>> {
+  const { apiToken, accountId, databaseId } = getD1Config();
+  const endpoint = `https://api.cloudflare.com/client/v4/accounts/${accountId}/d1/database/${databaseId}/query`;
+
+  const res = await fetch(endpoint, {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${apiToken}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ sql, params }),
+  });
+
+  if (!res.ok) {
+    const bodyText = await res.text();
+    throw new Error(`Cloudflare D1 HTTP ${res.status}: ${bodyText}`);
+  }
+
+  const data = (await res.json()) as D1ApiResponse<T>;
+  if (!data.success) {
+    const errMsg = data.errors?.map((e) => e.message).filter(Boolean).join('; ') || 'Unknown D1 error';
+    throw new Error(`Cloudflare D1 query failed: ${errMsg}`);
+  }
+
+  return data.result?.[0] || { results: [] };
+}
+
+export async function getExistingPageIdsFromD1(): Promise<Set<number>> {
+  const result = await queryD1<{ wikipedia_page_id: number }>(
+    'SELECT wikipedia_page_id FROM articles'
+  );
+  const ids = new Set<number>();
+  for (const row of result.results || []) {
+    if (typeof row.wikipedia_page_id === 'number') {
+      ids.add(row.wikipedia_page_id);
+    }
+  }
+  return ids;
+}
+
+export async function insertArticlesToD1(digests: ArticleDigest[]): Promise<number> {
+  if (digests.length === 0) return 0;
+
+  let inserted = 0;
+
+  for (const item of digests) {
+    const digestPayload = JSON.stringify({
+      hook: item.hook,
+      idea_cards: item.idea_cards,
+      quiz: item.quiz,
+    });
+
+    const res = await queryD1(
+      `INSERT OR IGNORE INTO articles (
+        wikipedia_page_id,
+        published_date,
+        article_title,
+        wikipedia_url,
+        thumbnail_url,
+        category,
+        read_time_minutes,
+        hook,
+        digest_json
+      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+      [
+        item.wikipedia_page_id,
+        item.published_date,
+        item.article_title,
+        item.wikipedia_url,
+        item.thumbnail_url ?? null,
+        item.category,
+        item.read_time_minutes,
+        item.hook,
+        digestPayload,
+      ]
+    );
+
+    const changes = res.meta?.changes ?? 1;
+    if (changes > 0) {
+      inserted += changes;
+    }
+  }
+
+  return inserted;
+}
+
+export async function exportStaticFeedsFromD1(): Promise<void> {
+  const result = await queryD1<{
+    wikipedia_page_id: number;
+    published_date: string;
+    article_title: string;
+    wikipedia_url: string;
+    thumbnail_url: string | null;
+    category: string;
+    read_time_minutes: number;
+    hook: string;
+    digest_json: string;
+  }>(
+    `SELECT
+      wikipedia_page_id,
+      published_date,
+      article_title,
+      wikipedia_url,
+      thumbnail_url,
+      category,
+      read_time_minutes,
+      hook,
+      digest_json
+    FROM articles
+    ORDER BY published_date DESC, wikipedia_page_id DESC`
+  );
+
+  const rows = result.results || [];
+  const feed: ArticleDigest[] = rows.map((row) => {
+    let parsedDigest: Partial<ArticleDigest> = {};
+    try {
+      parsedDigest = JSON.parse(row.digest_json || '{}');
+    } catch {
+      parsedDigest = {};
+    }
+
+    return {
+      wikipedia_page_id: row.wikipedia_page_id,
+      published_date: row.published_date,
+      article_title: row.article_title,
+      wikipedia_url: row.wikipedia_url,
+      thumbnail_url: row.thumbnail_url ?? null,
+      category: row.category,
+      read_time_minutes: row.read_time_minutes,
+      hook: row.hook || parsedDigest.hook || '',
+      idea_cards: Array.isArray(parsedDigest.idea_cards) ? parsedDigest.idea_cards : [],
+      quiz: parsedDigest.quiz || {
+        question: `What is a central focus of ${row.article_title}?`,
+        options: ['Core concepts & context', 'Unrelated topic', 'None of the above'],
+        correct_index: 0,
+        explanation: 'Based on the article summary.',
+      },
+    };
+  });
+
+  const outDir = path.join(process.cwd(), 'public', 'data');
+  await fs.mkdir(outDir, { recursive: true });
+  await fs.writeFile(path.join(outDir, 'latest.json'), JSON.stringify(feed, null, 2), 'utf8');
+  console.log(`Exported ${feed.length} articles to public/data/latest.json.`);
+}
