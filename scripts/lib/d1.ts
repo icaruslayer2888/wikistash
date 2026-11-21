@@ -1,302 +1,122 @@
-import fs from 'fs';
-import path from 'path';
-import { execSync } from 'child_process';
-import { ArticleDigest, ArchiveIndexEntry } from './types';
+import { fetchQualityWikipediaArticles } from './lib/wikipedia';
+import { batchSummarizeArticles } from './lib/gemini';
+import * as d1 from './lib/d1';
 
-export interface D1Config {
-  accountId?: string;
-  databaseId?: string;
-  apiToken?: string;
-  databaseName?: string;
-  isLocal?: boolean;
-}
+function parseArgs(argv: string[]): { limit: number; dryRun: boolean } {
+  let limit = 50;
+  let dryRun = false;
 
-export function getD1Config(): D1Config {
-  return {
-    accountId: process.env.CLOUDFLARE_ACCOUNT_ID,
-    databaseId: process.env.CLOUDFLARE_D1_DATABASE_ID,
-    apiToken: process.env.CLOUDFLARE_API_TOKEN,
-    databaseName: process.env.CLOUDFLARE_D1_NAME || 'wikistash-db',
-    isLocal: process.env.D1_LOCAL === 'true',
-  };
-}
-
-/**
- * Execute SQL query against Cloudflare D1 via HTTP API.
- */
-async function executeD1HttpApi(
-  config: D1Config,
-  sql: string,
-  params: any[] = []
-): Promise<any> {
-  if (!config.accountId || !config.databaseId || !config.apiToken) {
-    throw new Error('Missing Cloudflare D1 HTTP API credentials');
-  }
-
-  const endpoint = `https://api.cloudflare.com/client/v4/accounts/${config.accountId}/d1/database/${config.databaseId}/query`;
-  const res = await fetch(endpoint, {
-    method: 'POST',
-    headers: {
-      'Authorization': `Bearer ${config.apiToken}`,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      sql,
-      params,
-    }),
-  });
-
-  const data: any = await res.json();
-  if (!res.ok || !data.success) {
-    throw new Error(`D1 API error: ${JSON.stringify(data.errors || data)}`);
-  }
-
-  return data.result?.[0]?.results || [];
-}
-
-/**
- * Execute SQL query via Wrangler CLI.
- */
-function executeD1Wrangler(
-  config: D1Config,
-  sql: string,
-  useLocal: boolean = false
-): any {
-  const dbName = config.databaseName || 'wikistash-db';
-  const localFlag = useLocal ? '--local' : '--remote';
-
-  // Escape double quotes for shell execution
-  const escapedSql = sql.replace(/"/g, '\\"');
-  const cmd = `npx wrangler d1 execute ${dbName} ${localFlag} --command="${escapedSql}" --json`;
-
-  const output = execSync(cmd, { encoding: 'utf-8', stdio: ['pipe', 'pipe', 'pipe'] });
-  const parsed = JSON.parse(output);
-  return parsed?.[0]?.results || [];
-}
-
-/**
- * Fetch all existing wikipedia_page_id's from D1 (or local fallback) to ensure zero duplicates.
- */
-export async function getExistingPageIds(config: D1Config): Promise<Set<number>> {
-  const ids = new Set<number>();
-
-  // Check Cloudflare D1 HTTP API first if credentials exist
-  if (config.accountId && config.databaseId && config.apiToken) {
-    try {
-      const results = await executeD1HttpApi(config, 'SELECT wikipedia_page_id FROM articles');
-      for (const row of results) {
-        if (row.wikipedia_page_id) ids.add(Number(row.wikipedia_page_id));
+  for (const arg of argv) {
+    if (arg.startsWith('--limit=')) {
+      const parsed = Number.parseInt(arg.split('=')[1], 10);
+      if (!Number.isNaN(parsed) && parsed > 0) {
+        limit = Math.min(parsed, 100);
       }
-      return ids;
-    } catch (e) {
-      console.warn('Could not query D1 HTTP API for existing page IDs:', (e as Error).message);
+    } else if (arg === '--dry-run') {
+      dryRun = true;
     }
   }
 
-  // Next check local wrangler if local flag set
-  if (config.isLocal) {
-    try {
-      const results = executeD1Wrangler(config, 'SELECT wikipedia_page_id FROM articles', true);
-      for (const row of results) {
-        if (row.wikipedia_page_id) ids.add(Number(row.wikipedia_page_id));
-      }
-      return ids;
-    } catch {
-      // Local D1 might not be initialized yet
-    }
-  }
-
-  // Fallback to local files: public/data/archive-index.json and public/data/latest.json
-  const dataDir = path.resolve(process.cwd(), 'public/data');
-  const archivePath = path.join(dataDir, 'archive-index.json');
-  const latestPath = path.join(dataDir, 'latest.json');
-
-  if (fs.existsSync(archivePath)) {
-    try {
-      const content = JSON.parse(fs.readFileSync(archivePath, 'utf-8')) as ArchiveIndexEntry[];
-      for (const item of content) {
-        if (item.wikipedia_page_id) ids.add(Number(item.wikipedia_page_id));
-      }
-    } catch {}
-  }
-
-  if (fs.existsSync(latestPath)) {
-    try {
-      const content = JSON.parse(fs.readFileSync(latestPath, 'utf-8')) as ArticleDigest[];
-      for (const item of content) {
-        if (item.wikipedia_page_id) ids.add(Number(item.wikipedia_page_id));
-      }
-    } catch {}
-  }
-
-  return ids;
+  return { limit, dryRun };
 }
 
-/**
- * Save new ArticleDigest records into Cloudflare D1.
- * Also persists locally to ensure immediate zero-latency builds.
- */
-export async function insertArticlesToD1(
-  digests: ArticleDigest[],
-  config: D1Config
-): Promise<number> {
-  if (digests.length === 0) return 0;
+function checkD1Configured(): boolean {
+  return Boolean(
+    process.env.CLOUDFLARE_API_TOKEN?.trim() &&
+      process.env.CLOUDFLARE_ACCOUNT_ID?.trim() &&
+      process.env.CLOUDFLARE_D1_DATABASE_ID?.trim()
+  );
+}
 
-  let insertedCount = 0;
+async function main() {
+  const { limit, dryRun } = parseArgs(process.argv.slice(2));
+  const publishDate = new Date().toISOString().slice(0, 10);
+  const d1Enabled = checkD1Configured();
+  const geminiKey = process.env.GEMINI_API_KEY?.trim() || '';
 
-  // 1. Try Cloudflare D1 HTTP API if credentials present
-  if (config.accountId && config.databaseId && config.apiToken) {
-    console.log(`Inserting ${digests.length} articles into Cloudflare D1 via HTTP API...`);
-    for (const item of digests) {
-      const sql = `
-        INSERT OR IGNORE INTO articles (
-          wikipedia_page_id,
-          published_date,
-          article_title,
-          wikipedia_url,
-          thumbnail_url,
-          category,
-          read_time_minutes,
-          hook,
-          digest_json
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);
-      `;
-      const params = [
-        item.wikipedia_page_id,
-        item.published_date,
-        item.article_title,
-        item.wikipedia_url,
-        item.thumbnail_url,
-        item.category,
-        item.read_time_minutes,
-        item.hook,
-        JSON.stringify(item),
-      ];
+  console.log('======================================================================');
+  console.log('⚡ WikiStash — Daily AI Ingestion Pipeline');
+  console.log('======================================================================');
+  console.log(`Target Count     : ${limit} articles`);
+  console.log(`Publish Date     : ${publishDate}`);
+  console.log(`Dry Run Mode     : ${dryRun ? 'YES' : 'NO'}`);
+  console.log(`Cloudflare D1    : ${d1Enabled ? 'Configured (HTTP API)' : 'Not Configured'}`);
+  console.log(`Gemini API Key   : ${geminiKey ? 'Configured (Live AI)' : 'Missing (Fallback Mode)'}`);
+  console.log('======================================================================');
 
-      try {
-        await executeD1HttpApi(config, sql, params);
-        insertedCount++;
-      } catch (err) {
-        console.error(`Failed to insert article ${item.wikipedia_page_id} into D1:`, err);
-      }
-    }
-  } else if (config.isLocal) {
-    console.log(`Inserting ${digests.length} articles into local Wrangler D1...`);
-    // Write temporary SQL file and execute via wrangler d1 execute
-    const sqlFile = path.resolve(process.cwd(), '.temp_insert.sql');
-    const statements = digests.map((item) => {
-      const jsonStr = JSON.stringify(item).replace(/'/g, "''");
-      const title = item.article_title.replace(/'/g, "''");
-      const hook = item.hook.replace(/'/g, "''");
-      const thumb = item.thumbnail_url ? `'${item.thumbnail_url.replace(/'/g, "''")}'` : 'NULL';
-      return `INSERT OR IGNORE INTO articles (wikipedia_page_id, published_date, article_title, wikipedia_url, thumbnail_url, category, read_time_minutes, hook, digest_json) VALUES (${item.wikipedia_page_id}, '${item.published_date}', '${title}', '${item.wikipedia_url}', ${thumb}, '${item.category}', ${item.read_time_minutes}, '${hook}', '${jsonStr}');`;
-    });
+  console.log('[1/4] Checking existing Wikipedia page IDs for deduplication...');
+  const getExistingIds =
+    (d1 as any).getExistingPageIdsFromD1 ||
+    (d1 as any).fetchExistingPageIds ||
+    (d1 as any).getExistingWikipediaPageIds;
 
-    fs.writeFileSync(sqlFile, statements.join('\n'));
-    try {
-      execSync(`npx wrangler d1 execute ${config.databaseName || 'wikistash-db'} --local --file="${sqlFile}"`, {
-        stdio: 'inherit',
-      });
-      insertedCount = digests.length;
-    } catch (e) {
-      console.warn('Local wrangler execution failed:', e);
-    } finally {
-      if (fs.existsSync(sqlFile)) fs.unlinkSync(sqlFile);
-    }
+  const existingIds: Set<number> =
+    d1Enabled && !dryRun && typeof getExistingIds === 'function'
+      ? await getExistingIds()
+      : new Set<number>();
+  console.log(`Found ${existingIds.size} already stored articles. Zero duplicates guaranteed.`);
+
+  console.log(`[2/4] Fetching ${limit} quality-filtered Wikipedia articles (min 450 words)...`);
+  const candidates = await fetchQualityWikipediaArticles(limit, existingIds, 450);
+  console.log(`Successfully collected ${candidates.length} high-signal Wikipedia articles.`);
+
+  if (candidates.length === 0) {
+    console.warn('No new candidate articles collected. Skipping summarization and DB writes.');
+    return;
+  }
+
+  console.log('[3/4] Summarizing articles into Deepstash-style micro-learning cards...');
+  const digests = await batchSummarizeArticles(candidates, publishDate, geminiKey);
+  console.log(`Successfully generated ${digests.length} ArticleDigest records.`);
+
+  if (dryRun) {
+    console.log('[4/4] Dry-run enabled: skipping Cloudflare D1 writes and static feed export.');
+    return;
+  }
+
+  console.log('[4/4] Inserting into Cloudflare D1 and exporting static CDN feed...');
+  if (!d1Enabled) {
+    throw new Error('Cloudflare D1 environment variables are not configured; aborting ingest.');
+  }
+
+  const insertFn = (d1 as any).insertArticlesToD1 || (d1 as any).upsertArticlesToD1;
+  if (typeof insertFn !== 'function') {
+    throw new Error(`Could not find insert function in scripts/lib/d1.ts. Exports found: ${Object.keys(d1).join(', ')}`);
+  }
+
+  const insertResult = await insertFn(digests);
+  const insertedCount =
+    typeof insertResult === 'number'
+      ? insertResult
+      : typeof insertResult?.inserted === 'number'
+        ? insertResult.inserted
+        : digests.length;
+
+  console.log(`Inserted ${insertedCount} new records.`);
+
+  if (insertedCount === 0) {
+    throw new Error(
+      `D1 write guard triggered: ${digests.length} digests were generated, but 0 rows were inserted into D1.`
+    );
+  }
+
+  const exportFn =
+    (d1 as any).exportStaticFeedsFromD1 ||
+    (d1 as any).exportFeedFiles ||
+    (d1 as any).exportStaticFeed;
+
+  if (typeof exportFn === 'function') {
+    await exportFn();
   } else {
-    console.log('No Cloudflare D1 credentials detected. Proceeding with static JSON export mode.');
-    const dataDir = path.resolve(process.cwd(), 'public/data');
-    if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });
-    const latestPath = path.join(dataDir, 'latest.json');
-    let existing: ArticleDigest[] = [];
-    if (fs.existsSync(latestPath)) {
-      try {
-        existing = JSON.parse(fs.readFileSync(latestPath, 'utf-8'));
-      } catch {}
-    }
-    const combined = [...digests, ...existing];
-    const seen = new Set<number>();
-    const unique = combined.filter((item) => {
-      if (seen.has(item.wikipedia_page_id)) return false;
-      seen.add(item.wikipedia_page_id);
-      return true;
-    });
-    fs.writeFileSync(latestPath, JSON.stringify(unique, null, 2), 'utf-8');
-    insertedCount = digests.length;
+    console.warn(`No export function matched in scripts/lib/d1.ts (${Object.keys(d1).join(', ')}).`);
   }
 
-  return insertedCount;
+  console.log('======================================================================');
+  console.log('🎉 WikiStash daily ingestion completed successfully!');
+  console.log('======================================================================');
 }
 
-/**
- * Export feed from D1 or local store directly to public/data/latest.json and archive-index.json
- */
-export async function exportFeedFromD1(
-  config: D1Config,
-  limitLatest: number = 50
-): Promise<{ latestCount: number; archiveCount: number }> {
-  const dataDir = path.resolve(process.cwd(), 'public/data');
-  if (!fs.existsSync(dataDir)) {
-    fs.mkdirSync(dataDir, { recursive: true });
-  }
-
-  const latestPath = path.join(dataDir, 'latest.json');
-  const archivePath = path.join(dataDir, 'archive-index.json');
-
-  let allArticles: ArticleDigest[] = [];
-
-  // Try querying D1 if credentials exist
-  if (config.accountId && config.databaseId && config.apiToken) {
-    try {
-      const rows = await executeD1HttpApi(
-        config,
-        'SELECT digest_json FROM articles ORDER BY published_date DESC, created_at DESC'
-      );
-      allArticles = rows.map((r: any) => JSON.parse(r.digest_json) as ArticleDigest);
-    } catch (e) {
-      console.warn('Could not fetch articles from D1 API for export:', (e as Error).message);
-    }
-  }
-
-  // If D1 did not return rows, read existing local latest & archive
-  if (allArticles.length === 0) {
-    if (fs.existsSync(latestPath)) {
-      try {
-        const existingLatest = JSON.parse(fs.readFileSync(latestPath, 'utf-8')) as ArticleDigest[];
-        allArticles.push(...existingLatest);
-      } catch {}
-    }
-  }
-
-  // Deduplicate by wikipedia_page_id
-  const seen = new Set<number>();
-  const uniqueArticles: ArticleDigest[] = [];
-  for (const art of allArticles) {
-    if (!seen.has(art.wikipedia_page_id)) {
-      seen.add(art.wikipedia_page_id);
-      uniqueArticles.push(art);
-    }
-  }
-
-  const latestSlice = uniqueArticles.slice(0, limitLatest);
-  fs.writeFileSync(latestPath, JSON.stringify(latestSlice, null, 2), 'utf-8');
-
-  // Build archive index
-  const archiveIndex: ArchiveIndexEntry[] = uniqueArticles.map((art) => ({
-    wikipedia_page_id: art.wikipedia_page_id,
-    published_date: art.published_date,
-    article_title: art.article_title,
-    category: art.category,
-    read_time_minutes: art.read_time_minutes,
-    hook: art.hook,
-    thumbnail_url: art.thumbnail_url,
-    idea_cards_count: art.idea_cards?.length || 0,
-  }));
-
-  fs.writeFileSync(archivePath, JSON.stringify(archiveIndex, null, 2), 'utf-8');
-
-  return {
-    latestCount: latestSlice.length,
-    archiveCount: archiveIndex.length,
-  };
-}
+main().catch((err) => {
+  console.error('❌ Ingestion pipeline failed:', err);
+  process.exit(1);
+});
