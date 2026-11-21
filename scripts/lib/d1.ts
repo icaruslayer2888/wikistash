@@ -28,6 +28,12 @@ export interface ArticleDigest {
   quiz: QuizData;
 }
 
+export interface D1Config {
+  apiToken: string;
+  accountId: string;
+  databaseId: string;
+}
+
 interface D1QueryResult<T = Record<string, unknown>> {
   results?: T[];
   success?: boolean;
@@ -42,10 +48,10 @@ interface D1ApiResponse<T = Record<string, unknown>> {
   result?: Array<D1QueryResult<T>>;
 }
 
-function getD1Config() {
-  const apiToken = process.env.CLOUDFLARE_API_TOKEN?.trim();
-  const accountId = process.env.CLOUDFLARE_ACCOUNT_ID?.trim();
-  const databaseId = process.env.CLOUDFLARE_D1_DATABASE_ID?.trim();
+export function getD1Config(): D1Config {
+  const apiToken = process.env.CLOUDFLARE_API_TOKEN?.trim() || '';
+  const accountId = process.env.CLOUDFLARE_ACCOUNT_ID?.trim() || '';
+  const databaseId = process.env.CLOUDFLARE_D1_DATABASE_ID?.trim() || '';
 
   if (!apiToken || !accountId || !databaseId) {
     throw new Error(
@@ -145,7 +151,7 @@ export async function insertArticlesToD1(digests: ArticleDigest[]): Promise<numb
   return inserted;
 }
 
-export async function exportStaticFeedsFromD1(): Promise<void> {
+export async function exportStaticFeedsFromD1(): Promise<number> {
   const result = await queryD1<{
     wikipedia_page_id: number;
     published_date: string;
@@ -203,4 +209,7 @@ export async function exportStaticFeedsFromD1(): Promise<void> {
   await fs.mkdir(outDir, { recursive: true });
   await fs.writeFile(path.join(outDir, 'latest.json'), JSON.stringify(feed, null, 2), 'utf8');
   console.log(`Exported ${feed.length} articles to public/data/latest.json.`);
+  return feed.length;
 }
+
+export const exportFeedFromD1 = exportStaticFeedsFromD1;
