@@ -4,7 +4,6 @@ import {
   getExistingPageIdsFromD1,
   insertArticlesToD1,
   exportStaticFeedsFromD1,
-  isD1Configured,
 } from './lib/d1';
 
 function parseArgs(argv: string[]): { limit: number; dryRun: boolean } {
@@ -25,10 +24,18 @@ function parseArgs(argv: string[]): { limit: number; dryRun: boolean } {
   return { limit, dryRun };
 }
 
+function hasD1Credentials(): boolean {
+  return Boolean(
+    process.env.CLOUDFLARE_API_TOKEN?.trim() &&
+      process.env.CLOUDFLARE_ACCOUNT_ID?.trim() &&
+      process.env.CLOUDFLARE_D1_DATABASE_ID?.trim()
+  );
+}
+
 async function main() {
   const { limit, dryRun } = parseArgs(process.argv.slice(2));
   const publishDate = new Date().toISOString().slice(0, 10);
-  const d1Enabled = isD1Configured();
+  const d1Enabled = hasD1Credentials();
   const geminiKey = process.env.GEMINI_API_KEY?.trim() || '';
 
   console.log('======================================================================');
