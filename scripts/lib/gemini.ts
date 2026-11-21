@@ -1,8 +1,8 @@
 import { GoogleGenAI, Type } from '@google/genai';
 import { ArticleDigest, WikipediaCandidate } from './types';
 
-const PRIMARY_MODEL = 'gemini-2.5-flash';
-const FALLBACK_MODEL = 'gemini-2.5-flash-lite';
+const PRIMARY_MODEL = 'gemini-3.5-flash-lite';
+const FALLBACK_MODEL = 'gemini-3.6-flash';
 
 const ideaCardSchema = {
   type: Type.OBJECT,
@@ -170,35 +170,34 @@ export async function summarizeArticleWithGemini(
 ): Promise<ArticleDigest> {
   const ai = new GoogleGenAI({ apiKey });
 
+  // 1,200 words cuts TPM by >50% while retaining core thesis & mechanisms
   const contentSnippet = candidate.extractText
     .split(/\s+/)
-    .slice(0, 2500)
+    .slice(0, 1200)
     .join(' ');
 
   const systemInstruction = `You are the lead curator at WikiStash, a Deepstash-style micro-learning platform.
-Your mission is to transform dense Wikipedia articles into bite-sized, high-signal knowledge nuggets that readers can learn in under 3 minutes.
+Transform this Wikipedia article into bite-sized, high-signal knowledge nuggets readable in under 3 minutes.
 Rules:
-1. Category must be strictly one of: 'Science & Tech', 'History & Culture', 'Psychology & Philosophy', 'Biography', 'Nature & Space', 'Society & Economics'.
-2. Hook: Exactly 1 provocative, intriguing sentence highlighting an unexpected fact or counter-intuitive truth.
-3. Idea Cards: Provide 3 to 5 cards. Each card must have:
-   - title: 3 to 6 words punchy headline (e.g. "The Illusion of Infinite Choice").
-   - insight: 2 to 3 sentences explaining the mechanism or historical context simply and vividly.
-   - key_takeaway: 1 memorable mental model or practical takeaway (e.g. "Takeaway: Abundance without curation creates cognitive paralysis.").
-4. Quiz: Exactly 1 question, 3 plausible options, correct_index (0, 1, or 2), and a brief explanation.
-5. Date: Use "${targetDate}".
-6. Page ID: ${candidate.pageId}. Title: "${candidate.title}".
-7. Return strictly valid JSON adhering to the provided schema.`;
+1. Category: strictly one of 'Science & Tech', 'History & Culture', 'Psychology & Philosophy', 'Biography', 'Nature & Space', 'Society & Economics'.
+2. Hook: 1 provocative, intriguing sentence highlighting an unexpected fact or counter-intuitive truth.
+3. Idea Cards: 3 to 5 cards. Each card needs:
+   - title: 3–6 words punchy headline.
+   - insight: 2–3 vivid, clear sentences explaining the mechanism or context.
+   - key_takeaway: 1 memorable mental model or practical takeaway starting with "Takeaway:" or "Mental Model:".
+4. Quiz: 1 question, 3 plausible options, correct_index (0, 1, or 2), and a 1–2 sentence explanation.
+5. Date: "${targetDate}". Page ID: ${candidate.pageId}. Title: "${candidate.title}".
+6. Return strictly valid JSON adhering to the schema.`;
 
   const prompt = `Article Title: ${candidate.title}
 Wikipedia URL: ${candidate.url}
-Overview Description: ${candidate.description}
-Thumbnail: ${candidate.thumbnailUrl || 'null'}
+Overview: ${candidate.description}
 
 Article Text:
 ${contentSnippet}
 `;
 
-  const maxRetries = 4;
+  const maxRetries = 3;
   let activeModel = modelName || process.env.GEMINI_MODEL || PRIMARY_MODEL;
 
   for (let attempt = 0; attempt <= maxRetries; attempt++) {
@@ -211,7 +210,6 @@ ${contentSnippet}
         config: {
           responseMimeType: 'application/json',
           responseSchema: articleDigestSchema,
-          temperature: 0.4,
         },
       });
 
@@ -228,7 +226,7 @@ ${contentSnippet}
       parsed.thumbnail_url = candidate.thumbnailUrl || null;
       parsed.published_date = targetDate;
 
-      if (parsed.quiz && parsed.quiz.options && parsed.quiz.options.length !== 3) {
+      if (parsed.quiz?.options && parsed.quiz.options.length !== 3) {
         if (parsed.quiz.options.length > 3) {
           parsed.quiz.options = parsed.quiz.options.slice(0, 3) as [string, string, string];
         } else {
@@ -244,15 +242,12 @@ ${contentSnippet}
 
       return parsed;
     } catch (err: any) {
-      // Fail fast on bad API key or invalid schema
       if (err?.status === 400 || err?.status === 401 || err?.status === 403) {
-        console.error(
-          `[Gemini Fatal Config Error (${err.status})] Model="${activeModel}" -> ${err?.message || err}`
-        );
+        console.error(`[Gemini Fatal Config Error (${err.status})] Model="${activeModel}" -> ${err?.message || err}`);
         break;
       }
 
-      // If the configured model isn't found (404), immediately switch to FALLBACK_MODEL
+      // Fail fast on 404 model-not-found without burning retry sleep
       if (err?.status === 404 && activeModel !== FALLBACK_MODEL) {
         console.warn(`[Model 404] "${activeModel}" unavailable. Switching to "${FALLBACK_MODEL}"...`);
         activeModel = FALLBACK_MODEL;
@@ -264,18 +259,16 @@ ${contentSnippet}
         err?.status === 500 ||
         err?.message?.includes('503') ||
         err?.message?.includes('UNAVAILABLE') ||
-        err?.message?.includes('high demand') ||
-        err?.message?.includes('Spikes in demand');
+        err?.message?.includes('high demand');
 
       if (isCapacityIssue && attempt < maxRetries) {
-        // Switch to FALLBACK_MODEL after first 503 spike so we don't stay stuck on a congested model
         if (activeModel !== FALLBACK_MODEL) {
-          console.warn(`[503 High Demand on ${activeModel}] Switching immediately to "${FALLBACK_MODEL}"...`);
+          console.warn(`[503 High Demand on ${activeModel}] Switching to "${FALLBACK_MODEL}"...`);
           activeModel = FALLBACK_MODEL;
           continue;
         }
-        const waitMs = Math.min(12000, 3000 * Math.pow(1.5, attempt)) + Math.floor(Math.random() * 1000);
-        console.warn(`[Gemini 503 High Demand] Cooling down for ${Math.round(waitMs / 1000)}s (attempt ${attempt + 1}/${maxRetries})...`);
+        const waitMs = 8000 * (attempt + 1);
+        console.warn(`[Gemini 503] Cooling down ${waitMs / 1000}s (attempt ${attempt + 1}/${maxRetries})...`);
         await new Promise((resolve) => setTimeout(resolve, waitMs));
         continue;
       }
@@ -287,15 +280,21 @@ ${contentSnippet}
         err?.message?.includes('Quota');
 
       if (isRateLimit && attempt < maxRetries) {
-        const delayMs = 4000 * Math.pow(1.5, attempt) + Math.random() * 1000;
+        // Switch model on second 429 so we tap a fresh per-model quota bucket
+        if (attempt >= 1 && activeModel !== FALLBACK_MODEL) {
+          console.warn(`[429 Quota Limit on ${activeModel}] Switching to "${FALLBACK_MODEL}"...`);
+          activeModel = FALLBACK_MODEL;
+        }
+        // Longer backoff (15s -> 30s -> 45s) lets the rolling 60s RPM/TPM window reset
+        const delayMs = 15000 * (attempt + 1) + Math.floor(Math.random() * 2000);
         console.warn(`[Gemini Rate Limit 429] Backing off for ${Math.round(delayMs / 1000)}s (attempt ${attempt + 1}/${maxRetries})...`);
         await new Promise((resolve) => setTimeout(resolve, delayMs));
         continue;
       }
 
       if (attempt < maxRetries) {
-        console.warn(`[Gemini API Error] ${err?.message || err}. Retrying in 3s...`);
-        await new Promise((resolve) => setTimeout(resolve, 3000 + Math.random() * 1000));
+        console.warn(`[Gemini API Error] ${err?.message || err}. Retrying in 4s...`);
+        await new Promise((resolve) => setTimeout(resolve, 4000));
         continue;
       }
     }
@@ -313,8 +312,12 @@ export async function batchSummarizeArticles(
   onProgress?: (completed: number, total: number, currentTitle: string) => void
 ): Promise<ArticleDigest[]> {
   const results: ArticleDigest[] = [];
-  const PACING_DELAY_MS = 3500;
+  // 7s pacing (~8.5 RPM) prevents hitting rolling minute limits across 50 articles (~6 min total)
+  const PACING_DELAY_MS = 7000;
   const resolvedModel = modelName || process.env.GEMINI_MODEL || PRIMARY_MODEL;
+
+  let aiCount = 0;
+  let fallbackCount = 0;
 
   console.log(`Using Gemini model: "${resolvedModel}" (${candidates.length} articles queued)`);
 
@@ -328,12 +331,18 @@ export async function batchSummarizeArticles(
         apiKey,
         resolvedModel
       );
+      if (digest.quiz.options[1] === 'Unrelated peripheral documentation') {
+        fallbackCount++;
+      } else {
+        aiCount++;
+      }
       results.push(digest);
       if (onProgress) {
         onProgress(results.length, candidates.length, digest.article_title);
       }
     } catch (err) {
       console.error(`Error processing "${candidate.title}", generating fallback:`, err);
+      fallbackCount++;
       const fallback = createFallbackDigest(candidate, targetDate);
       results.push(fallback);
       if (onProgress) {
@@ -346,5 +355,6 @@ export async function batchSummarizeArticles(
     }
   }
 
+  console.log(`Summarization quality summary: ${aiCount} AI-curated, ${fallbackCount} algorithmic fallbacks.`);
   return results;
 }
