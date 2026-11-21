@@ -36,6 +36,7 @@ export interface D1Config {
 
 export interface ExportFeedResult {
   latestCount: number;
+  archiveCount: number;
 }
 
 interface D1QueryResult<T = Record<string, unknown>> {
@@ -168,7 +169,7 @@ export async function exportFeedFromD1(
 ): Promise<ExportFeedResult> {
   const safeLimit = Number.isFinite(limit) && limit > 0 ? Math.min(Math.floor(limit), 500) : 50;
 
-  const result = await queryD1<{
+  const latestResult = await queryD1<{
     wikipedia_page_id: number;
     published_date: string;
     article_title: string;
@@ -196,8 +197,8 @@ export async function exportFeedFromD1(
     overrideConfig
   );
 
-  const rows = result.results || [];
-  const feed: ArticleDigest[] = rows.map((row) => {
+  const latestRows = latestResult.results || [];
+  const feed: ArticleDigest[] = latestRows.map((row) => {
     let parsedDigest: Partial<ArticleDigest> = {};
     try {
       parsedDigest = JSON.parse(row.digest_json || '{}');
@@ -224,12 +225,45 @@ export async function exportFeedFromD1(
     };
   });
 
+  const archiveResult = await queryD1<{
+    wikipedia_page_id: number;
+    published_date: string;
+    article_title: string;
+    category: string;
+    read_time_minutes: number;
+    hook: string;
+  }>(
+    `SELECT
+      wikipedia_page_id,
+      published_date,
+      article_title,
+      category,
+      read_time_minutes,
+      hook
+    FROM articles
+    ORDER BY published_date DESC, wikipedia_page_id DESC`,
+    [],
+    overrideConfig
+  );
+
+  const archiveRows = archiveResult.results || [];
+
   const outDir = path.join(process.cwd(), 'public', 'data');
   await fs.mkdir(outDir, { recursive: true });
   await fs.writeFile(path.join(outDir, 'latest.json'), JSON.stringify(feed, null, 2), 'utf8');
-  console.log(`Exported ${feed.length} articles to public/data/latest.json.`);
+  await fs.writeFile(
+    path.join(outDir, 'archive-index.json'),
+    JSON.stringify(archiveRows, null, 2),
+    'utf8'
+  );
 
-  return { latestCount: feed.length };
+  console.log(`Exported ${feed.length} articles to public/data/latest.json.`);
+  console.log(`Exported ${archiveRows.length} entries to public/data/archive-index.json.`);
+
+  return {
+    latestCount: feed.length,
+    archiveCount: archiveRows.length,
+  };
 }
 
 export const exportStaticFeedsFromD1 = exportFeedFromD1;
