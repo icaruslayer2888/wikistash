@@ -1,4 +1,3 @@
-cat << 'EOF' > scripts/lib/gemini.ts
 import { GoogleGenAI, Type } from '@google/genai';
 import { ArticleDigest, WikipediaCandidate } from './types';
 import { summarizeArticleWithGroq } from './groq';
@@ -363,4 +362,3 @@ export async function batchSummarizeArticles(
 
   return results;
 }
-EOF
