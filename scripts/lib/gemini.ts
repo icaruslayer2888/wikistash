@@ -1,3 +1,4 @@
+cat << 'EOF' > scripts/lib/gemini.ts
 import { GoogleGenAI, Type } from '@google/genai';
 import { ArticleDigest, WikipediaCandidate } from './types';
 import { summarizeArticleWithGroq } from './groq';
@@ -104,10 +105,6 @@ const articleDigestSchema = {
   ],
 };
 
-/**
- * High-quality algorithmic fallback generator if all AI models are temporarily down.
- * Guarantees zero lost articles and 100% reliable cron execution.
- */
 export function createFallbackDigest(candidate: WikipediaCandidate, targetDate: string): ArticleDigest {
   const words = candidate.extractText.split(/\s+/).filter(Boolean);
   const categories = [
@@ -166,10 +163,6 @@ export function createFallbackDigest(candidate: WikipediaCandidate, targetDate: 
   };
 }
 
-/**
- * Summarize a Wikipedia article into Deepstash-style micro-learning cards.
- * Uses Gemini structured output schema with rate-limit retries.
- */
 export async function summarizeArticleWithGemini(
   candidate: WikipediaCandidate,
   targetDate: string,
@@ -178,7 +171,6 @@ export async function summarizeArticleWithGemini(
 ): Promise<ArticleDigest> {
   const ai = new GoogleGenAI({ apiKey });
 
-  // Excerpt first ~2,500 words to ensure we stay well within context while getting full substance
   const contentSnippet = candidate.extractText
     .split(/\s+/)
     .slice(0, 2500)
@@ -231,14 +223,12 @@ ${contentSnippet}
 
       const parsed = JSON.parse(responseText) as ArticleDigest;
 
-      // Ensure mandatory fields are firmly aligned
       parsed.wikipedia_page_id = candidate.pageId;
       parsed.article_title = candidate.title;
       parsed.wikipedia_url = candidate.url;
       parsed.thumbnail_url = candidate.thumbnailUrl || null;
       parsed.published_date = targetDate;
 
-      // Normalize quiz options array length to 3
       if (parsed.quiz && parsed.quiz.options && parsed.quiz.options.length !== 3) {
         if (parsed.quiz.options.length > 3) {
           parsed.quiz.options = parsed.quiz.options.slice(0, 3) as [string, string, string];
@@ -255,7 +245,6 @@ ${contentSnippet}
 
       return parsed;
     } catch (err: any) {
-      // Fail fast on non-retryable client/config errors (invalid model name, bad API key, invalid schema)
       if (
         err?.status === 400 ||
         err?.status === 401 ||
@@ -268,7 +257,6 @@ ${contentSnippet}
         break;
       }
 
-      // Check for High Demand (503) or Server Capacity Shedding (500)
       const isCapacityIssue =
         err?.status === 503 ||
         err?.status === 500 ||
@@ -277,19 +265,18 @@ ${contentSnippet}
         err?.message?.includes('high demand') ||
         err?.message?.includes('Spikes in demand');
 
-      // Instant Failover to Groq if configured
       if ((isCapacityIssue || attempt >= 2) && process.env.GROQ_API_KEY) {
-        console.warn(`[Failover to Groq] Google AI Studio busy. Routing "${candidate.title}" to Groq (Llama 3.3 70B)...`);
+        console.warn(`[Failover to Groq] Routing "${candidate.title}" to Groq...`);
         try {
           const groqDigest = await summarizeArticleWithGroq(
             candidate,
             targetDate,
             process.env.GROQ_API_KEY
           );
-          console.log(`[Groq Success] "${candidate.title}" summarized in <1s via Groq fallback!`);
+          console.log(`[Groq Success] "${candidate.title}" summarized via Groq fallback!`);
           return groqDigest;
         } catch (groqErr: any) {
-          console.warn(`[Groq Fallback Warning] Groq attempt failed:`, groqErr?.message || groqErr);
+          console.warn(`[Groq Fallback Warning]`, groqErr?.message || groqErr);
         }
       }
 
@@ -315,4 +302,65 @@ ${contentSnippet}
 
       if (attempt < maxRetries) {
         console.warn(`[Gemini API Error] ${err?.message || err}. Retrying in 3s...`);
-        await new Promise((resolve) => setTimeout(resolve, 3000 +
+        await new Promise((resolve) => setTimeout(resolve, 3000 + Math.random() * 1000));
+        continue;
+      }
+    }
+  }
+
+  if (process.env.GROQ_API_KEY) {
+    try {
+      return await summarizeArticleWithGroq(candidate, targetDate, process.env.GROQ_API_KEY);
+    } catch (e: any) {
+      console.warn(`[Final Fallback Failed]`, e?.message || e);
+    }
+  }
+
+  console.warn(`[Graceful Recovery] "${candidate.title}" fell back to algorithmic digest.`);
+  return createFallbackDigest(candidate, targetDate);
+}
+
+export async function batchSummarizeArticles(
+  candidates: WikipediaCandidate[],
+  targetDate: string,
+  apiKey: string,
+  modelName?: string,
+  onProgress?: (completed: number, total: number, currentTitle: string) => void
+): Promise<ArticleDigest[]> {
+  const results: ArticleDigest[] = [];
+  const PACING_DELAY_MS = 3500;
+  const resolvedModel = modelName || process.env.GEMINI_MODEL || DEFAULT_MODEL;
+
+  console.log(`Using Gemini model: "${resolvedModel}" (${candidates.length} articles queued)`);
+
+  for (let i = 0; i < candidates.length; i++) {
+    const candidate = candidates[i];
+    console.log(`-> [${i + 1}/${candidates.length}] Calling Gemini for "${candidate.title}"...`);
+    try {
+      const digest = await summarizeArticleWithGemini(
+        candidate,
+        targetDate,
+        apiKey,
+        resolvedModel
+      );
+      results.push(digest);
+      if (onProgress) {
+        onProgress(results.length, candidates.length, digest.article_title);
+      }
+    } catch (err) {
+      console.error(`Error processing "${candidate.title}", generating fallback:`, err);
+      const fallback = createFallbackDigest(candidate, targetDate);
+      results.push(fallback);
+      if (onProgress) {
+        onProgress(results.length, candidates.length, fallback.article_title);
+      }
+    }
+
+    if (i < candidates.length - 1) {
+      await new Promise((resolve) => setTimeout(resolve, PACING_DELAY_MS));
+    }
+  }
+
+  return results;
+}
+EOF
