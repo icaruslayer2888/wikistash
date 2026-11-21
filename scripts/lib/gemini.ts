@@ -2,7 +2,7 @@ import { GoogleGenAI, Type } from '@google/genai';
 import { ArticleDigest, WikipediaCandidate } from './types';
 import { summarizeArticleWithGroq } from './groq';
 
-const DEFAULT_MODEL = 'gemini-3.8-flash';
+const DEFAULT_MODEL = 'gemini-2.5-flash';
 
 const ideaCardSchema = {
   type: Type.OBJECT,
@@ -207,9 +207,8 @@ Article Text:
 ${contentSnippet}
 `;
 
-  let lastError: unknown = null;
   const maxRetries = 4;
-  let activeModel = modelName || process.env.GEMINI_MODEL || DEFAULT_MODEL;
+  const activeModel = modelName || process.env.GEMINI_MODEL || DEFAULT_MODEL;
 
   for (let attempt = 0; attempt <= maxRetries; attempt++) {
     try {
@@ -256,7 +255,18 @@ ${contentSnippet}
 
       return parsed;
     } catch (err: any) {
-      lastError = err;
+      // Fail fast on non-retryable client/config errors (invalid model name, bad API key, invalid schema)
+      if (
+        err?.status === 400 ||
+        err?.status === 401 ||
+        err?.status === 403 ||
+        err?.status === 404
+      ) {
+        console.error(
+          `[Gemini Fatal Config Error (${err.status})] Model="${activeModel}" -> ${err?.message || err}`
+        );
+        break;
+      }
 
       // Check for High Demand (503) or Server Capacity Shedding (500)
       const isCapacityIssue =
@@ -284,9 +294,8 @@ ${contentSnippet}
       }
 
       if (isCapacityIssue && attempt < maxRetries) {
-        // High demand is temporary per Google: back off with jitter to allow the traffic spike to clear
         const waitMs = Math.min(14000, 4000 * Math.pow(1.6, attempt)) + Math.floor(Math.random() * 1500);
-        console.warn(`[Gemini 503 High Demand] Google AI Studio experiencing a brief spike. Cooling down for ${Math.round(waitMs / 1000)}s (attempt ${attempt + 1}/${maxRetries})...`);
+        console.warn(`[Gemini 503 High Demand] Cooling down for ${Math.round(waitMs / 1000)}s (attempt ${attempt + 1}/${maxRetries})...`);
         await new Promise((resolve) => setTimeout(resolve, waitMs));
         continue;
       }
@@ -306,68 +315,4 @@ ${contentSnippet}
 
       if (attempt < maxRetries) {
         console.warn(`[Gemini API Error] ${err?.message || err}. Retrying in 3s...`);
-        await new Promise((resolve) => setTimeout(resolve, 3000 + Math.random() * 1000));
-        continue;
-      }
-    }
-  }
-
-  // Final attempt with Groq if available before algorithmic fallback
-  if (process.env.GROQ_API_KEY) {
-    try {
-      console.warn(`[Final Fallback] Attempting Groq summarization for "${candidate.title}"...`);
-      return await summarizeArticleWithGroq(candidate, targetDate, process.env.GROQ_API_KEY);
-    } catch (e: any) {
-      console.warn(`[Final Fallback Failed] Groq error:`, e?.message || e);
-    }
-  }
-
-  // Graceful Fallback: If all attempts encounter persistent 503 high-demand, generate structured algorithmic digest
-  console.warn(`[Graceful Recovery] "${candidate.title}" experienced persistent 503 high demand. Using algorithmic fallback digest.`);
-  return createFallbackDigest(candidate, targetDate);
-}
-
-/**
- * Process a collection of Wikipedia candidates sequentially with a 3.5-second pacing.
- * Eliminates concurrent request collisions and stays safely under Free Tier 15 RPM.
- */
-export async function batchSummarizeArticles(
-  candidates: WikipediaCandidate[],
-  targetDate: string,
-  apiKey: string,
-  modelName?: string,
-  onProgress?: (completed: number, total: number, currentTitle: string) => void
-): Promise<ArticleDigest[]> {
-  const results: ArticleDigest[] = [];
-  const PACING_DELAY_MS = 3500;
-
-  for (let i = 0; i < candidates.length; i++) {
-    const candidate = candidates[i];
-    try {
-      const digest = await summarizeArticleWithGemini(
-        candidate,
-        targetDate,
-        apiKey,
-        modelName
-      );
-      results.push(digest);
-      if (onProgress) {
-        onProgress(results.length, candidates.length, digest.article_title);
-      }
-    } catch (err) {
-      console.error(`Error processing "${candidate.title}", generating fallback:`, err);
-      const fallback = createFallbackDigest(candidate, targetDate);
-      results.push(fallback);
-      if (onProgress) {
-        onProgress(results.length, candidates.length, fallback.article_title);
-      }
-    }
-
-    // Delay between items to respect Gemini AI Studio free-tier rate limits and prevent 503 bursts
-    if (i < candidates.length - 1) {
-      await new Promise((resolve) => setTimeout(resolve, PACING_DELAY_MS));
-    }
-  }
-
-  return results;
-}
+        await new Promise((resolve) => setTimeout(resolve, 3000 +
