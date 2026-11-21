@@ -207,8 +207,7 @@ ${contentSnippet}
 `;
 
   let lastError: unknown = null;
-  const maxRetries = 5;
-  const MODEL_POOL = ['gemini-3.8-flash', 'gemini-2.0-flash', 'gemini-1.5-flash'];
+  const maxRetries = 4;
   let activeModel = modelName || process.env.GEMINI_MODEL || DEFAULT_MODEL;
 
   for (let attempt = 0; attempt <= maxRetries; attempt++) {
@@ -258,7 +257,7 @@ ${contentSnippet}
     } catch (err: any) {
       lastError = err;
 
-      // Check for High Demand (503), Unavailable, Internal (500), Not Found (404), or Deprecated Model
+      // Check for High Demand (503) or Server Capacity Shedding (500)
       const isCapacityIssue =
         err?.status === 503 ||
         err?.status === 500 ||
@@ -267,23 +266,11 @@ ${contentSnippet}
         err?.message?.includes('high demand') ||
         err?.message?.includes('Spikes in demand');
 
-      const isNotFound =
-        err?.status === 404 ||
-        err?.message?.includes('404') ||
-        err?.message?.includes('no longer available') ||
-        err?.message?.includes('NOT_FOUND');
-
-      // Failover immediately to an alternate model from the pool on 503, 500, or 404
-      if (isCapacityIssue || isNotFound) {
-        const currentIdx = MODEL_POOL.indexOf(activeModel);
-        const nextModel = MODEL_POOL[(currentIdx + 1) % MODEL_POOL.length];
-        const reason = isCapacityIssue ? '503 High Demand' : '404 Model Unavailable';
-        console.warn(`[Model Failover] "${activeModel}" hit ${reason}. Instantly rotating to "${nextModel}"...`);
-        activeModel = nextModel;
-
-        // Jittered short pause before contacting the alternate model pool
-        const jitter = Math.floor(Math.random() * 1200) + 1000;
-        await new Promise((resolve) => setTimeout(resolve, jitter));
+      if (isCapacityIssue && attempt < maxRetries) {
+        // High demand is temporary per Google: back off with jitter to allow the traffic spike to clear
+        const waitMs = Math.min(14000, 4000 * Math.pow(1.6, attempt)) + Math.floor(Math.random() * 1500);
+        console.warn(`[Gemini 503 High Demand] Google AI Studio experiencing a brief spike. Cooling down for ${Math.round(waitMs / 1000)}s (attempt ${attempt + 1}/${maxRetries})...`);
+        await new Promise((resolve) => setTimeout(resolve, waitMs));
         continue;
       }
 
@@ -294,32 +281,28 @@ ${contentSnippet}
         err?.message?.includes('Quota');
 
       if (isRateLimit && attempt < maxRetries) {
-        // Also rotate model on rate limit to leverage secondary model quotas
-        const currentIdx = MODEL_POOL.indexOf(activeModel);
-        activeModel = MODEL_POOL[(currentIdx + 1) % MODEL_POOL.length];
-
         const delayMs = 4000 * Math.pow(1.5, attempt) + Math.random() * 1000;
-        console.warn(`[Gemini Rate Limit 429] Backing off for ${Math.round(delayMs)}ms & switching to "${activeModel}"...`);
+        console.warn(`[Gemini Rate Limit 429] Backing off for ${Math.round(delayMs / 1000)}s (attempt ${attempt + 1}/${maxRetries})...`);
         await new Promise((resolve) => setTimeout(resolve, delayMs));
         continue;
       }
 
       if (attempt < maxRetries) {
-        console.warn(`[Gemini API Error] ${err?.message || err}. Retrying in 2000ms...`);
-        await new Promise((resolve) => setTimeout(resolve, 2000 + Math.random() * 800));
+        console.warn(`[Gemini API Error] ${err?.message || err}. Retrying in 3s...`);
+        await new Promise((resolve) => setTimeout(resolve, 3000 + Math.random() * 1000));
         continue;
       }
     }
   }
 
-  // Graceful Fallback: If all models and retries fail, generate structured algorithmic digest
-  console.warn(`[Graceful Recovery] All AI models busy for "${candidate.title}". Using algorithmic fallback digest.`);
+  // Graceful Fallback: If all attempts encounter persistent 503 high-demand, generate structured algorithmic digest
+  console.warn(`[Graceful Recovery] "${candidate.title}" experienced persistent 503 high demand. Using algorithmic fallback digest.`);
   return createFallbackDigest(candidate, targetDate);
 }
 
 /**
- * Process a collection of Wikipedia candidates in batches of 2 with a 4-second delay.
- * Adheres strictly to Gemini AI Studio Free Tier rate limits (15 RPM).
+ * Process a collection of Wikipedia candidates sequentially with a 3.5-second pacing.
+ * Eliminates concurrent request collisions and stays safely under Free Tier 15 RPM.
  */
 export async function batchSummarizeArticles(
   candidates: WikipediaCandidate[],
@@ -329,41 +312,33 @@ export async function batchSummarizeArticles(
   onProgress?: (completed: number, total: number, currentTitle: string) => void
 ): Promise<ArticleDigest[]> {
   const results: ArticleDigest[] = [];
-  const BATCH_SIZE = 2;
-  const DELAY_MS = 4000;
+  const PACING_DELAY_MS = 3500;
 
-  for (let i = 0; i < candidates.length; i += BATCH_SIZE) {
-    const currentBatch = candidates.slice(i, i + BATCH_SIZE);
-
-    const batchPromises = currentBatch.map(async (candidate) => {
-      try {
-        const digest = await summarizeArticleWithGemini(
-          candidate,
-          targetDate,
-          apiKey,
-          modelName
-        );
-        return digest;
-      } catch (err) {
-        console.error(`Error processing "${candidate.title}", generating fallback:`, err);
-        return createFallbackDigest(candidate, targetDate);
+  for (let i = 0; i < candidates.length; i++) {
+    const candidate = candidates[i];
+    try {
+      const digest = await summarizeArticleWithGemini(
+        candidate,
+        targetDate,
+        apiKey,
+        modelName
+      );
+      results.push(digest);
+      if (onProgress) {
+        onProgress(results.length, candidates.length, digest.article_title);
       }
-    });
-
-    const batchResults = await Promise.all(batchPromises);
-
-    for (const item of batchResults) {
-      if (item) {
-        results.push(item);
-        if (onProgress) {
-          onProgress(results.length, candidates.length, item.article_title);
-        }
+    } catch (err) {
+      console.error(`Error processing "${candidate.title}", generating fallback:`, err);
+      const fallback = createFallbackDigest(candidate, targetDate);
+      results.push(fallback);
+      if (onProgress) {
+        onProgress(results.length, candidates.length, fallback.article_title);
       }
     }
 
-    // Delay between batches if there are more to process
-    if (i + BATCH_SIZE < candidates.length) {
-      await new Promise((resolve) => setTimeout(resolve, DELAY_MS));
+    // Delay between items to respect Gemini AI Studio free-tier rate limits and prevent 503 bursts
+    if (i < candidates.length - 1) {
+      await new Promise((resolve) => setTimeout(resolve, PACING_DELAY_MS));
     }
   }
 
