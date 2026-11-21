@@ -1,82 +1,764 @@
 [
   {
-    "wikipedia_page_id": 38866,
+    "wikipedia_page_id": 78543525,
     "published_date": "2026-11-21",
-    "article_title": "Theodor Zwinger",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Theodor_Zwinger",
-    "category": "Biography",
+    "article_title": "Obznana",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Obznana",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Obznana_29.12.1920.png/330px-Obznana_29.12.1920.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "category": "History & Culture",
     "read_time_minutes": 3,
-    "hook": "Long before digital databases, a single Renaissance scholar compiled one of history's most massive encyclopedias entirely by hand.",
+    "hook": "Issued entirely outside normal legal channels and never published in an official gazette, a single government poster effectively outlawed communism in interwar Yugoslavia.",
     "idea_cards": [
       {
         "card_number": 1,
-        "title": "A Renaissance Academic Dynasty",
-        "insight": "Theodor Zwinger was the trailblazing first distinguished representative of a prominent Basel academic family. He studied across Europe under leading thinkers before joining the faculty at the University of Basel.",
-        "key_takeaway": "Takeaway: Foundational academic legacies are often built through cross-disciplinary study and wide travel."
+        "title": "The Threat of Electoral Success",
+        "insight": "After the Communist Party of Yugoslavia secured a surprisingly strong showing in the 1920 Constitutional Assembly elections, the ruling coalition viewed them as an existential threat. Amid widespread postwar labor unrest and general strikes, the government decided decisive action was necessary to prevent a potential revolution.",
+        "key_takeaway": "Takeaway: Rapid political growth by insurgent movements often provokes swift, extra-legal crackdowns from established authorities."
       },
       {
         "card_number": 2,
-        "title": "Mastering The Human Experience",
-        "insight": "Zwinger edited the Theatrum Humanae Vitae, an early multi-volume encyclopedia. It is widely considered perhaps the most comprehensive collection of knowledge compiled by a single individual in the early modern period.",
-        "key_takeaway": "Takeaway: Comprehensive knowledge curation requires building upon the intellectual foundations of predecessors."
+        "title": "A Decree Without Legal Power",
+        "insight": "Authored by Minister of the Interior Milorad Drašković, the Obznana was neither debated by parliament nor signed by the King. Instead of following constitutional protocols, it was printed as a poster and pasted directly onto the streets of major cities overnight.",
+        "key_takeaway": "Takeaway: Crises can prompt governments to bypass standard institutional checks and balances through executive fiat."
       },
       {
         "card_number": 3,
-        "title": "Ancestor of the Enlightenment",
-        "insight": "By synthesizing vast quantities of information, Zwinger's encyclopedic works served as vital literary predecessors to the famous French Encyclopédie of the 18th century. His texts bridged Renaissance humanism with Enlightenment organization.",
-        "key_takeaway": "Takeaway: Early organizational frameworks pave the way for major societal shifts in how information is shared."
+        "title": "From Decree to Total Ban",
+        "insight": "The Obznana mandated the closure of communist-affiliated trade unions, newspapers, and organizations while banning all communist propaganda. This aggressive suppression triggered a cycle of political violence and assassinations, culminating in the formal Law on the Protection of the State.",
+        "key_takeaway": "Takeaway: Extra-judicial suppression frequently backfires, breeding radicalization and escalating cycles of retaliatory violence."
       }
     ],
     "quiz": {
-      "question": "What is the name of the massive early encyclopedia compiled by Theodor Zwinger?",
+      "question": "How was the Obznana officially promulgated to the public?",
       "options": [
-        "Theatrum Humanae Vitae",
-        "Encyclopédie Universelle",
-        "Magnum Opus Basiliensis"
+        "It was passed unanimously by the parliament.",
+        "It was printed as a poster and pasted on city streets.",
+        "It was formally published in the official government gazette."
       ],
-      "correct_index": 0,
-      "explanation": "Theatrum Humanae Vitae was Zwinger's magnum opus and one of the largest knowledge collections compiled by a single person in the early modern period."
-    },
-    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Theodorus_Zwingerus_Basiliensis%2C_medicus_%28d%C3%A9tail%29.jpg/330px-Theodorus_Zwingerus_Basiliensis%2C_medicus_%28d%C3%A9tail%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+      "correct_index": 1,
+      "explanation": "The Obznana bypassed normal legislative and publishing channels entirely, being distributed instead as street posters overnight."
+    }
   },
   {
-    "wikipedia_page_id": 3246698,
+    "wikipedia_page_id": 76347816,
     "published_date": "2026-11-21",
-    "article_title": "Jessica Wahls",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Jessica_Wahls",
-    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Jessica_Wahls_-_2025094_185632_2025-04-04_Radio_Regenbogen_Award_2025_-_Sven_-_1D_X_MK_II_-_0190_-_B70I9021.jpg/330px-Jessica_Wahls_-_2025094_185632_2025-04-04_Radio_Regenbogen_Award_2025_-_Sven_-_1D_X_MK_II_-_0190_-_B70I9021.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
-    "category": "Psychology & Philosophy",
-    "read_time_minutes": 4,
-    "hook": "Jessica Wahls illuminates how german singer reshaped our understanding of psychology & philosophy.",
+    "article_title": "Josiah Yale",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Josiah_Yale",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Josiah_Yale_Jr.%2C_son_of_Capt._Josiah_Yale%2C_Lee%2C_Massachusetts_2.png/330px-Josiah_Yale_Jr.%2C_son_of_Capt._Josiah_Yale%2C_Lee%2C_Massachusetts_2.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "A single 18th-century pioneer from a wild Massachusetts wilderness became the genealogical nexus linking John D. Rockefeller's business partners, the Vanderbilts, and Mozart's personal friend.",
     "idea_cards": [
       {
         "card_number": 1,
-        "title": "Origins of Jessica Wahls",
-        "insight": "Jessica Martina Wahls (born 2 February 1977), also known under her nickname Jess, is a German pop singer, radio music editor, and former television host, who rose to fame as one of the founding members of the successful all-female pop band No Angels, the \"biggest-selling...",
-        "key_takeaway": "Takeaway: German singer reveals underlying foundational patterns in Psychology & Philosophy."
+        "title": "Pioneer of Lee Wilderness",
+        "insight": "Captain Josiah Yale purchased 50 wilderness acres in 1774 and married Ruth Tracy in the very first recorded marriage ceremony in Lee, Massachusetts. He helped transform an untamed frontier into an organized settlement by building the town's first meeting-house, roads, and bridges.",
+        "key_takeaway": "Mental Model: Foundational infrastructure work builds the bedrock for entire communities to flourish."
+      },
+      {
+        "card_number": 2,
+        "title": "Revolutionary War Captain",
+        "insight": "Beyond local governance, Yale actively served in the American War of Independence, fighting in the Stillwater Alarms during the critical Saratoga Campaign. He later managed supply lines and troop payments, eventually serving multiple terms in the Massachusetts House of Representatives.",
+        "key_takeaway": "Takeaway: True leaders step up during times of crisis, balancing military duty with civic nation-building."
+      },
+      {
+        "card_number": 3,
+        "title": "Extraordinary Historical Descendants",
+        "insight": "Yale's extensive family tree strangely intertwined with American royalty and titans of industry. His descendants and relatives included millionaires, presidential confidants like Wellington Smith, John D. Rockefeller's early business partner George W. Gardner, and connections to Mozart's associate Lorenzo Da Ponte.",
+        "key_takeaway": "Mental Model: The ripple effects of a single pioneer's lineage can unexpectedly shape generations of industry and culture."
+      }
+    ],
+    "quiz": {
+      "question": "What town did Captain Josiah Yale help pioneer and settle in Massachusetts?",
+      "options": [
+        "Boston",
+        "Lee",
+        "Wallingford"
+      ],
+      "correct_index": 1,
+      "explanation": "Josiah Yale bought land in the northwest part of Lee, Massachusetts in 1774, becoming one of its key early settlers, selectmen, and community builders."
+    }
+  },
+  {
+    "wikipedia_page_id": 66961103,
+    "published_date": "2026-11-21",
+    "article_title": "Wright's Town, Lower Canada",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Wright's_Town%2C_Lower_Canada",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/A_View_of_the_Mill_and_Tavern_of_Philemon_Wright_at_the_Chaudi%C3%A8re_Falls%2C_Hull_DuVernet_1823_-_Collection_orig_at_LAC.jpg/330px-A_View_of_the_Mill_and_Tavern_of_Philemon_Wright_at_the_Chaudi%C3%A8re_Falls%2C_Hull_DuVernet_1823_-_Collection_orig_at_LAC.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "category": "Society & Economics",
+    "read_time_minutes": 4,
+    "hook": "Wright's Town, Lower Canada illuminates how historical settlement in present-day gatineau, quebec, canada reshaped our understanding of society & economics.",
+    "idea_cards": [
+      {
+        "card_number": 1,
+        "title": "Origins of Wright's Town, Lower Can",
+        "insight": "Wright's Town, also known as Wrightstown, Wright's Village, and Columbia Falls Village, was the first permanent colonial settlement in the Ottawa Valley, located at the north edge of the Chaudière Falls on the Ottawa River, on the southern part of what is now known as...",
+        "key_takeaway": "Takeaway: Historical settlement in present-day Gatineau, Quebec, Canada reveals underlying foundational patterns in Society & Economics."
       },
       {
         "card_number": 2,
         "title": "Core Dynamics & Developments",
-        "insight": "German girl band to date\", according to the German media. == Biography == === Early life === Wahls, the only child born to an African-American father, James, and a German mother, Gabriele, was born in Frankfurt am Main and raised in Rosbach vor der Höhe. Her parents separated when she...",
+        "insight": "Hull Island, in present-day Gatineau, Quebec, Canada. Wright's Town was established by and named after American settler Philemon Wright, who settled in the area in 1800. Though nothing remains of Wright's Town, its growth and legacy spurred the development of other settlements in the Ottawa Valley, including the settlement of...",
         "key_takeaway": "Mental Model: First-principles examination clarifies how complex historical and scientific systems evolve."
       },
       {
         "card_number": 3,
         "title": "Lasting Impact & Legacy",
-        "insight": "was six months old, after which she was raised primarily by her mother, who worked as a personal assistant to support the family. Wahls had little contact with her father following the separation. In 1999, Gabriele married Wahls' Barbadian stepfather, Tosh. Interest in music at...",
+        "insight": "Bytown across the river, which would eventually develop into the city of Ottawa, Ontario, the national capital of Canada. == History == Wright's Town was founded by Philemon Wright, an American from Woburn, Massachusetts. In 1799, Philemon acquired a land grant from the British Crown...",
         "key_takeaway": "Takeaway: Historical precedents directly inform contemporary decisions and cultural developments."
       }
     ],
     "quiz": {
-      "question": "What primary subject is central to Jessica Wahls?",
+      "question": "What primary subject is central to Wright's Town, Lower Canada?",
       "options": [
-        "German singer",
+        "Historical settlement in present-day Gatineau, Quebec, Canada",
         "Unrelated peripheral documentation",
         "Modern speculative fiction only"
       ],
       "correct_index": 0,
-      "explanation": "Jessica Wahls is primarily known as: German singer."
+      "explanation": "Wright's Town, Lower Canada is primarily known as: Historical settlement in present-day Gatineau, Quebec, Canada."
+    }
+  },
+  {
+    "wikipedia_page_id": 62446119,
+    "published_date": "2026-11-21",
+    "article_title": "Glass Slippers (horse)",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Glass_Slippers_(horse)",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Owner_T_G_and_Mrs_M_E_Holdcroft.svg/330px-Owner_T_G_and_Mrs_M_E_Holdcroft.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "category": "Science & Tech",
+    "read_time_minutes": 3,
+    "hook": "Despite struggling in her early domestic races, this resilient British filly transformed into an international racing powerhouse by conquering elite tracks across France, Ireland, and America.",
+    "idea_cards": [
+      {
+        "card_number": 1,
+        "title": "Humble Beginnings and Early Struggles",
+        "insight": "Glass Slippers began her two-year-old career as a 50/1 outsider at Haydock Park and later suffered a disastrous start in 2019 where she lost both front shoes and finished fifteenth. Rather than breaking her momentum, these early setbacks served as a testing ground for her gradual physical and mental maturation.",
+        "key_takeaway": "Mental Model: Initial failure is often just early calibration for long-term mastery."
+      },
+      {
+        "card_number": 2,
+        "title": "Conquering France and Group 1",
+        "insight": "After struggling in Britain, her trainer sent her to France where she unlocked top-class form over sprint distances. She captured the Prix Moonlight Cloud and Prix du Petit Couvert before dominating the prestigious Group 1 Prix de l'Abbaye de Longchamp by three lengths.",
+        "key_takeaway": "Takeaway: Changing your environment or strategy can unlock latent potential that domestic constraints suppress."
+      },
+      {
+        "card_number": 3,
+        "title": "Peak Performance in 2020",
+        "insight": "During the restructured 2020 flat racing season, Glass Slippers displayed a knack for peaking later in the year. She secured another Group 1 win in the Flying Five Stakes in Ireland before culminating her career-defining run with a massive victory in the Breeders' Cup Turf Sprint.",
+        "key_takeaway": "Mental Model: Timing your peak energy investment for the end of a cycle yields the highest ultimate rewards."
+      }
+    ],
+    "quiz": {
+      "question": "Which major international race served as the culmination of Glass Slippers' biggest victory in 2020?",
+      "options": [
+        "The Prix de l'Abbaye",
+        "The Breeders' Cup Turf Sprint",
+        "The King's Stand Stakes"
+      ],
+      "correct_index": 1,
+      "explanation": "Glass Slippers took her biggest career victory in 2020 by winning the prestigious Breeders' Cup Turf Sprint after securing an earlier Group 1 win in the Flying Five Stakes."
+    }
+  },
+  {
+    "wikipedia_page_id": 58864505,
+    "published_date": "2026-11-21",
+    "article_title": "Tamara De Anda",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Tamara_De_Anda",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Tamara_De_Anda_%28cropped%29.jpg/330px-Tamara_De_Anda_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "category": "Biography",
+    "read_time_minutes": 3,
+    "hook": "When a Mexican journalist reported a street catcaller using an obscure local law, her simple action exposed systemic impunity and triggered an international wave of online retaliation.",
+    "idea_cards": [
+      {
+        "card_number": 1,
+        "title": "Exposing Discrimination in Media Casting",
+        "insight": "In 2013, Tamara De Anda exposed a discriminatory Aeroméxico casting call that explicitly barred dark-skinned applicants in favor of a white complexion. Her viral social media posts forced the airline to issue a public apology and brought corporate colorism in Mexican advertising to light.",
+        "key_takeaway": "Takeaway: Public spotlighting can disrupt normalized institutional discrimination when legal enforcement falls short."
+      },
+      {
+        "card_number": 2,
+        "title": "Challenging Street Harassment Norms",
+        "insight": "After reporting a driver for catcalling her, De Anda achieved a rare legal enforcement outcome when the harasser was fined and jailed overnight. Because authorities routinely dismiss gender-based harassment in Mexico, enforcing a simple civic rule sparked nationwide shock and debate.",
+        "key_takeaway": "Mental Model: Civic Friction — Systemic injustice often persists simply because citizens do not know or utilize existing legal protections."
+      },
+      {
+        "card_number": 3,
+        "title": "Weaponization of Online Disinformation",
+        "insight": "Following her legal victory, internet trolls targeted De Anda with severe online abuse, even falsely circulating her photo as a victim of foreign terror attacks. Amnesty International and the UN cited her experience as emblematic of organized online harassment designed to silence women human rights defenders.",
+        "key_takeaway": "Takeaway: Retaliatory trolling frequently uses false narratives and digital mobbing to intimidate outspoken public figures."
+      },
+      {
+        "card_number": 4,
+        "title": "Empowering Women Through Pop Culture",
+        "insight": "Co-authoring the 2018 book #Amigadatecuenta, De Anda translated her advocacy into accessible writing on feminism and health for young readers. Recognized as one of the BBC's 100 Women, she turned personal harassment into platform-driven youth education.",
+        "key_takeaway": "Takeaway: Channeling personal conflict into practical educational media builds lasting cultural resilience."
+      }
+    ],
+    "quiz": {
+      "question": "Why did Tamara De Anda's reporting of a street harasser in Mexico City gain international attention?",
+      "options": [
+        "It resulted in the immediate creation of a new federal crime carrying a ten-year sentence.",
+        "She successfully enforced an existing civic law in a system where street harassment was routinely ignored.",
+        "The taxi driver turned out to be an undercover police officer."
+      ],
+      "correct_index": 1,
+      "explanation": "Authorities in Mexico rarely penalized street harassment. De Anda's simple act of calling a officer and enforcing an existing fine exposed how rarely legal remedies were utilized."
+    }
+  },
+  {
+    "wikipedia_page_id": 54341192,
+    "published_date": "2026-11-21",
+    "article_title": "Eisenach West station",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Eisenach_West_station",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/ESA_WESTBHF.jpg/330px-ESA_WESTBHF.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "A major German railway station did not emerge from grand national transit plans, but was instead willed into existence by a single private worsted spinning mill in 1893.",
+    "idea_cards": [
+      {
+        "card_number": 1,
+        "title": "Born From Industrial Demand",
+        "insight": "Eisenach West station was opened in August 1893 purely at the urging of the Eisenacher Kammgarnspinnerei, the city's largest industrial enterprise at the time. It was placed right at the western entrance of the company premises to conveniently serve factory workers and local tramways.",
+        "key_takeaway": "Takeaway: Private enterprise has historically driven public infrastructure development."
+      },
+      {
+        "card_number": 2,
+        "title": "Elevating Urban Rail Networks",
+        "insight": "Between 1902 and 1905, surging traffic volumes and dangerous level crossings forced a massive engineering overhaul. The entire station and surrounding tracks were raised by up to 4 meters, completely reshaping the local cityscape with towering masonry walls and viaducts.",
+        "key_takeaway": "Mental Model: Friction forces evolution; growing congestion inevitably demands structural redesign."
+      },
+      {
+        "card_number": 3,
+        "title": "Geopolitical Pressures and Division",
+        "insight": "Following the Second World War, the station faced immense operational difficulties due to its proximity to the inner German border and coordination with Western occupying powers. The construction of the Berlin Wall in 1961 drastically choked its passenger traffic down to a mere handful of trains.",
+        "key_takeaway": "Takeaway: Macro-political borders can instantly transform vibrant transit hubs into isolated outposts."
+      },
+      {
+        "card_number": 4,
+        "title": "Post-Reunification Rebirth",
+        "insight": "After German Reunification, the station underwent substantial reconstruction, including line electrification and building renovation. Abandoned facilities eventually found new life, such as the northern building housing a model railway association exhibition.",
+        "key_takeaway": "Mental Model: Adaptive reuse allows derelict legacy infrastructure to find modern cultural value."
+      }
+    ],
+    "quiz": {
+      "question": "At whose direct urging was Eisenach West station originally opened in 1893?",
+      "options": [
+        "The Prussian military administration",
+        "The Eisenach Worsted Spinning Mill",
+        "The municipal tramway operator"
+      ],
+      "correct_index": 1,
+      "explanation": "The station was established in 1893 specifically at the urging of the Eisenacher Kammgarnspinnerei to serve its large industrial enterprise."
+    }
+  },
+  {
+    "wikipedia_page_id": 54045503,
+    "published_date": "2026-11-21",
+    "article_title": "Ghosted (TV series)",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Ghosted_(TV_series)",
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/en/6/6d/Ghosted_TV_Series.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "Before its television broadcast, the supernatural sitcom Ghosted premiered directly on the social media platform Twitter.",
+    "idea_cards": [
+      {
+        "card_number": 1,
+        "title": "An Odd-Couple Paranormal Duo",
+        "insight": "The series stars comedic actors Craig Robinson and Adam Scott as two polar opposites. One is a sharp-witted skeptic and former police detective, while the other is a genius true believer whose wife was allegedly abducted by aliens.",
+        "key_takeaway": "Mental Model: Pairing contrasting worldviews creates natural comedic tension and engaging storytelling dynamics."
+      },
+      {
+        "card_number": 2,
+        "title": "The Bureau Underground",
+        "insight": "Recruited by a secretive organization known as The Bureau Underground, the duo investigates strange, unexplained activities threatening Los Angeles. Later in the season, the narrative pivots to conspiracy theories when they discover the bureau itself is bugged.",
+        "key_takeaway": "Takeaway: Institutional paranoia is a classic narrative device used to escalate stakes in mystery-driven plots."
+      },
+      {
+        "card_number": 3,
+        "title": "Mid-Season Creative Overhaul",
+        "insight": "During its first season, Fox ordered additional episodes and brought in a new showrunner, Paul Lieberstein. This led to a creative retooling that shifted the show away from its pure paranormal focus toward a more office-based workplace setting.",
+        "key_takeaway": "Takeaway: Drastic mid-stream creative shifts can alienate the initial audience and complicate a show's core identity."
+      }
+    ],
+    "quiz": {
+      "question": "Which social media platform hosted the early streaming premiere of Ghosted in September 2017?",
+      "options": [
+        "Facebook",
+        "Twitter",
+        "YouTube"
+      ],
+      "correct_index": 1,
+      "explanation": "Ghosted debuted via streaming on the social media website Twitter ahead of its television premiere on Fox."
+    }
+  },
+  {
+    "wikipedia_page_id": 53841665,
+    "published_date": "2026-11-21",
+    "article_title": "Mykola Martynenko",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Mykola_Martynenko",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Mykola_Martynenko.jpg/330px-Mykola_Martynenko.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "category": "Society & Economics",
+    "read_time_minutes": 3,
+    "hook": "Can a high-profile politician voluntarily resign to prove innocence, only to face a decade-long international legal labyrinth culminating in an acquittal?",
+    "idea_cards": [
+      {
+        "card_number": 1,
+        "title": "Unprecedented Parliamentary Resignation",
+        "insight": "In December 2015, Ukrainian MP Mykola Martynenko took the historic step of voluntarily surrendering his parliamentary mandate. He aimed to strip away his immunity and face corruption investigations directly without hiding behind political office.",
+        "key_takeaway": "Takeaway: True accountability sometimes requires willingly stepping down from positions of institutional shelter."
+      },
+      {
+        "card_number": 2,
+        "title": "Cross-Border Corruption Probes",
+        "insight": "Authorities across Ukraine, Switzerland, and the Czech Republic scrutinized Martynenko over large-scale embezzlement allegations. Martynenko consistently argued that these investigations were politically motivated retaliation orchestrated by energy oligarchs.",
+        "key_takeaway": "Mental Model: Follow the incentives where political reform directly threatens entrenched monopoly profits."
+      },
+      {
+        "card_number": 3,
+        "title": "Swiss Legal Rollercoaster",
+        "insight": "The legal battle saw dramatic shifts in foreign courts, including an initial conviction for money laundering in 2020 followed by a complete acquittal by the Appeals Chamber of the Swiss Federal Criminal Court in 2024.",
+        "key_takeaway": "Takeaway: International due process and appeals can dramatically reverse preliminary lower court judgments."
+      }
+    ],
+    "quiz": {
+      "question": "What historic action did Mykola Martynenko take in December 2015 regarding his political career?",
+      "options": [
+        "He ran for the presidency of Ukraine",
+        "He voluntarily refused his parliamentary mandate to face investigations",
+        "He fled the country to avoid any questioning"
+      ],
+      "correct_index": 1,
+      "explanation": "Martynenko became the first People's Deputy in Ukraine's history to voluntarily surrender his parliamentary mandate to show he was unafraid of investigations."
+    }
+  },
+  {
+    "wikipedia_page_id": 45141519,
+    "published_date": "2026-11-21",
+    "article_title": "Municipal Borough of Altrincham",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Municipal_Borough_of_Altrincham",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Altrincham_Town_Hall_-_geograph.org.uk_-_1313270.jpg/330px-Altrincham_Town_Hall_-_geograph.org.uk_-_1313270.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "Long before modern democratic councils, Altrincham was governed by a medieval seigneurial system where the lord of the manor appointed all municipal officers.",
+    "idea_cards": [
+      {
+        "card_number": 1,
+        "title": "From Manor to Borough",
+        "insight": "Altrincham operated as a seigneurial borough from 1290, retaining a limited form of self-governance under the lord of the manor. Because of its restricted powers, it famously escaped being reformed by the landmark Municipal Corporations Act of 1835.",
+        "key_takeaway": "Takeaway: Ancient governance structures often persisted long past their prime due to legal technicalities."
+      },
+      {
+        "card_number": 2,
+        "title": "The Evolution of Local Boards",
+        "insight": "To keep pace with modern demands, Altrincham transitioned into a local board district in 1851 and later an urban district in 1894. This administrative growth eventually led to the construction of Altrincham Town Hall on Market Street in 1901.",
+        "key_takeaway": "Mental Model: Institutional scaling requires transitioning from informal oversight to dedicated bureaucratic infrastructure."
+      },
+      {
+        "card_number": 3,
+        "title": "Achieving Borough Status",
+        "insight": "After absorbing surrounding areas like Timperley, Altrincham finally received its charter of incorporation as a municipal borough in 1937. The formal charter was presented by the Lord Lieutenant of Cheshire with the Earl of Stamford serving as its charter mayor.",
+        "key_takeaway": "Takeaway: Administrative recognition often validates decades of suburban expansion and population growth."
+      },
+      {
+        "card_number": 4,
+        "title": "Twentieth Century Political Shifts",
+        "insight": "The newly formed borough council was initially dominated by Independents until the Conservative Party surged to power in 1949. Over the subsequent decades, political control shifted dynamically between Conservatives, Labour, and Liberals before the council's eventual abolition.",
+        "key_takeaway": "Mental Model: Political landscapes in local governments are rarely permanent and constantly react to demographic shifts."
+      }
+    ],
+    "quiz": {
+      "question": "In what year was Altrincham granted a charter of incorporation to become a municipal borough?",
+      "options": [
+        "1894",
+        "1937",
+        "1974"
+      ],
+      "correct_index": 1,
+      "explanation": "Altrincham Urban District was granted a charter of incorporation converting it into a municipal borough in 1937."
+    }
+  },
+  {
+    "wikipedia_page_id": 37029155,
+    "published_date": "2026-11-21",
+    "article_title": "Matt Ganuelas-Rosser",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Matt_Ganuelas-Rosser",
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/d/dc/Matt_Ganuelas-Rosser_-_2015-1120.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "category": "Biography",
+    "read_time_minutes": 3,
+    "hook": "Forced to relocate to America after a major volcanic eruption, Matt Ganuelas-Rosser overcame a severe senior-year knee injury to become an NCAA champion and top Philippine basketball star.",
+    "idea_cards": [
+      {
+        "card_number": 1,
+        "title": "From Disaster to Collegiate Glory",
+        "insight": "Born near Subic Bay, Ganuelas-Rosser moved to California after the 1991 Mount Pinatubo volcanic eruption displaced his family. Embracing basketball in San Diego, he eventually anchored the Cal Poly Pomona Broncos, helping them capture the 2010 NCAA Division II Championship.",
+        "key_takeaway": "Takeaway: Disruptive early life events can inadvertently place you in environments where your true talents flourish."
+      },
+      {
+        "card_number": 2,
+        "title": "Bouncing Back from Injury",
+        "insight": "A severe knee injury in high school sidelined Ganuelas-Rosser for 15 games and threatened his college recruitment. Nevertheless, his elite performance in remaining games demonstrated his baseline skill, propelling him to a stellar college campaign and a #4 overall PBA draft selection in 2014.",
+        "key_takeaway": "Mental Model: High baseline capability buffers against temporary setbacks and keeps long-term opportunities alive."
+      },
+      {
+        "card_number": 3,
+        "title": "Honoring Heritage on the Court",
+        "insight": "Representing the Philippine national team, Ganuelas-Rosser claimed gold at the 2012 William Jones Cup and the 2013 SEA Games. In FIBA-sanctioned international events, he specifically used his maternal surname 'Ganuelas' to honor his native heritage.",
+        "key_takeaway": "Takeaway: Personal identity and cultural heritage can provide a profound purpose beyond individual achievement."
+      }
+    ],
+    "quiz": {
+      "question": "Which event prompted Matt Ganuelas-Rosser's family to move from Olongapo City to San Diego during his early childhood?",
+      "options": [
+        "The 1991 Mount Pinatubo eruption",
+        "The 1990 Luzon earthquake",
+        "The closure of Subic Bay Naval Base"
+      ],
+      "correct_index": 0,
+      "explanation": "The eruption of Mount Pinatubo in 1991 forced his family to relocate from Subic Bay to San Diego when he was just two years old."
+    }
+  },
+  {
+    "wikipedia_page_id": 36454463,
+    "published_date": "2026-11-21",
+    "article_title": "Aryeh Tzvi Frumer",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Aryeh_Tzvi_Frumer",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/%D7%94%D7%A8%D7%91_%D7%90%D7%A8%D7%99%D7%94_%D7%A6%D7%91%D7%99_%D7%A4%D7%A8%D7%95%D7%9E%D7%A8.JPG/330px-%D7%94%D7%A8%D7%91_%D7%90%D7%A8%D7%99%D7%94_%D7%A6%D7%91%D7%99_%D7%A4%D7%A8%D7%95%D7%9E%D7%A8.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "category": "Biography",
+    "read_time_minutes": 3,
+    "hook": "Appointed to lead Poland's premier rabbinical academy at a young age, Rabbi Aryeh Tzvi Frumer clandestinely taught students in the Warsaw Ghetto before his tragic murder in Majdanek.",
+    "idea_cards": [
+      {
+        "card_number": 1,
+        "title": "A Prodigy from Czeladź",
+        "insight": "Born in 1884 to a tailor in Poland, Frumer lost his mother at a young age and quickly displayed a sharp mind in his Torah studies. By age 13, he was studying in the renowned yeshiva of the Sochatchover Rebbe, where he developed into a profound scholar.",
+        "key_takeaway": "Takeaway: Early immersion in rigorous intellectual environments accelerates the mastery of complex domains."
+      },
+      {
+        "card_number": 2,
+        "title": "Leadership at Sochaczew and Lublin",
+        "insight": "At just 26, Frumer was appointed rosh yeshiva in Sochaczew following the death of the Avnei Nezer. Decades later, in 1934, he was chosen to lead Yeshivas Chachmei Lublin, the premier rabbinical institution in Poland.",
+        "key_takeaway": "Takeaway: True authority is earned through deep scholarship and the ability to inspire exceptional students."
+      },
+      {
+        "card_number": 3,
+        "title": "Innovative Halachic Scholarship",
+        "insight": "His major work, Eretz Tzvi, is celebrated for its unique methodology that integrates non-halachic and kabbalistic sources to resolve complex practical legal problems. Additionally, he initiated the global Mishnah Yomit daily study program in 1938.",
+        "key_takeaway": "Takeaway: Cross-disciplinary synthesis often unlocks novel solutions to long-standing traditional problems."
+      },
+      {
+        "card_number": 4,
+        "title": "Resistance in the Ghetto",
+        "insight": "During the German occupation, Frumer was incarcerated in the Warsaw Ghetto, where he continued clandestine education for hundreds of students. He was eventually deported to Majdanek concentration camp, where he was murdered in May 1943.",
+        "key_takeaway": "Takeaway: Intellectual and spiritual resilience can persist even in the face of insurmountable systemic tyranny."
+      }
+    ],
+    "quiz": {
+      "question": "What was the name of the premier Polish yeshiva where Rabbi Aryeh Tzvi Frumer served as rosh yeshiva from 1934 to 1939?",
+      "options": [
+        "Yeshivas Chachmei Lublin",
+        "Sochaczew Yeshiva Ketana",
+        "Koziegłowy Community Academy"
+      ],
+      "correct_index": 0,
+      "explanation": "Frumer served as the rosh yeshiva of Yeshivas Chachmei Lublin, the premier yeshiva of Poland, succeeding Rabbi Meir Shapiro."
+    }
+  },
+  {
+    "wikipedia_page_id": 33193162,
+    "published_date": "2026-11-21",
+    "article_title": "Vision in fish",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Vision_in_fish",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Astronotus_ocellatus_-_closeup_%28aka%29.jpg/330px-Astronotus_ocellatus_-_closeup_%28aka%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "category": "Science & Tech",
+    "read_time_minutes": 3,
+    "hook": "While terrestrial animals focus their eyes by changing lens shape, fish must physically shift their dense, spherical lenses back and forth like a camera zoom.",
+    "idea_cards": [
+      {
+        "card_number": 1,
+        "title": "The Physics of Underwater Sight",
+        "insight": "Water absorbs light rapidly, filtering out long wavelengths like red and orange within the first few meters while blue and green penetrate deepest. Because the refractive index of water is close to that of the fish's cornea, the eye lens must do almost all the heavy lifting to refract light and form sharp images.",
+        "key_takeaway": "Takeaway: Aquatic vision requires specialized spherical lenses to compensate for water's minimal corneal refraction."
+      },
+      {
+        "card_number": 2,
+        "title": "Zooming Instead of Morphing",
+        "insight": "Mammals and birds adjust their focus by deforming the elastic shape of their eye lenses using tiny muscles. In contrast, most fish accommodate for distance by using specialized muscles to slide their rigid, spherical lenses closer to or further from the retina.",
+        "key_takeaway": "Takeaway: Mechanical translation replaces structural deformation for underwater focusing."
+      },
+      {
+        "card_number": 3,
+        "title": "Ultraviolet Secret Channels",
+        "insight": "Many fish species possess opsin mutations allowing them to perceive ultraviolet light, which penetrates deeper into clear waters than visible spectrums. This hidden visual bandwidth serves as a high-fidelity communication channel for mating signals and alarm warnings that predators cannot detect.",
+        "key_takeaway": "Takeaway: Specialized sensory adaptations create private evolutionary communication channels."
+      },
+      {
+        "card_number": 4,
+        "title": "Reflective Tapetum Boosts Sensitivity",
+        "insight": "Deep-sea and nocturnal fish often feature a reflective cellular layer behind the retina called the tapetum. This mirror-like layer bounces unabsorbed photons back through the photoreceptors, doubling their chances of light capture at the cost of visual resolution.",
+        "key_takeaway": "Takeaway: Biological reflection trades visual sharpness for extreme low-light sensitivity."
+      }
+    ],
+    "quiz": {
+      "question": "How do most fish typically adjust their eye focus for different distances?",
+      "options": [
+        "By changing the elastic shape of their lens",
+        "By moving the lens closer to or further from the retina",
+        "By using a muscular iris to alter pupil size"
+      ],
+      "correct_index": 1,
+      "explanation": "Unlike terrestrial vertebrates that deform their lens shape, fish adjust focus by using specialized muscles to mechanically slide the lens toward or away from the retina."
+    }
+  },
+  {
+    "wikipedia_page_id": 29143431,
+    "published_date": "2026-11-21",
+    "article_title": "Living Dead Girl (novel)",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Living_Dead_Girl_(novel)",
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/en/c/c6/Living_Dead_Girl_%28novel%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "Forced by her captor to recruit her own replacement, a young captive named Alice must choose between absolute survival and reclaiming her humanity.",
+    "idea_cards": [
+      {
+        "card_number": 1,
+        "title": "The Psychological Prison",
+        "insight": "Abducted at age ten and brainwashed for five years, Alice believes her captor, Ray, is omnipotent. Through constant fear for her family's safety and severe deprivation, she exists in a state of emotional numbness, viewing herself as already dead.",
+        "key_takeaway": "Mental Model: Learned Helplessness occurs when a victim believes they have zero agency, making escape psychologically invisible."
+      },
+      {
+        "card_number": 2,
+        "title": "The Ultimate Betrayal Task",
+        "insight": "Ray commands Alice to find and train a new victim to replace her. Instead of breaking down entirely, Alice weaponizes this horrifying assignment, seeing it as her only pathway to either freedom or an end to her endless suffering.",
+        "key_takeaway": "Takeaway: In extreme trauma, individuals often repurpose coercive commands to carve out microscopic fractions of control."
+      },
+      {
+        "card_number": 3,
+        "title": "Reclaiming True Identity",
+        "insight": "When the cycle of violence is finally broken by an outside intervention, Alice uses her dying breath not to plead for medical help, but to state her real name, Kyla Davis, and ask to be taken home.",
+        "key_takeaway": "Mental Model: Identity Retrieval is the psychological necessity of recovering one's true self after systemic dehumanization."
+      }
+    ],
+    "quiz": {
+      "question": "What is the primary task Ray assigns to Alice during the events of the novel?",
+      "options": [
+        "To run away and find a safe house for them both",
+        "To find and train a new 'Alice' to replace her",
+        "To secure money and resources for his apartment"
+      ],
+      "correct_index": 1,
+      "explanation": "Ray commands Alice to go to local playgrounds and find a young girl to train as his next captive, setting off the climax of the story."
+    }
+  },
+  {
+    "wikipedia_page_id": 27589456,
+    "published_date": "2026-11-21",
+    "article_title": "Roland de la Poype",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Roland_de_la_Poype",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/Roland_de_la_Poype.jpg/330px-Roland_de_la_Poype.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "category": "Biography",
+    "read_time_minutes": 3,
+    "hook": "A World War II fighter ace with 16 victories, Roland de la Poype went on to revolutionize everyday consumer goods by inventing plastic shampoo packaging and founding France's largest marine park.",
+    "idea_cards": [
+      {
+        "card_number": 1,
+        "title": "The Fighter Ace",
+        "insight": "At just 19, Roland de la Poype fled occupied France to join the Free French Air Force and later the Royal Air Force. He eventually volunteered for the elite Normandie-Niemen fighter group, fighting on the harsh Soviet front and earning the prestigious title Hero of the Soviet Union.",
+        "key_takeaway": "Takeaway: Exceptional adaptability enables success across wildly different environments."
+      },
+      {
+        "card_number": 2,
+        "title": "Industrial Plastics Pioneer",
+        "insight": "Recognizing the massive future potential of synthetic materials after leaving military service in 1947, de la Poype founded a successful plastics enterprise. His company famously designed the iconic tetrahedron-shaped Berlingot shampoo packaging for L'Oréal.",
+        "key_takeaway": "Takeaway: Foresight in emerging technologies creates lifelong second acts."
+      },
+      {
+        "card_number": 3,
+        "title": "Creator of Marineland Antibes",
+        "insight": "Driven by a deep passion for wildlife and public education, de la Poype established Marineland in Antibes in 1970. It became Europe's largest marine park, reflecting his remarkable post-war transition from military combatant to conservationist entrepreneur.",
+        "key_takeaway": "Takeaway: True versatility spans from high-stakes survival to creative commercial ventures."
+      }
+    ],
+    "quiz": {
+      "question": "Which iconic automotive design was created by Roland de la Poype's firm?",
+      "options": [
+        "Citroën Méhari",
+        "Renault 4CV",
+        "Peugeot 205"
+      ],
+      "correct_index": 0,
+      "explanation": "Roland de la Poype and his plastics firm designed the utilitarian and iconic Citroën Méhari."
+    }
+  },
+  {
+    "wikipedia_page_id": 24388807,
+    "published_date": "2026-11-21",
+    "article_title": "Raj Chetty",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Raj_Chetty",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Raj_Chetty_recieving_the_2019_A.SK_Social_Science_Award.png/330px-Raj_Chetty_recieving_the_2019_A.SK_Social_Science_Award.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "category": "Biography",
+    "read_time_minutes": 3,
+    "hook": "An economist who achieved tenure at Harvard at just 29 proved that where you grow up dictates your future far more than previously believed.",
+    "idea_cards": [
+      {
+        "card_number": 1,
+        "title": "Tenured at Age Twenty-Nine",
+        "insight": "Raj Chetty became one of the youngest professors to receive tenure in Harvard's history. Early in his academic career, mentors encouraged him to trust his counter-intuitive ideas rather than conventional wisdom.",
+        "key_takeaway": "Takeaway: Back your own unorthodox hypotheses with rigorous empirical data."
+      },
+      {
+        "card_number": 2,
+        "title": "Mapping American Economic Mobility",
+        "insight": "Using massive federal tax records, Chetty and his team mapped intergenerational mobility down to the neighborhood level through the Opportunity Atlas. Their work revealed that economic mobility varies enormously across different geographic areas.",
+        "key_takeaway": "Mental Model: Place-based economics dictates that local environment is a primary driver of success."
+      },
+      {
+        "card_number": 3,
+        "title": "The Power of Early Childhood Moves",
+        "insight": "Revisiting housing experiments, Chetty discovered that children who moved to low-poverty neighborhoods before age 13 earned significantly more as adults. Older teenagers did not see the same gains, highlighting sensitive developmental windows.",
+        "key_takeaway": "Takeaway: Timing matters; early exposure to high-opportunity environments yields lifelong compounding benefits."
+      }
+    ],
+    "quiz": {
+      "question": "What key finding did Raj Chetty's research uncover regarding childhood moves to low-poverty neighborhoods?",
+      "options": [
+        "Children of all ages experience identical income boosts.",
+        "Moving before age 13 significantly improves long-term adult earnings.",
+        "Moving during high school yields the greatest financial benefits."
+      ],
+      "correct_index": 1,
+      "explanation": "Chetty's research found that children who moved to low-poverty neighborhoods before age 13 experienced higher earnings as adults, whereas older children did not show the same gains."
+    }
+  },
+  {
+    "wikipedia_page_id": 23579812,
+    "published_date": "2026-11-21",
+    "article_title": "Beth Jeans Houghton",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Beth_Jeans_Houghton",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Beth_Jeans_Houghton_plays_to_a_soggy_Applecart_Festival_in_Victoria_Park%2C_east_London.jpg/330px-Beth_Jeans_Houghton_plays_to_a_soggy_Applecart_Festival_in_Victoria_Park%2C_east_London.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "category": "Biography",
+    "read_time_minutes": 3,
+    "hook": "How does a self-taught musician transition from psychedelic rock to animating official music videos for the Red Hot Chili Peppers?",
+    "idea_cards": [
+      {
+        "card_number": 1,
+        "title": "Self-Taught Multi-Disciplinary Creator",
+        "insight": "Leaving school at sixteen, Beth Jeans Houghton bought a Fender Stratocaster and taught themselves how to play entirely independently. Beyond music, they build an expansive artistic universe encompassing photography, sculpture, animation, and embroidery.",
+        "key_takeaway": "Takeaway: Formal credentials matter far less than relentless curiosity and self-directed practice."
+      },
+      {
+        "card_number": 2,
+        "title": "The Birth of Du Blonde",
+        "insight": "Seeking a fresh creative outlet away from their earlier moniker, Houghton adopted the persona Du Blonde in 2014. Under this name, they released critically acclaimed records that pushed their punk, rock, and soul influences further.",
+        "key_takeaway": "Mental Model: Reinventing your artistic persona can liberate your creative expression."
+      },
+      {
+        "card_number": 3,
+        "title": "Animation Meets Alt-Rock",
+        "insight": "Houghton channels their visual arts background into directing and animating striking music videos for iconic bands. Their distinctive illustrative style has brought vibrant life to tracks by the Red Hot Chili Peppers, Ezra Furman, and LUMP.",
+        "key_takeaway": "Takeaway: Combining distinct creative disciplines creates a unique professional edge."
+      },
+      {
+        "card_number": 4,
+        "title": "Humor and Mental Health",
+        "insight": "As a lifelong sufferer of anxiety, Houghton uses humor in their comics and art to unpack uncomfortable social situations. Practices like Transcendental Meditation also helped them build confidence in managing their mental well-being.",
+        "key_takeaway": "Mental Model: Humor acts as a powerful psychological shield against vulnerability and stigma."
+      }
+    ],
+    "quiz": {
+      "question": "Under what pseudonym does Beth Jeans Houghton release much of their rock and punk music?",
+      "options": [
+        "Du Blonde",
+        "Hooves of Destiny",
+        "LUMP"
+      ],
+      "correct_index": 0,
+      "explanation": "Houghton began writing and recording music under the moniker Du Blonde starting in 2014, releasing multiple successful albums under that name."
+    }
+  },
+  {
+    "wikipedia_page_id": 23248391,
+    "published_date": "2026-11-21",
+    "article_title": "Herbert and Dorothy Vogel",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Herbert_and_Dorothy_Vogel",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Herbert_and_dorothy_vogel.jpg/330px-Herbert_and_dorothy_vogel.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "Living on a postal clerk and librarian salary in a cramped Manhattan apartment, two ordinary civil servants built one of the world's most legendary modern art collections.",
+    "idea_cards": [
+      {
+        "card_number": 1,
+        "title": "Living Frugally for Art",
+        "insight": "Herbert Vogel worked as a postal clerk while Dorothy was a librarian, living in a rent-controlled one-bedroom apartment. They dedicated Dorothy's salary entirely to living expenses while using Herbert's modest income, which peaked at just $23,000 a year, exclusively to buy art.",
+        "key_takeaway": "Mental Model: Radical Prioritization—aligning 100% of discretionary resources with your deepest passion."
+      },
+      {
+        "card_number": 2,
+        "title": "Subway Art Collectors",
+        "insight": "Rejecting the high-end, speculative art market, the Vogels bought strictly what they loved directly from emerging artists. Because they had no car, every new acquisition had to be small enough to carry home on the subway or in a taxi.",
+        "key_takeaway": "Takeaway: Build collections based on personal resonance rather than market investment or status."
+      },
+      {
+        "card_number": 3,
+        "title": "Artistic Friendships and Barter",
+        "insight": "The couple became deeply embedded in the New York minimalist and conceptual art scenes, forming lifelong friendships with icons like Sol LeWitt. On one notable occasion, they even acquired a collage from artist Christo simply by cat-sitting for him.",
+        "key_takeaway": "Takeaway: Authentic community and genuine support matter more than financial capital when building profound relationships."
+      },
+      {
+        "card_number": 4,
+        "title": "Gifting to the Public",
+        "insight": "Instead of cashing out their multi-million dollar collection for personal wealth, the Vogels donated nearly 5,000 works to the National Gallery of Art. They later orchestrated a massive national gift, distributing 2,500 pieces to museums across all 50 U.S. states.",
+        "key_takeaway": "Mental Model: Generosity as Legacy—true fulfillment comes from sharing value with the public rather than hoarding it."
+      }
+    ],
+    "quiz": {
+      "question": "How did Herbert and Dorothy Vogel fund their multi-million dollar art collection on ordinary civil servant salaries?",
+      "options": [
+        "They inherited a secret fortune from family estates",
+        "They lived extremely frugally, using Herbert's postal salary solely for art",
+        "They won the lottery in the early 1960s"
+      ],
+      "correct_index": 1,
+      "explanation": "The Vogels used Dorothy's income for daily living expenses and dedicated Herbert's postal clerk salary entirely to purchasing minimalist and conceptual art."
+    }
+  },
+  {
+    "wikipedia_page_id": 21970127,
+    "published_date": "2026-11-21",
+    "article_title": "Dave Koz (album)",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Dave_Koz_(album)",
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/en/4/4e/Album.Dave.Koz.cover.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "category": "History & Culture",
+    "read_time_minutes": 2,
+    "hook": "Before becoming a smooth jazz icon, saxophonist Dave Koz crafted a 1990 debut album packed with a massive web of elite session players and a surprising nod to Richard Marx.",
+    "idea_cards": [
+      {
+        "card_number": 1,
+        "title": "A Collaborative Debut Masterpiece",
+        "insight": "Dave Koz co-wrote eight out of the eleven tracks on his 1990 self-titled debut album. He collaborated with prominent musicians and producers like Jeff Lorber to establish his signature smooth jazz sound right out of the gate.",
+        "key_takeaway": "Mental Model: Co-creation accelerates early career breakthroughs by leveraging collective genius."
+      },
+      {
+        "card_number": 2,
+        "title": "Star-Studded Session Network",
+        "insight": "The album relied on an enormous rotation of elite guest artists, backing vocalists, and engineers depending on the track. This meticulous assembly ensured every single song had a distinct, polished sonic fingerprint.",
+        "key_takeaway": "Takeaway: Surround your projects with specialized talent to maximize overall quality."
+      },
+      {
+        "card_number": 3,
+        "title": "Reimagining Pop Hits",
+        "insight": "Alongside original compositions, Koz included a fresh reworking of Richard Marx's hit single 'Endless Summer Nights'. This bridge between pop sensibilities and instrumental jazz helped broaden his commercial appeal.",
+        "key_takeaway": "Mental Model: Reinterpreting proven formats introduces your unique style to wider audiences."
+      }
+    ],
+    "quiz": {
+      "question": "How many tracks did Dave Koz co-write on his 1990 debut album?",
+      "options": [
+        "5 out of 11",
+        "8 out of 11",
+        "All 11"
+      ],
+      "correct_index": 1,
+      "explanation": "Dave Koz co-wrote eight of the 11 tracks on his 1990 debut album, alongside featuring a reworking of a Richard Marx song."
     }
   },
   {
@@ -120,124 +802,204 @@
     }
   },
   {
-    "wikipedia_page_id": 5918257,
+    "wikipedia_page_id": 17100042,
     "published_date": "2026-11-21",
-    "article_title": "Grittleton House",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Grittleton_House",
-    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Grittleton_house_school_19y07.JPG/330px-Grittleton_house_school_19y07.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "article_title": "Sol-Angel and the Hadley St. Dreams",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Sol-Angel_and_the_Hadley_St._Dreams",
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/en/5/55/Solange_-_Sol-Angel_And_The_Hadley_St._Dreams.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
     "category": "History & Culture",
-    "read_time_minutes": 5,
-    "hook": "Grittleton House illuminates how country house in wiltshire, england reshaped our understanding of history & culture.",
+    "read_time_minutes": 3,
+    "hook": "Solange deliberately pivoted from mainstream dance-pop to target an 'intellectual, backpacking, coffee shop' youth demographic with vintage 1960s soul.",
     "idea_cards": [
       {
         "card_number": 1,
-        "title": "Origins of Grittleton House",
-        "insight": "Grittleton House is a country house in the village of Grittleton, Wiltshire, England, about 5+1⁄2 miles (9 km) northwest of the town of Chippenham. It is a building of historical significance and is Grade II* listed on the English Heritage Register. == History == On...",
-        "key_takeaway": "Takeaway: Country house in Wiltshire, England reveals underlying foundational patterns in History & Culture."
+        "title": "Motown Roots and European Electronica",
+        "insight": "Solange drew heavy inspiration from 1960s and 70s Motown girl groups and her mother's musical background. She blended these classic soul influences with downbeat and electronic music elements she discovered during trips to Europe.",
+        "key_takeaway": "Mental Model: Cross-Pollination of Genres combines distinct historical eras with modern sonic textures to create a truly original artistic lane."
       },
       {
         "card_number": 2,
-        "title": "Core Dynamics & Developments",
-        "insight": "this site, across the road from St Mary's Church, stood a three-bay Jacobean manor house, dating from 1660. The estate was bought in 1828 by Joseph Neeld, a London lawyer who had inherited a substantial sum, and Grittleton became his country seat. Architect James Thomson partly refaced and added to...",
-        "key_takeaway": "Mental Model: First-principles examination clarifies how complex historical and scientific systems evolve."
+        "title": "Winning Over Skeptical Producers",
+        "insight": "High-profile producers and songwriters initially hesitated to sign on because they had not yet heard the material. Solange had to schedule in-person listening sessions and even party with CeeLo Green at the Grammy Awards to convince them to join.",
+        "key_takeaway": "Takeaway: Demonstration over reputation—letting the actual work speak for itself is often the best way to earn the trust of elite collaborators."
       },
       {
         "card_number": 3,
-        "title": "Lasting Impact & Legacy",
-        "insight": "this house during 1832–40 for Neeld. In 1852–6 there was a partial demolition of the original manor with the new additions being designed again by Thomson, who was replaced by Henry Clutton in 1853. However, Thomson appears to have completed the house in 1854–6. Pevsner...",
-        "key_takeaway": "Takeaway: Historical precedents directly inform contemporary decisions and cultural developments."
+        "title": "A Niche Targeted Marketing Strategy",
+        "insight": "Geffen Records and Music World Entertainment marketed the album not toward mainstream radio crowds, but specifically toward an 'intellectual, backpacking, digital kid' audience. The approach resulted in critical acclaim and strong chart placements for its dance singles.",
+        "key_takeaway": "Takeaway: Tailoring a product to a hyper-specific, passionate niche can yield higher creative satisfaction and cult-classic status than chasing broad appeal."
       }
     ],
     "quiz": {
-      "question": "What primary subject is central to Grittleton House?",
+      "question": "What primary musical influence inspired Solange to create Sol-Angel and the Hadley St. Dreams?",
       "options": [
-        "Country house in Wiltshire, England",
-        "Unrelated peripheral documentation",
-        "Modern speculative fiction only"
+        "1980s synth-pop and heavy metal",
+        "The 'Motown Sound' of the 1960s and 1970s",
+        "Traditional Texas country and western music"
       ],
-      "correct_index": 0,
-      "explanation": "Grittleton House is primarily known as: Country house in Wiltshire, England."
+      "correct_index": 1,
+      "explanation": "Solange was heavily influenced by the Motown Sound of the 1960s and 1970s, drawing inspiration from iconic girl groups like The Supremes and The Marvelettes."
     }
   },
   {
-    "wikipedia_page_id": 27589456,
+    "wikipedia_page_id": 10961264,
     "published_date": "2026-11-21",
-    "article_title": "Roland de la Poype",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Roland_de_la_Poype",
-    "category": "Biography",
-    "read_time_minutes": 3,
-    "hook": "A World War II fighter ace with 16 victories, Roland de la Poype went on to revolutionize everyday consumer goods by inventing plastic shampoo packaging and founding France's largest marine park.",
-    "idea_cards": [
-      {
-        "card_number": 1,
-        "title": "The Fighter Ace",
-        "insight": "At just 19, Roland de la Poype fled occupied France to join the Free French Air Force and later the Royal Air Force. He eventually volunteered for the elite Normandie-Niemen fighter group, fighting on the harsh Soviet front and earning the prestigious title Hero of the Soviet Union.",
-        "key_takeaway": "Takeaway: Exceptional adaptability enables success across wildly different environments."
-      },
-      {
-        "card_number": 2,
-        "title": "Industrial Plastics Pioneer",
-        "insight": "Recognizing the massive future potential of synthetic materials after leaving military service in 1947, de la Poype founded a successful plastics enterprise. His company famously designed the iconic tetrahedron-shaped Berlingot shampoo packaging for L'Oréal.",
-        "key_takeaway": "Takeaway: Foresight in emerging technologies creates lifelong second acts."
-      },
-      {
-        "card_number": 3,
-        "title": "Creator of Marineland Antibes",
-        "insight": "Driven by a deep passion for wildlife and public education, de la Poype established Marineland in Antibes in 1970. It became Europe's largest marine park, reflecting his remarkable post-war transition from military combatant to conservationist entrepreneur.",
-        "key_takeaway": "Takeaway: True versatility spans from high-stakes survival to creative commercial ventures."
-      }
-    ],
-    "quiz": {
-      "question": "Which iconic automotive design was created by Roland de la Poype's firm?",
-      "options": [
-        "Citroën Méhari",
-        "Renault 4CV",
-        "Peugeot 205"
-      ],
-      "correct_index": 0,
-      "explanation": "Roland de la Poype and his plastics firm designed the utilitarian and iconic Citroën Méhari."
-    },
-    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/Roland_de_la_Poype.jpg/330px-Roland_de_la_Poype.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
-  },
-  {
-    "wikipedia_page_id": 4440995,
-    "published_date": "2026-11-21",
-    "article_title": "1984 24 Hours of Le Mans",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/1984_24_Hours_of_Le_Mans",
+    "article_title": "Hungerford, Queensland",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Hungerford%2C_Queensland",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Australia_Queensland_hungerford.jpg/330px-Australia_Queensland_hungerford.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
     "category": "History & Culture",
     "read_time_minutes": 3,
-    "hook": "A sudden last-minute rule change by the sport's governing body triggered a massive works team boycott, leaving the prestigious 1984 24 Hours of Le Mans completely wide open for customer teams.",
+    "hook": "For years, this remote Australian outback town was accidentally thought to be in an entirely different state than it actually was.",
     "idea_cards": [
       {
         "card_number": 1,
-        "title": "The Great Works Boycott",
-        "insight": "Just months before the race, FISA announced sudden fuel regulation changes to incorporate IMSA classes, adding 50 kg to the minimum weight. Furious after investing heavily in fuel-efficient engines, the dominant Porsche and Lancia works teams protested, leading Rothmans Porsche to boycott the event entirely.",
-        "key_takeaway": "Takeaway: Abrupt regulatory shifts can instantly dismantle years of strategic technical development."
+        "title": "An Accidental Border Town",
+        "insight": "Hungerford began as a customs post and stock route alongside the Paroo River. Due to a lack of proper initial surveying, early residents and authorities believed the entire settlement was located within New South Wales instead of Queensland.",
+        "key_takeaway": "Mental Model: Verify boundaries early before assuming your jurisdictional placement."
       },
       {
         "card_number": 2,
-        "title": "A Tragic High-Speed Night",
-        "insight": "Running under clear evening skies, the race saw thrilling lead changes before disaster struck at 9:15 pm on the notorious Hunaudières Straight. John Sheldon's leading Nimrod-Aston Martin veered off at the Mulsanne kink, crashing into the barriers and bursting into flames, resulting in the tragic death of a track marshal.",
-        "key_takeaway": "Takeaway: Extreme velocity demands absolute engineering precision and relentless focus on safety."
+        "title": "Literary Fame by Henry Lawson",
+        "insight": "The famous Australian writer Henry Lawson visited Hungerford in the 1890s, immortalizing it in a short story. He famously noted that an inter-provincial rabbit-proof fence ran right down the main street—with rabbits thriving on both sides of it.",
+        "key_takeaway": "Takeaway: Art often captures the absurd, paradoxical realities of remote outposts better than any historical record."
       },
       {
         "card_number": 3,
-        "title": "The Ultimate Comeback Victory",
-        "insight": "The Joest Porsche of Henri Pescarolo and Klaus Ludwig suffered severe fuel-pressure issues in the very first hour, dropping down to 30th position. However, through sheer resilience, mechanical attrition of rival cars, and careful driving, they mounted the biggest comeback in Le Mans history to claim outright victory.",
-        "key_takeaway": "Takeaway: Endurance racing rewards persistence and survival far more than an early sprint."
+        "title": "A Century of Pandemics",
+        "insight": "Long before modern global health events, Hungerford served as a critical border choke point. During the 1919 Spanish flu pandemic, Queensland Police were deployed to close the border and medically screen travelers attempting to cross from New South Wales.",
+        "key_takeaway": "Mental Model: Historical precedents show that geographic borders are frequently leveraged for epidemiological defense."
       }
     ],
     "quiz": {
-      "question": "Which major team boycotted the 1984 24 Hours of Le Mans due to sudden regulation changes?",
+      "question": "Which state are both of Hungerford's historical pubs located in?",
       "options": [
-        "Rothmans Porsche works team",
-        "Group 44 Jaguar",
-        "Nimrod-Aston Martin"
+        "New South Wales",
+        "Queensland",
+        "South Australia"
+      ],
+      "correct_index": 1,
+      "explanation": "As noted in Henry Lawson's famous historical account, despite the town straddling the border, characteristically both pubs found themselves situated safely on the Queensland side."
+    }
+  },
+  {
+    "wikipedia_page_id": 9717503,
+    "published_date": "2026-11-21",
+    "article_title": "Kurdish–Turkish conflict",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Kurdish%E2%80%93Turkish_conflict",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/%C5%9E%C4%B1rnak_%C3%A7at%C4%B1%C5%9Fmas%C4%B1_%C3%A7ocuk_cenaze_t%C3%B6reni.jpg/330px-%C5%9E%C4%B1rnak_%C3%A7at%C4%B1%C5%9Fmas%C4%B1_%C3%A7ocuk_cenaze_t%C3%B6reni.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "While Kurdish rebellions against central Anatolian authority have spanned over two centuries, the modern phase of the conflict was born from the seismic political transition from the multi-ethnic Ottoman Empire to a strict secular nation-state.",
+    "idea_cards": [
+      {
+        "card_number": 1,
+        "title": "From Empire to Nation-State",
+        "insight": "The abolition of the Ottoman Caliphate in 1924 dismantled the millet system, which had previously unified various Muslim ethnic groups under a common religious identity. The newly formed secular Turkish state replaced this with a singular Turkish political identity, refusing to recognize separate Kurdish or distinct Islamic national identities.",
+        "key_takeaway": "Mental Model: Forced homogenization of diverse ethnic groups under a single national banner often sparks deep-seated nationalist counter-movements."
+      },
+      {
+        "card_number": 2,
+        "title": "Early Uprisings and Revolts",
+        "insight": "Following the transition, major uprisings emerged seeking autonomy or independence for Kurdish regions, notably led by figures like Sheikh Said Piran in 1925 and the self-proclaimed Republic of Ararat in 1927. These early revolts were systematically suppressed by the Turkish military, leading to decades of ongoing political and armed struggle.",
+        "key_takeaway": "Takeaway: Repression of public cultural identity and language typically hardens resistance rather than eradicating ethnic loyalties."
+      },
+      {
+        "card_number": 3,
+        "title": "Identity Suppression Policies",
+        "insight": "Successive Turkish governments sought national unity by banning Kurdish languages in print and media, aligning with Atatürk's belief that a unitary political identity was essential for state stability. This policy alienated many Kurds who fiercely maintained their cultural and linguistic heritage despite government prohibitions.",
+        "key_takeaway": "Mental Model: Cultural assimilation policies fail when they attempt to erase generational linguistic and ethnic identity by legal decree."
+      }
+    ],
+    "quiz": {
+      "question": "What major political shift in 1924 triggered widespread resentment and set the stage for modern Kurdish uprisings?",
+      "options": [
+        "The abolition of the Caliphate and establishment of a secular Turkish state",
+        "The signing of the Treaty of Versailles",
+        "The annexation of eastern Anatolia by the Russian Empire"
       ],
       "correct_index": 0,
-      "explanation": "The Rothmans Porsche works team chose to boycott Le Mans after FISA abruptly announced changes to fuel and weight regulations right before the season."
-    },
-    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Circuit_de_la_Sarthe_Le_Mans_1979-1985.png/330px-Circuit_de_la_Sarthe_Le_Mans_1979-1985.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+      "explanation": "The abolition of the Ottoman Caliphate ended the millet system that united diverse Muslim groups, leading to a secular nationalist state that did not recognize independent Kurdish identity."
+    }
+  },
+  {
+    "wikipedia_page_id": 9366006,
+    "published_date": "2026-11-21",
+    "article_title": "Sophie Blanchard",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Sophie_Blanchard",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Sophie_Blanchard.jpg/330px-Sophie_Blanchard.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "category": "Biography",
+    "read_time_minutes": 3,
+    "hook": "Despite suffering from debilitating panic on the ground, Sophie Blanchard was fearless in the sky, becoming Europe's most celebrated female aeronaut before meeting a fiery end.",
+    "idea_cards": [
+      {
+        "card_number": 1,
+        "title": "A Life Aloft Despite Fear",
+        "insight": "Sophie Blanchard was terrified of loud noises and horse-drawn carriages on solid ground, yet she felt entirely at peace in the air. Following her husband's death, she cleared their heavy debts by turning professional ballooning into her sole career.",
+        "key_takeaway": "Takeaway: True courage is not the absence of fear, but finding peace in your domain."
+      },
+      {
+        "card_number": 2,
+        "title": "Royal Favor and Astute Advice",
+        "insight": "Her daring night flights and pyrotechnic displays captivated Europe, earning her titles from both Napoleon Bonaparte and the restored King Louis XVIII. She even successfully dissuaded Napoleon from a disastrous aerial invasion of England by citing unpredictable channel winds.",
+        "key_takeaway": "Takeaway: Mastery combined with practical realism commands respect from the highest authorities."
+      },
+      {
+        "card_number": 3,
+        "title": "Tragic Pyrotechnic Finale",
+        "insight": "In 1819, during a crowded exhibition in Paris, Blanchard ignited a spectacular array of fireworks attached to her hydrogen balloon. A stray spark ignited the escaping gas mid-air, causing the craft to crash and resulting in history's first female aviation fatality.",
+        "key_takeaway": "Takeaway: Pushing the boundaries of high-risk innovation leaves no room for accumulated complacency."
+      }
+    ],
+    "quiz": {
+      "question": "What title was Sophie Blanchard given by Napoleon Bonaparte?",
+      "options": [
+        "Queen of the Skies",
+        "Aeronaut of the Official Festivals",
+        "Minister of Aerial Defense"
+      ],
+      "correct_index": 1,
+      "explanation": "Napoleon appointed her as the 'Aeronaut of the Official Festivals' to organize grand ballooning displays for major imperial events."
+    }
+  },
+  {
+    "wikipedia_page_id": 7095830,
+    "published_date": "2026-11-21",
+    "article_title": "Kimovsk",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Kimovsk",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/%D0%9A%D0%B8%D0%BC%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9_%D1%80%D1%8B%D0%BD%D0%BE%D0%BA.jpg/330px-%D0%9A%D0%B8%D0%BC%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9_%D1%80%D1%8B%D0%BD%D0%BE%D0%BA.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "Have you ever wondered how a major Russian town got its name from an acronym honoring the Young Communist International?",
+    "idea_cards": [
+      {
+        "card_number": 1,
+        "title": "Origins in Wartime Coal",
+        "insight": "Kimovsk began as a modest 17th-century village named Mikhaylovka. Its rapid transformation was fueled by intense coal exploitation during the Great Patriotic War to supply the Moscow Coal Basin.",
+        "key_takeaway": "Takeaway: Major industrial settlements can emerge rapidly from wartime resource demands."
+      },
+      {
+        "card_number": 2,
+        "title": "The Acronym Nametag",
+        "insight": "The town owes its unique name to a local kolkhoz called the Young Communist International, abbreviated in Russian as KIM. The settlement that grew around the local mines adopted this acronym before officially becoming a town in 1952.",
+        "key_takeaway": "Mental Model: Nomenclature often echoes the sociopolitical ideologies of the era in which a place is born."
+      },
+      {
+        "card_number": 3,
+        "title": "Geographical Watershed Hub",
+        "insight": "Strategically positioned in Tula Oblast, Kimovsk sits right at the watershed separating the Don and Volga Rivers. This unique geography places it at an important hydrological junction south-east of Tula.",
+        "key_takeaway": "Takeaway: Towns located at ecological and geographical watersheds often serve as vital regional crossroads."
+      }
+    ],
+    "quiz": {
+      "question": "What does the name Kimovsk originate from?",
+      "options": [
+        "A local ancient river name",
+        "An acronym for the Young Communist International",
+        "A founding military general's surname"
+      ],
+      "correct_index": 1,
+      "explanation": "Kimovsk is named after KIM, the Russian abbreviation for the Young Communist International, on whose lands the mining settlement was built."
+    }
   },
   {
     "wikipedia_page_id": 6997470,
@@ -280,56 +1042,11 @@
     }
   },
   {
-    "wikipedia_page_id": 36454463,
-    "published_date": "2026-11-21",
-    "article_title": "Aryeh Tzvi Frumer",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Aryeh_Tzvi_Frumer",
-    "category": "Biography",
-    "read_time_minutes": 3,
-    "hook": "Appointed to lead Poland's premier rabbinical academy at a young age, Rabbi Aryeh Tzvi Frumer clandestinely taught students in the Warsaw Ghetto before his tragic murder in Majdanek.",
-    "idea_cards": [
-      {
-        "card_number": 1,
-        "title": "A Prodigy from Czeladź",
-        "insight": "Born in 1884 to a tailor in Poland, Frumer lost his mother at a young age and quickly displayed a sharp mind in his Torah studies. By age 13, he was studying in the renowned yeshiva of the Sochatchover Rebbe, where he developed into a profound scholar.",
-        "key_takeaway": "Takeaway: Early immersion in rigorous intellectual environments accelerates the mastery of complex domains."
-      },
-      {
-        "card_number": 2,
-        "title": "Leadership at Sochaczew and Lublin",
-        "insight": "At just 26, Frumer was appointed rosh yeshiva in Sochaczew following the death of the Avnei Nezer. Decades later, in 1934, he was chosen to lead Yeshivas Chachmei Lublin, the premier rabbinical institution in Poland.",
-        "key_takeaway": "Takeaway: True authority is earned through deep scholarship and the ability to inspire exceptional students."
-      },
-      {
-        "card_number": 3,
-        "title": "Innovative Halachic Scholarship",
-        "insight": "His major work, Eretz Tzvi, is celebrated for its unique methodology that integrates non-halachic and kabbalistic sources to resolve complex practical legal problems. Additionally, he initiated the global Mishnah Yomit daily study program in 1938.",
-        "key_takeaway": "Takeaway: Cross-disciplinary synthesis often unlocks novel solutions to long-standing traditional problems."
-      },
-      {
-        "card_number": 4,
-        "title": "Resistance in the Ghetto",
-        "insight": "During the German occupation, Frumer was incarcerated in the Warsaw Ghetto, where he continued clandestine education for hundreds of students. He was eventually deported to Majdanek concentration camp, where he was murdered in May 1943.",
-        "key_takeaway": "Takeaway: Intellectual and spiritual resilience can persist even in the face of insurmountable systemic tyranny."
-      }
-    ],
-    "quiz": {
-      "question": "What was the name of the premier Polish yeshiva where Rabbi Aryeh Tzvi Frumer served as rosh yeshiva from 1934 to 1939?",
-      "options": [
-        "Yeshivas Chachmei Lublin",
-        "Sochaczew Yeshiva Ketana",
-        "Koziegłowy Community Academy"
-      ],
-      "correct_index": 0,
-      "explanation": "Frumer served as the rosh yeshiva of Yeshivas Chachmei Lublin, the premier yeshiva of Poland, succeeding Rabbi Meir Shapiro."
-    },
-    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/%D7%94%D7%A8%D7%91_%D7%90%D7%A8%D7%99%D7%94_%D7%A6%D7%91%D7%99_%D7%A4%D7%A8%D7%95%D7%9E%D7%A8.JPG/330px-%D7%94%D7%A8%D7%91_%D7%90%D7%A8%D7%99%D7%94_%D7%A6%D7%91%D7%99_%D7%A4%D7%A8%D7%95%D7%9E%D7%A8.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
-  },
-  {
     "wikipedia_page_id": 6571310,
     "published_date": "2026-11-21",
     "article_title": "Cho Yong-pil",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Cho_Yong-pil",
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/3/36/Cho_Yong-pil_from_acrofan.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
     "category": "Biography",
     "read_time_minutes": 3,
     "hook": "Dubbed the 'King of Pop' of South Korea, Cho Yong-pil achieved the unprecedented feat of scoring number-one songs across four distinct decades.",
@@ -368,60 +1085,260 @@
       ],
       "correct_index": 1,
       "explanation": "Cho Yong-pil made history in 1980 by holding a concert at Carnegie Hall in New York, becoming the very first South Korean singer to perform there."
-    },
-    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/3/36/Cho_Yong-pil_from_acrofan.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+    }
   },
   {
-    "wikipedia_page_id": 33193162,
+    "wikipedia_page_id": 5953915,
     "published_date": "2026-11-21",
-    "article_title": "Vision in fish",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Vision_in_fish",
-    "category": "Science & Tech",
+    "article_title": "Danny Coles",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Danny_Coles",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Danny_Coles_1.jpg/330px-Danny_Coles_1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "category": "Biography",
     "read_time_minutes": 3,
-    "hook": "While terrestrial animals focus their eyes by changing lens shape, fish must physically shift their dense, spherical lenses back and forth like a camera zoom.",
+    "hook": "How does a professional athlete overcome catastrophic injuries like a fractured spine and torn knee ligaments, only to see his career derailed by a single ill-fated tweet?",
     "idea_cards": [
       {
         "card_number": 1,
-        "title": "The Physics of Underwater Sight",
-        "insight": "Water absorbs light rapidly, filtering out long wavelengths like red and orange within the first few meters while blue and green penetrate deepest. Because the refractive index of water is close to that of the fish's cornea, the eye lens must do almost all the heavy lifting to refract light and form sharp images.",
-        "key_takeaway": "Takeaway: Aquatic vision requires specialized spherical lenses to compensate for water's minimal corneal refraction."
+        "title": "Rise Through Bristol City",
+        "insight": "Danny Coles began his professional journey at Bristol City, quickly establishing himself as a regular starter and earning the Young Player of the Year award. He played a pivotal role in leading the squad to the Division Two play-off final, showcasing his early potential as a resilient defender.",
+        "key_takeaway": "Takeaway: Early recognition and consistent performance lay the foundation for a long professional sports career."
       },
       {
         "card_number": 2,
-        "title": "Zooming Instead of Morphing",
-        "insight": "Mammals and birds adjust their focus by deforming the elastic shape of their eye lenses using tiny muscles. In contrast, most fish accommodate for distance by using specialized muscles to slide their rigid, spherical lenses closer to or further from the retina.",
-        "key_takeaway": "Takeaway: Mechanical translation replaces structural deformation for underwater focusing."
+        "title": "Overcoming Severe Injuries",
+        "insight": "Throughout his career, Coles faced devastating setbacks, including an anterior cruciate ligament tear at Hull City and a shocking fractured spine during training at Exeter City. Despite these career-threatening physical trials, he consistently fought his way back to full fitness and reclaim first-team status.",
+        "key_takeaway": "Mental Model: True athletic resilience is measured not just by physical skill, but by the mental grit required to rebuild after catastrophic injuries."
       },
       {
         "card_number": 3,
-        "title": "Ultraviolet Secret Channels",
-        "insight": "Many fish species possess opsin mutations allowing them to perceive ultraviolet light, which penetrates deeper into clear waters than visible spectrums. This hidden visual bandwidth serves as a high-fidelity communication channel for mating signals and alarm warnings that predators cannot detect.",
-        "key_takeaway": "Takeaway: Specialized sensory adaptations create private evolutionary communication channels."
+        "title": "The Costly Social Media Slip",
+        "insight": "While serving as team captain for Exeter City, Coles faced severe internal disciplinary action after responding to online provocation with offensive language on Twitter. The incident cost him two weeks' wages, his captaincy, and ultimately his standing at the club, demonstrating how quickly digital missteps can eclipse years of hard work.",
+        "key_takeaway": "Takeaway: Professional reputation is fragile; digital discipline is just as critical as on-field performance in the modern era."
       },
       {
         "card_number": 4,
-        "title": "Reflective Tapetum Boosts Sensitivity",
-        "insight": "Deep-sea and nocturnal fish often feature a reflective cellular layer behind the retina called the tapetum. This mirror-like layer bounces unabsorbed photons back through the photoreceptors, doubling their chances of light capture at the cost of visual resolution.",
-        "key_takeaway": "Takeaway: Biological reflection trades visual sharpness for extreme low-light sensitivity."
+        "title": "Transition to Coaching",
+        "insight": "In the twilight of his playing career with Forest Green Rovers, Coles briefly stepped up to fill a player-coach role during a coaching staff departure. This opportunity allowed him to share his extensive professional experience with younger players before ultimately retiring from the sport.",
+        "key_takeaway": "Takeaway: Transitioning from a player to a mentor role is a natural evolution for seasoned veterans facing the end of their playing days."
       }
     ],
     "quiz": {
-      "question": "How do most fish typically adjust their eye focus for different distances?",
+      "question": "What unusual and severe injury did Danny Coles suffer during a training session at Exeter City in 2012?",
       "options": [
-        "By changing the elastic shape of their lens",
-        "By moving the lens closer to or further from the retina",
-        "By using a muscular iris to alter pupil size"
+        "A torn anterior cruciate ligament",
+        "A fractured spine",
+        "A broken leg from a sliding tackle"
       ],
       "correct_index": 1,
-      "explanation": "Unlike terrestrial vertebrates that deform their lens shape, fish adjust focus by using specialized muscles to mechanically slide the lens toward or away from the retina."
-    },
-    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Astronotus_ocellatus_-_closeup_%28aka%29.jpg/330px-Astronotus_ocellatus_-_closeup_%28aka%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+      "explanation": "Coles suffered a fractured spine during a collision with goalkeeper Artur Krysiak in training, which caused him to miss the remainder of the 2011-12 season."
+    }
+  },
+  {
+    "wikipedia_page_id": 5918257,
+    "published_date": "2026-11-21",
+    "article_title": "Grittleton House",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Grittleton_House",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Grittleton_house_school_19y07.JPG/330px-Grittleton_house_school_19y07.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "category": "History & Culture",
+    "read_time_minutes": 5,
+    "hook": "Grittleton House illuminates how country house in wiltshire, england reshaped our understanding of history & culture.",
+    "idea_cards": [
+      {
+        "card_number": 1,
+        "title": "Origins of Grittleton House",
+        "insight": "Grittleton House is a country house in the village of Grittleton, Wiltshire, England, about 5+1⁄2 miles (9 km) northwest of the town of Chippenham. It is a building of historical significance and is Grade II* listed on the English Heritage Register. == History == On...",
+        "key_takeaway": "Takeaway: Country house in Wiltshire, England reveals underlying foundational patterns in History & Culture."
+      },
+      {
+        "card_number": 2,
+        "title": "Core Dynamics & Developments",
+        "insight": "this site, across the road from St Mary's Church, stood a three-bay Jacobean manor house, dating from 1660. The estate was bought in 1828 by Joseph Neeld, a London lawyer who had inherited a substantial sum, and Grittleton became his country seat. Architect James Thomson partly refaced and added to...",
+        "key_takeaway": "Mental Model: First-principles examination clarifies how complex historical and scientific systems evolve."
+      },
+      {
+        "card_number": 3,
+        "title": "Lasting Impact & Legacy",
+        "insight": "this house during 1832–40 for Neeld. In 1852–6 there was a partial demolition of the original manor with the new additions being designed again by Thomson, who was replaced by Henry Clutton in 1853. However, Thomson appears to have completed the house in 1854–6. Pevsner...",
+        "key_takeaway": "Takeaway: Historical precedents directly inform contemporary decisions and cultural developments."
+      }
+    ],
+    "quiz": {
+      "question": "What primary subject is central to Grittleton House?",
+      "options": [
+        "Country house in Wiltshire, England",
+        "Unrelated peripheral documentation",
+        "Modern speculative fiction only"
+      ],
+      "correct_index": 0,
+      "explanation": "Grittleton House is primarily known as: Country house in Wiltshire, England."
+    }
+  },
+  {
+    "wikipedia_page_id": 5119921,
+    "published_date": "2026-11-21",
+    "article_title": "CYP1A1",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/CYP1A1",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/Ideogram_human_chromosome_15.svg/330px-Ideogram_human_chromosome_15.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "category": "Science & Tech",
+    "read_time_minutes": 3,
+    "hook": "An enzyme notorious for activating deadly carcinogens in tobacco smoke also acts as a biological shield protecting your gut from ingested toxins.",
+    "idea_cards": [
+      {
+        "card_number": 1,
+        "title": "The Dual-Nature Enzyme",
+        "insight": "The CYP1A1 gene encodes an enzyme that helps metabolize foreign drugs and xenobiotics. While it can convert environmental toxins like polycyclic aromatic hydrocarbons into dangerous carcinogens, animal studies show it also acts as a barrier in the intestinal mucosa to block toxins from entering the bloodstream.",
+        "key_takeaway": "Mental Model: Biochemical Paradox. A single biological mechanism can simultaneously create local protection and systemic vulnerability depending on its anatomical location."
+      },
+      {
+        "card_number": 2,
+        "title": "Omega-3 Signal Producers",
+        "insight": "Beyond handling toxins, CYP1A1 breaks down polyunsaturated fatty acids into powerful signaling molecules. It metabolizes beneficial omega-3 fats like EPA and DHA into epoxides that suppress inflammation, reduce hypertension, and inhibit tumor growth.",
+        "key_takeaway": "Takeaway: Dietary fats exert their anti-inflammatory effects in part by being converted locally into short-lived, highly protective epoxide metabolites."
+      },
+      {
+        "card_number": 3,
+        "title": "Genetic Vulnerability to Smoking",
+        "insight": "Certain genetic polymorphisms in the CYP1A1 gene lead to much higher enzyme inductivity in response to aromatic hydrocarbons. Light smokers who carry these specific susceptible genetic variants face a drastically higher risk of developing lung cancer.",
+        "key_takeaway": "Mental Model: Gene-Environment Interaction. Environmental hazards like smoking are vastly more dangerous when paired with high-inducibility genetic polymorphisms."
+      }
+    ],
+    "quiz": {
+      "question": "What surprising protective role does the CYP1A1 enzyme play in the digestive tract?",
+      "options": [
+        "It completely prevents the absorption of all dietary fats.",
+        "It acts in the intestinal mucosa to block ingested carcinogens from entering systemic circulation.",
+        "It neutralizes stomach acid to prevent ulcers."
+      ],
+      "correct_index": 1,
+      "explanation": "Although CYP1A1 can help convert certain toxins into carcinogens, in the intestinal mucosa it surprisingly serves as a protective barrier preventing those ingested toxins from infiltrating the rest of the body."
+    }
+  },
+  {
+    "wikipedia_page_id": 4694698,
+    "published_date": "2026-11-21",
+    "article_title": "Ulmus wallichiana",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Ulmus_wallichiana",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/Ulmus_wallichiana.JPG/330px-Ulmus_wallichiana.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "category": "Nature & Space",
+    "read_time_minutes": 3,
+    "hook": "A Himalayan mountain tree saved European elms from devastating fungal plagues, yet faces extinction at home due to intense firewood harvesting.",
+    "idea_cards": [
+      {
+        "card_number": 1,
+        "title": "Natural Fungal Resistance",
+        "insight": "The Himalayan elm possesses a high natural resistance to the fungus Ophiostoma himal-ulmi, which causes Dutch elm disease in its native region. This genetic resilience made it an invaluable asset for scientists seeking to breed disease-resistant elm varieties in Europe.",
+        "key_takeaway": "Takeaway: Nature often holds the genetic solutions to contemporary environmental crises if we preserve wild biodiversity."
+      },
+      {
+        "card_number": 2,
+        "title": "The Dutch Breeding Savior",
+        "insight": "Introduced to Europe in the 1920s, a surviving cutting of Ulmus wallichiana became a foundational parent in the Dutch elm breeding program starting in 1938. Crossing it with winter-hardy cultivars eventually yielded legendary resistant hybrids like 'Plantyn', 'Lutèce', and 'San Zanobi'.",
+        "key_takeaway": "Mental Model: Single points of failure in breeding programs can be rescued by introducing resilient, wild-sourced genetic traits."
+      },
+      {
+        "card_number": 3,
+        "title": "Threatened By Local Survival",
+        "insight": "Endemic to an impoverished region lacking fossil fuel resources, the Himalayan elm is heavily lopped for firewood and livestock fodder. While conservationists in India are storing refrigerated seeds to protect the species, heavy local utilization continues to endanger native populations.",
+        "key_takeaway": "Takeaway: Conservation success requires balancing local human energy needs with the protection of endemic wild species."
+      }
+    ],
+    "quiz": {
+      "question": "What primary trait made Ulmus wallichiana so valuable to European tree breeders?",
+      "options": [
+        "Its extreme resistance to cold Boston winters",
+        "Its natural resistance to Dutch elm disease fungi",
+        "Its rapid growth rate in urban environments"
+      ],
+      "correct_index": 1,
+      "explanation": "Ulmus wallichiana was used as a crucial source of anti-fungal genes in breeding programs to combat the devastating Dutch elm disease."
+    }
+  },
+  {
+    "wikipedia_page_id": 4440995,
+    "published_date": "2026-11-21",
+    "article_title": "1984 24 Hours of Le Mans",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/1984_24_Hours_of_Le_Mans",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Circuit_de_la_Sarthe_Le_Mans_1979-1985.png/330px-Circuit_de_la_Sarthe_Le_Mans_1979-1985.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "A sudden last-minute rule change by the sport's governing body triggered a massive works team boycott, leaving the prestigious 1984 24 Hours of Le Mans completely wide open for customer teams.",
+    "idea_cards": [
+      {
+        "card_number": 1,
+        "title": "The Great Works Boycott",
+        "insight": "Just months before the race, FISA announced sudden fuel regulation changes to incorporate IMSA classes, adding 50 kg to the minimum weight. Furious after investing heavily in fuel-efficient engines, the dominant Porsche and Lancia works teams protested, leading Rothmans Porsche to boycott the event entirely.",
+        "key_takeaway": "Takeaway: Abrupt regulatory shifts can instantly dismantle years of strategic technical development."
+      },
+      {
+        "card_number": 2,
+        "title": "A Tragic High-Speed Night",
+        "insight": "Running under clear evening skies, the race saw thrilling lead changes before disaster struck at 9:15 pm on the notorious Hunaudières Straight. John Sheldon's leading Nimrod-Aston Martin veered off at the Mulsanne kink, crashing into the barriers and bursting into flames, resulting in the tragic death of a track marshal.",
+        "key_takeaway": "Takeaway: Extreme velocity demands absolute engineering precision and relentless focus on safety."
+      },
+      {
+        "card_number": 3,
+        "title": "The Ultimate Comeback Victory",
+        "insight": "The Joest Porsche of Henri Pescarolo and Klaus Ludwig suffered severe fuel-pressure issues in the very first hour, dropping down to 30th position. However, through sheer resilience, mechanical attrition of rival cars, and careful driving, they mounted the biggest comeback in Le Mans history to claim outright victory.",
+        "key_takeaway": "Takeaway: Endurance racing rewards persistence and survival far more than an early sprint."
+      }
+    ],
+    "quiz": {
+      "question": "Which major team boycotted the 1984 24 Hours of Le Mans due to sudden regulation changes?",
+      "options": [
+        "Rothmans Porsche works team",
+        "Group 44 Jaguar",
+        "Nimrod-Aston Martin"
+      ],
+      "correct_index": 0,
+      "explanation": "The Rothmans Porsche works team chose to boycott Le Mans after FISA abruptly announced changes to fuel and weight regulations right before the season."
+    }
+  },
+  {
+    "wikipedia_page_id": 3246698,
+    "published_date": "2026-11-21",
+    "article_title": "Jessica Wahls",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Jessica_Wahls",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Jessica_Wahls_-_2025094_185632_2025-04-04_Radio_Regenbogen_Award_2025_-_Sven_-_1D_X_MK_II_-_0190_-_B70I9021.jpg/330px-Jessica_Wahls_-_2025094_185632_2025-04-04_Radio_Regenbogen_Award_2025_-_Sven_-_1D_X_MK_II_-_0190_-_B70I9021.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "category": "Psychology & Philosophy",
+    "read_time_minutes": 4,
+    "hook": "Jessica Wahls illuminates how german singer reshaped our understanding of psychology & philosophy.",
+    "idea_cards": [
+      {
+        "card_number": 1,
+        "title": "Origins of Jessica Wahls",
+        "insight": "Jessica Martina Wahls (born 2 February 1977), also known under her nickname Jess, is a German pop singer, radio music editor, and former television host, who rose to fame as one of the founding members of the successful all-female pop band No Angels, the \"biggest-selling...",
+        "key_takeaway": "Takeaway: German singer reveals underlying foundational patterns in Psychology & Philosophy."
+      },
+      {
+        "card_number": 2,
+        "title": "Core Dynamics & Developments",
+        "insight": "German girl band to date\", according to the German media. == Biography == === Early life === Wahls, the only child born to an African-American father, James, and a German mother, Gabriele, was born in Frankfurt am Main and raised in Rosbach vor der Höhe. Her parents separated when she...",
+        "key_takeaway": "Mental Model: First-principles examination clarifies how complex historical and scientific systems evolve."
+      },
+      {
+        "card_number": 3,
+        "title": "Lasting Impact & Legacy",
+        "insight": "was six months old, after which she was raised primarily by her mother, who worked as a personal assistant to support the family. Wahls had little contact with her father following the separation. In 1999, Gabriele married Wahls' Barbadian stepfather, Tosh. Interest in music at...",
+        "key_takeaway": "Takeaway: Historical precedents directly inform contemporary decisions and cultural developments."
+      }
+    ],
+    "quiz": {
+      "question": "What primary subject is central to Jessica Wahls?",
+      "options": [
+        "German singer",
+        "Unrelated peripheral documentation",
+        "Modern speculative fiction only"
+      ],
+      "correct_index": 0,
+      "explanation": "Jessica Wahls is primarily known as: German singer."
+    }
   },
   {
     "wikipedia_page_id": 1928747,
     "published_date": "2026-11-21",
     "article_title": "Hedgehog's dilemma",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Hedgehog's_dilemma",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Igelfamilie_%284%29.jpg/330px-Igelfamilie_%284%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
     "category": "Psychology & Philosophy",
     "read_time_minutes": 3,
     "hook": "Why is true emotional closeness with others almost always guaranteed to cause us some degree of pain?",
@@ -454,54 +1371,94 @@
       ],
       "correct_index": 1,
       "explanation": "Schopenhauer argued that politeness and good manners act as the 'mean distance' that prevents us from pricking each other with our quills."
-    },
-    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Igelfamilie_%284%29.jpg/330px-Igelfamilie_%284%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+    }
   },
   {
-    "wikipedia_page_id": 9366006,
+    "wikipedia_page_id": 1927356,
     "published_date": "2026-11-21",
-    "article_title": "Sophie Blanchard",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Sophie_Blanchard",
+    "article_title": "Shaun Cody",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Shaun_Cody",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Shaun_Cody.JPG/330px-Shaun_Cody.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
     "category": "Biography",
     "read_time_minutes": 3,
-    "hook": "Despite suffering from debilitating panic on the ground, Sophie Blanchard was fearless in the sky, becoming Europe's most celebrated female aeronaut before meeting a fiery end.",
+    "hook": "Long before anchoring NFL defensive lines, Shaun Cody was Pete Carroll's foundational recruit who single-handedly kickstarted USC's legendary football dynasty of the early 2000s.",
     "idea_cards": [
       {
         "card_number": 1,
-        "title": "A Life Aloft Despite Fear",
-        "insight": "Sophie Blanchard was terrified of loud noises and horse-drawn carriages on solid ground, yet she felt entirely at peace in the air. Following her husband's death, she cleared their heavy debts by turning professional ballooning into her sole career.",
-        "key_takeaway": "Takeaway: True courage is not the absence of fear, but finding peace in your domain."
+        "title": "A Legendary High School Career",
+        "insight": "During his high school years at Los Altos, Shaun Cody put up video-game numbers with 35 sacks in a single season. His dominance earned him recognition as USA Today's Defensive Most Valuable Player and made him one of the country's most sought-after prospects.",
+        "key_takeaway": "Mental Model: Exceptional early foundational dominance often acts as a massive magnet, attracting top-tier talent and resources to a rebuilding organization."
       },
       {
         "card_number": 2,
-        "title": "Royal Favor and Astute Advice",
-        "insight": "Her daring night flights and pyrotechnic displays captivated Europe, earning her titles from both Napoleon Bonaparte and the restored King Louis XVIII. She even successfully dissuaded Napoleon from a disastrous aerial invasion of England by citing unpredictable channel winds.",
-        "key_takeaway": "Takeaway: Mastery combined with practical realism commands respect from the highest authorities."
+        "title": "Catalyst For USC's Dynasty",
+        "insight": "Cody became newly hired coach Pete Carroll's very first blue-chip recruit at USC. Landing Cody validated the new coaching staff's vision and paved the way for a recruiting cascade that brought an era of national dominance to the Trojans.",
+        "key_takeaway": "Takeaway: Securing the first major high-profile believer drastically lowers the barrier to entry for building a winning culture."
       },
       {
         "card_number": 3,
-        "title": "Tragic Pyrotechnic Finale",
-        "insight": "In 1819, during a crowded exhibition in Paris, Blanchard ignited a spectacular array of fireworks attached to her hydrogen balloon. A stray spark ignited the escaping gas mid-air, causing the craft to crash and resulting in history's first female aviation fatality.",
-        "key_takeaway": "Takeaway: Pushing the boundaries of high-risk innovation leaves no room for accumulated complacency."
+        "title": "Resilience In The Trenches",
+        "insight": "Transitioning to the NFL, Cody was drafted in the second round by the Detroit Lions and later played for the Houston Texans. His toughness was famously tested when he suffered a punctured lung and broken ribs mid-game, yet returned to finish playing.",
+        "key_takeaway": "Mental Model: Extreme grit and physical resilience define elite performers who refuse to quit when the stakes are highest."
       }
     ],
     "quiz": {
-      "question": "What title was Sophie Blanchard given by Napoleon Bonaparte?",
+      "question": "Whose very first blue-chip recruit was Shaun Cody at USC?",
       "options": [
-        "Queen of the Skies",
-        "Aeronaut of the Official Festivals",
-        "Minister of Aerial Defense"
+        "Pete Carroll",
+        "Nick Saban",
+        "Bill Belichick"
+      ],
+      "correct_index": 0,
+      "explanation": "Shaun Cody was famously Pete Carroll's first major blue-chip recruit at USC, which helped attract other elite players and launch the team's early 2000s dominance."
+    }
+  },
+  {
+    "wikipedia_page_id": 1800296,
+    "published_date": "2026-11-21",
+    "article_title": "James H. Sands",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/James_H._Sands",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/J.H.Sands.jpg/330px-J.H.Sands.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "category": "Biography",
+    "read_time_minutes": 2,
+    "hook": "Rear Admiral James H. Sands fought in the American Civil War, commanded the Naval Academy, and quietly shaped religious tolerance within the United States military.",
+    "idea_cards": [
+      {
+        "card_number": 1,
+        "title": "Civil War Naval Hero",
+        "insight": "Born into a naval family in 1845, James H. Sands graduated from the U.S. Naval Academy in 1863 right in the middle of the American Civil War. He served valiantly on multiple blockading vessels and earned citations for gallantry during the fierce attacks on Fort Fisher.",
+        "key_takeaway": "Takeaway: Early trials shape lifelong dedication; active service in high-stress environments builds elite leadership capacity."
+      },
+      {
+        "card_number": 2,
+        "title": "A Storied Military Career",
+        "insight": "Over decades of service, Sands commanded famous vessels like the USS Columbia and USS Minneapolis, eventually rising to become the nineteenth superintendent of the United States Naval Academy. His extensive assignments spanned global stations, hydrographic offices, and retirement boards.",
+        "key_takeaway": "Mental Model: Career compounding—consistently tackling diverse operational roles creates a holistic master of the domain."
+      },
+      {
+        "card_number": 3,
+        "title": "Advocate for Religious Tolerance",
+        "insight": "As a devout Roman Catholic in a predominantly Protestant era, Sands successfully fostered greater religious acceptance and inclusivity within the Naval Academy and broader military ranks. His quiet influence helped pave the way for a more diverse armed forces.",
+        "key_takeaway": "Takeaway: Personal integrity and cultural patience can permanently shift institutional norms for the better."
+      }
+    ],
+    "quiz": {
+      "question": "What prominent leadership position did James H. Sands hold later in his naval career?",
+      "options": [
+        "Secretary of the Navy",
+        "Superintendent of the United States Naval Academy",
+        "Governor of the Panama Canal Zone"
       ],
       "correct_index": 1,
-      "explanation": "Napoleon appointed her as the 'Aeronaut of the Official Festivals' to organize grand ballooning displays for major imperial events."
-    },
-    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Sophie_Blanchard.jpg/330px-Sophie_Blanchard.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+      "explanation": "James H. Sands served as the nineteenth superintendent of the United States Naval Academy from 1905 until his transition to other duties."
+    }
   },
   {
     "wikipedia_page_id": 1293187,
     "published_date": "2026-11-21",
     "article_title": "Royal guard",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Royal_guard",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Guards_at_Buckingham_Palace_%2832629261244%29.jpg/330px-Guards_at_Buckingham_Palace_%2832629261244%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
     "category": "History & Culture",
     "read_time_minutes": 3,
     "hook": "Far beyond mere ceremonial window dressing, royal guards have historically held the power to topple empires through a single shift in political loyalty.",
@@ -534,87 +1491,178 @@
       ],
       "correct_index": 1,
       "explanation": "Due to their unique status and proximity to power, royal guards frequently served as kingmakers whose loyalty or betrayal dictated the success or failure of revolutions."
-    },
-    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Guards_at_Buckingham_Palace_%2832629261244%29.jpg/330px-Guards_at_Buckingham_Palace_%2832629261244%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
-  },
-  {
-    "wikipedia_page_id": 66961103,
-    "published_date": "2026-11-21",
-    "article_title": "Wright's Town, Lower Canada",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Wright's_Town%2C_Lower_Canada",
-    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/A_View_of_the_Mill_and_Tavern_of_Philemon_Wright_at_the_Chaudi%C3%A8re_Falls%2C_Hull_DuVernet_1823_-_Collection_orig_at_LAC.jpg/330px-A_View_of_the_Mill_and_Tavern_of_Philemon_Wright_at_the_Chaudi%C3%A8re_Falls%2C_Hull_DuVernet_1823_-_Collection_orig_at_LAC.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
-    "category": "Society & Economics",
-    "read_time_minutes": 4,
-    "hook": "Wright's Town, Lower Canada illuminates how historical settlement in present-day gatineau, quebec, canada reshaped our understanding of society & economics.",
-    "idea_cards": [
-      {
-        "card_number": 1,
-        "title": "Origins of Wright's Town, Lower Can",
-        "insight": "Wright's Town, also known as Wrightstown, Wright's Village, and Columbia Falls Village, was the first permanent colonial settlement in the Ottawa Valley, located at the north edge of the Chaudière Falls on the Ottawa River, on the southern part of what is now known as...",
-        "key_takeaway": "Takeaway: Historical settlement in present-day Gatineau, Quebec, Canada reveals underlying foundational patterns in Society & Economics."
-      },
-      {
-        "card_number": 2,
-        "title": "Core Dynamics & Developments",
-        "insight": "Hull Island, in present-day Gatineau, Quebec, Canada. Wright's Town was established by and named after American settler Philemon Wright, who settled in the area in 1800. Though nothing remains of Wright's Town, its growth and legacy spurred the development of other settlements in the Ottawa Valley, including the settlement of...",
-        "key_takeaway": "Mental Model: First-principles examination clarifies how complex historical and scientific systems evolve."
-      },
-      {
-        "card_number": 3,
-        "title": "Lasting Impact & Legacy",
-        "insight": "Bytown across the river, which would eventually develop into the city of Ottawa, Ontario, the national capital of Canada. == History == Wright's Town was founded by Philemon Wright, an American from Woburn, Massachusetts. In 1799, Philemon acquired a land grant from the British Crown...",
-        "key_takeaway": "Takeaway: Historical precedents directly inform contemporary decisions and cultural developments."
-      }
-    ],
-    "quiz": {
-      "question": "What primary subject is central to Wright's Town, Lower Canada?",
-      "options": [
-        "Historical settlement in present-day Gatineau, Quebec, Canada",
-        "Unrelated peripheral documentation",
-        "Modern speculative fiction only"
-      ],
-      "correct_index": 0,
-      "explanation": "Wright's Town, Lower Canada is primarily known as: Historical settlement in present-day Gatineau, Quebec, Canada."
     }
   },
   {
-    "wikipedia_page_id": 78543525,
+    "wikipedia_page_id": 1050230,
     "published_date": "2026-11-21",
-    "article_title": "Obznana",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Obznana",
-    "category": "History & Culture",
+    "article_title": "Ɛ̃fini",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/%C6%90%CC%83fini",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Mazdaefini_1stSign.jpg/330px-Mazdaefini_1stSign.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "category": "Society & Economics",
     "read_time_minutes": 3,
-    "hook": "Issued entirely outside normal legal channels and never published in an official gazette, a single government poster effectively outlawed communism in interwar Yugoslavia.",
+    "hook": "In the late 1980s, Mazda launched an aggressive multi-brand experiment in Japan, creating three new marques simultaneously—only to watch economic reality force a rapid retreat.",
     "idea_cards": [
       {
         "card_number": 1,
-        "title": "The Threat of Electoral Success",
-        "insight": "After the Communist Party of Yugoslavia secured a surprisingly strong showing in the 1920 Constitutional Assembly elections, the ruling coalition viewed them as an existential threat. Amid widespread postwar labor unrest and general strikes, the government decided decisive action was necessary to prevent a potential revolution.",
-        "key_takeaway": "Takeaway: Rapid political growth by insurgent movements often provokes swift, extra-legal crackdowns from established authorities."
+        "title": "Mazda's Multi-Brand Expansion",
+        "insight": "During Japan's booming economy, Mazda diversified its domestic sales channels by introducing Autozam, Eunos, and ɛ̃fini. This strategy aimed to capture specific demographic slices by moving beyond traditional Mazda showrooms.",
+        "key_takeaway": "Mental Model: Market Diversification can lead to brand cannibalization if not backed by distinct customer value propositions."
       },
       {
         "card_number": 2,
-        "title": "A Decree Without Legal Power",
-        "insight": "Authored by Minister of the Interior Milorad Drašković, the Obznana was neither debated by parliament nor signed by the King. Instead of following constitutional protocols, it was printed as a poster and pasted directly onto the streets of major cities overnight.",
-        "key_takeaway": "Takeaway: Crises can prompt governments to bypass standard institutional checks and balances through executive fiat."
+        "title": "The Meaning Behind ɛ̃fini",
+        "insight": "Pronounced like the French word for infinity, the brand used a phonetic representation style with a Greek epsilon and a tilde. Its sedan lineup even bore model codes starting with 'MS', translating from a Greek phrase meaning great thoughts.",
+        "key_takeaway": "Takeaway: Premium naming conventions rely heavily on exotic linguistics and symbols to artificially manufacture prestige."
       },
       {
         "card_number": 3,
-        "title": "From Decree to Total Ban",
-        "insight": "The Obznana mandated the closure of communist-affiliated trade unions, newspapers, and organizations while banning all communist propaganda. This aggressive suppression triggered a cycle of political violence and assassinations, culminating in the formal Law on the Protection of the State.",
-        "key_takeaway": "Takeaway: Extra-judicial suppression frequently backfires, breeding radicalization and escalating cycles of retaliatory violence."
+        "title": "Victim of the Bubble Economy",
+        "insight": "The ambitious luxury experiment operated only from 1991 to 1997. The catastrophic collapse of the Japanese asset price bubble abruptly ended the selective marketing experiment, forcing dealerships back under the main Mazda umbrella.",
+        "key_takeaway": "Mental Model: Macroeconomic shocks routinely destroy aggressive expansion strategies built on peak-bubble optimism."
+      },
+      {
+        "card_number": 4,
+        "title": "Importing European Vehicles",
+        "insight": "Alongside rebadged Mazda models like the RX-7 and MPV, ɛ̃fini dealerships also served as sales channels for French Citroën products in Japan. This gave Japanese consumers rare access to distinct European automotive engineering.",
+        "key_takeaway": "Takeaway: Dealership networks often leverage foreign partnerships to diversify product portfolios without incurring heavy manufacturing costs."
       }
     ],
     "quiz": {
-      "question": "How was the Obznana officially promulgated to the public?",
+      "question": "What major economic event directly contributed to the termination of Mazda's ɛ̃fini brand?",
       "options": [
-        "It was passed unanimously by the parliament.",
-        "It was printed as a poster and pasted on city streets.",
-        "It was formally published in the official government gazette."
+        "The 1973 oil crisis",
+        "The collapse of the Japanese asset price bubble in 1991",
+        "The 2008 global financial crisis"
       ],
       "correct_index": 1,
-      "explanation": "The Obznana bypassed normal legislative and publishing channels entirely, being distributed instead as street posters overnight."
-    },
-    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Obznana_29.12.1920.png/330px-Obznana_29.12.1920.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+      "explanation": "The selective marketing experiment ended in the mid-1990s largely due to economic conditions sparked by the collapse of the Japanese asset price bubble in 1991."
+    }
+  },
+  {
+    "wikipedia_page_id": 1019612,
+    "published_date": "2026-11-21",
+    "article_title": "Evelyn Baring, 1st Earl of Cromer",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Evelyn_Baring%2C_1st_Earl_of_Cromer",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/LordCromer.jpg/330px-LordCromer.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "Through a system known as the Veiled Protectorate, Evelyn Baring ruled Egypt as a virtual dictator for decades while maintaining the illusion of a local government.",
+    "idea_cards": [
+      {
+        "card_number": 1,
+        "title": "From Military Roots to Administration",
+        "insight": "Evelyn Baring began his career in the Royal Artillery and quickly realized his formal education was lacking. Through rigorous self-education and early administrative roles in India, he discovered a natural talent for managing colonial governance.",
+        "key_takeaway": "Takeaway: Self-directed learning combined with practical field experience can completely pivot a career trajectory."
+      },
+      {
+        "card_number": 2,
+        "title": "The Financial Collapse of Egypt",
+        "insight": "Heavy borrowing by Khedive Ismail Pasha for grandiose projects and the collapse of the cotton market after the American Civil War left Egypt bankrupt. This financial vulnerability opened the door for European powers to step in and assume control.",
+        "key_takeaway": "Mental Model: Over-reliance on a single volatile cash crop combined with external debt creates a trap for national sovereignty."
+      },
+      {
+        "card_number": 3,
+        "title": "The Veiled Protectorate System",
+        "insight": "As British Consul-General, Baring established the Granville Doctrine, placing British officials inside key Egyptian ministries to direct policy behind a façade of compliant local ministers. This de facto dictatorship wielded absolute power while appearing hands-off.",
+        "key_takeaway": "Takeaway: Real power often operates behind ceremonial facades, exercising total control without holding formal titles."
+      },
+      {
+        "card_number": 4,
+        "title": "Economic Growth Versus Social Regression",
+        "insight": "While Baring's stingy budgeting and irrigation projects successfully stabilized Egyptian finances and generated prosperity, his policies simultaneously deepened dependence on cash crops and stunted local social developments like the state school system.",
+        "key_takeaway": "Mental Model: Fiscal stabilization and economic efficiency do not automatically translate to holistic societal progress."
+      }
+    ],
+    "quiz": {
+      "question": "What was the primary governance mechanism used by Evelyn Baring to control Egypt?",
+      "options": [
+        "Open military annexation and direct martial law",
+        "The Veiled Protectorate, placing British officials behind a façade of Egyptian ministers",
+        "A democratic parliament supervised by European commissioners"
+      ],
+      "correct_index": 1,
+      "explanation": "Baring operated through the Veiled Protectorate, where local Egyptian ministers maintained outward form while British officials secretly held the actual power."
+    }
+  },
+  {
+    "wikipedia_page_id": 216906,
+    "published_date": "2026-11-21",
+    "article_title": "Swedish University of Agricultural Sciences",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Swedish_University_of_Agricultural_Sciences",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/en/thumb/3/30/Sveriges_Lantbruksuniversitet_Logo.svg/330px-Sveriges_Lantbruksuniversitet_Logo.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "category": "Science & Tech",
+    "read_time_minutes": 3,
+    "hook": "Ever wonder how a 250-year-old veterinary school in Skara evolved into a global powerhouse for agricultural and environmental sciences?",
+    "idea_cards": [
+      {
+        "card_number": 1,
+        "title": "Unifying Historical Higher Education",
+        "insight": "Established in 1977, the university brought together separate, centuries-old colleges for veterinary medicine, forestry, and agriculture. This strategic consolidation maximized administrative efficiency and shared valuable institutional resources across departments.",
+        "key_takeaway": "Takeaway: Institutional mergers can exponentially increase cross-disciplinary research power."
+      },
+      {
+        "card_number": 2,
+        "title": "Roots in the Enlightenment",
+        "insight": "The institution traces its lineage back to the Veterinary Institution in Skara founded in 1775, whose early leader studied directly under the legendary naturalist Carl von Linné. These deep roots laid the rigorous scientific groundwork for modern Swedish biosciences.",
+        "key_takeaway": "Mental Model: Foundational lineages often anchor modern academic excellence."
+      },
+      {
+        "card_number": 3,
+        "title": "Global Academic Dominance",
+        "insight": "Despite its focused scope, the university ranks exceptionally high on the world stage, placing in the global top ten for fields like agriculture, forestry, and ecology. Its specialized faculties excel in tackling contemporary environmental and life science challenges.",
+        "key_takeaway": "Takeaway: Hyper-specialization combined with multi-campus synergy yields world-class authority."
+      }
+    ],
+    "quiz": {
+      "question": "In what year was the modern Swedish University of Agricultural Sciences formed by combining existing colleges?",
+      "options": [
+        "1775",
+        "1932",
+        "1977"
+      ],
+      "correct_index": 2,
+      "explanation": "The university was officially formed in 1977 by combining separate colleges for veterinary medicine, forestry, and agriculture into a single organization."
+    }
+  },
+  {
+    "wikipedia_page_id": 38866,
+    "published_date": "2026-11-21",
+    "article_title": "Theodor Zwinger",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Theodor_Zwinger",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Theodorus_Zwingerus_Basiliensis%2C_medicus_%28d%C3%A9tail%29.jpg/330px-Theodorus_Zwingerus_Basiliensis%2C_medicus_%28d%C3%A9tail%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "category": "Biography",
+    "read_time_minutes": 3,
+    "hook": "Long before digital databases, a single Renaissance scholar compiled one of history's most massive encyclopedias entirely by hand.",
+    "idea_cards": [
+      {
+        "card_number": 1,
+        "title": "A Renaissance Academic Dynasty",
+        "insight": "Theodor Zwinger was the trailblazing first distinguished representative of a prominent Basel academic family. He studied across Europe under leading thinkers before joining the faculty at the University of Basel.",
+        "key_takeaway": "Takeaway: Foundational academic legacies are often built through cross-disciplinary study and wide travel."
+      },
+      {
+        "card_number": 2,
+        "title": "Mastering The Human Experience",
+        "insight": "Zwinger edited the Theatrum Humanae Vitae, an early multi-volume encyclopedia. It is widely considered perhaps the most comprehensive collection of knowledge compiled by a single individual in the early modern period.",
+        "key_takeaway": "Takeaway: Comprehensive knowledge curation requires building upon the intellectual foundations of predecessors."
+      },
+      {
+        "card_number": 3,
+        "title": "Ancestor of the Enlightenment",
+        "insight": "By synthesizing vast quantities of information, Zwinger's encyclopedic works served as vital literary predecessors to the famous French Encyclopédie of the 18th century. His texts bridged Renaissance humanism with Enlightenment organization.",
+        "key_takeaway": "Takeaway: Early organizational frameworks pave the way for major societal shifts in how information is shared."
+      }
+    ],
+    "quiz": {
+      "question": "What is the name of the massive early encyclopedia compiled by Theodor Zwinger?",
+      "options": [
+        "Theatrum Humanae Vitae",
+        "Encyclopédie Universelle",
+        "Magnum Opus Basiliensis"
+      ],
+      "correct_index": 0,
+      "explanation": "Theatrum Humanae Vitae was Zwinger's magnum opus and one of the largest knowledge collections compiled by a single person in the early modern period."
+    }
   }
 ]
