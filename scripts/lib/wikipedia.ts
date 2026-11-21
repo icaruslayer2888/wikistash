@@ -104,7 +104,8 @@ export async function fetchQualityWikipediaArticles(
       seenIds.add(pageId);
 
       const extractText = await fetchFullArticleExtract(pageId);
-      if (countWords(extractText) < minWords) {
+      const wordCount = countWords(extractText);
+      if (wordCount < minWords) {
         await new Promise((r) => setTimeout(r, 80));
         continue;
       }
@@ -120,6 +121,7 @@ export async function fetchQualityWikipediaArticles(
         url,
         thumbnailUrl: summary.thumbnail?.source || null,
         extractText,
+        wordCount,
       });
 
       if (collected.length % 5 === 0 || collected.length === targetCount) {
