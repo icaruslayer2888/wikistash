@@ -1,5 +1,405 @@
 [
   {
+    "wikipedia_page_id": 82390336,
+    "published_date": "2026-11-22",
+    "article_title": "R v Hampden",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "A single landowner refusing to pay a minor wartime tax in peacetime triggered a constitutional crisis that helped ignite the English Civil War."
+  },
+  {
+    "wikipedia_page_id": 78423256,
+    "published_date": "2026-11-22",
+    "article_title": "Planasa",
+    "category": "Science & Tech",
+    "read_time_minutes": 3,
+    "hook": "Did you know that a single Spanish agricultural group quietly produces around one billion plant units annually to dominate the global berry and endive markets?"
+  },
+  {
+    "wikipedia_page_id": 78396522,
+    "published_date": "2026-11-22",
+    "article_title": "Band Triângulo",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "Before becoming a major regional network hub, this Brazilian television station survived the collapse of pioneering national networks by reinventing its format over five decades."
+  },
+  {
+    "wikipedia_page_id": 75670383,
+    "published_date": "2026-11-22",
+    "article_title": "1941 Białystok massacres",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "What began as a routine military search quickly escalated into an unfathomable atrocity where hundreds of innocent people were burned alive inside a city's Great Synagogue."
+  },
+  {
+    "wikipedia_page_id": 71585429,
+    "published_date": "2026-11-22",
+    "article_title": "Olga von Root",
+    "category": "Biography",
+    "read_time_minutes": 3,
+    "hook": "An aristocratic Russian teenager escapes her elite boarding school to live with Romani musicians, only to later have her life spared from a Bolshevik firing squad because of her stage fame."
+  },
+  {
+    "wikipedia_page_id": 68623161,
+    "published_date": "2026-11-22",
+    "article_title": "Omid Scobie",
+    "category": "Biography",
+    "read_time_minutes": 3,
+    "hook": "Despite building a career around chronicling the British royal family, author Omid Scobie found himself at the center of an international publishing storm over translated drafts."
+  },
+  {
+    "wikipedia_page_id": 63311884,
+    "published_date": "2026-11-22",
+    "article_title": "November 1886 Calgary municipal election",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "A magistrate's fierce crusade against local vice and liquor completely upended Calgary's early democracy, installing an unauthorized mayor and leaving the town defenseless against a catastrophic fire."
+  },
+  {
+    "wikipedia_page_id": 51925677,
+    "published_date": "2026-11-22",
+    "article_title": "William E. Blatz",
+    "category": "Psychology & Philosophy",
+    "read_time_minutes": 3,
+    "hook": "Long before modern attachment theory took over developmental psychology, a pioneering Canadian researcher was dropping unsuspecting volunteers out of trick chairs to measure the physiological shock of human emotion."
+  },
+  {
+    "wikipedia_page_id": 47322548,
+    "published_date": "2026-11-22",
+    "article_title": "Pearl Mist",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "Imagine spending $43.5 million to build a luxury cruise ship, only to leave it sitting abandoned in a shipyard for four years due to a bitter legal war."
+  },
+  {
+    "wikipedia_page_id": 47296881,
+    "published_date": "2026-11-22",
+    "article_title": "Argentina–Chile border",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "Spanning over 5,000 kilometers along the jagged Andes, this massive international border forces citizens of both nations to sometimes drive through the neighboring country just to reach different parts of their own homeland."
+  },
+  {
+    "wikipedia_page_id": 46305807,
+    "published_date": "2026-11-22",
+    "article_title": "Kevin Hornberger",
+    "category": "Society & Economics",
+    "read_time_minutes": 3,
+    "hook": "Can a mechanical engineer-turned-lawmaker lose an election simply for voting on a school walk day and state budgets?"
+  },
+  {
+    "wikipedia_page_id": 43594427,
+    "published_date": "2026-11-22",
+    "article_title": "Jeff Bakalar",
+    "category": "Biography",
+    "read_time_minutes": 3,
+    "hook": "From interning on Oscar-nominated films to owning a major gaming media site, Jeff Bakalar carved a unique multi-decade path through digital entertainment."
+  },
+  {
+    "wikipedia_page_id": 42027462,
+    "published_date": "2026-11-22",
+    "article_title": "Lili Bleeker",
+    "category": "Biography",
+    "read_time_minutes": 3,
+    "hook": "Lili Bleeker held the patents for the revolutionary phase-contrast microscope that won a Nobel Prize, yet she also risked her life hiding refugees from Nazi raids in her optical factory."
+  },
+  {
+    "wikipedia_page_id": 40348572,
+    "published_date": "2026-11-22",
+    "article_title": "Fortunate Fall (album)",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "Crowdfunded completely by fans through Kickstarter, Audrey Assad's independently released masterpiece defied industry norms to achieve Billboard chart success."
+  },
+  {
+    "wikipedia_page_id": 37342775,
+    "published_date": "2026-11-22",
+    "article_title": "Moroccan National Olympic Committee",
+    "category": "History & Culture",
+    "read_time_minutes": 2,
+    "hook": "Born out of a simple telegram in 1959, Morocco's Olympic journey was championed at its inception by Crown Prince Hassan II himself."
+  },
+  {
+    "wikipedia_page_id": 36402821,
+    "published_date": "2026-11-22",
+    "article_title": "Turukkaeans",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "Long before empire builders dominated the ancient Near East, a fierce coalition of mountain tribes known as the Turukkaeans continually rattled the mighty kingdoms of Mesopotamia."
+  },
+  {
+    "wikipedia_page_id": 35063002,
+    "published_date": "2026-11-22",
+    "article_title": "John de Vesci",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "How did a rebellious medieval baron transform from an enemy of the crown into one of King Edward I's most trusted confidants and even serve as a royal hostage?"
+  },
+  {
+    "wikipedia_page_id": 33237281,
+    "published_date": "2026-11-22",
+    "article_title": "MV Empire Faith",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "Built as a specialized wartime merchant vessel, the MV Empire Faith survived treacherous global convoys before spending three decades under multiple names and flags."
+  },
+  {
+    "wikipedia_page_id": 32913006,
+    "published_date": "2026-11-22",
+    "article_title": "High Sierra Camps",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "Imagine embarking on a grueling 51-mile wilderness trek where you only need to carry a day pack because hot meals, warm beds, and mule-delivered supplies await you every night."
+  },
+  {
+    "wikipedia_page_id": 32829458,
+    "published_date": "2026-11-22",
+    "article_title": "Side-looking airborne radar",
+    "category": "Science & Tech",
+    "read_time_minutes": 3,
+    "hook": "How can an aircraft map the Earth below by looking sideways instead of straight down?"
+  },
+  {
+    "wikipedia_page_id": 30755417,
+    "published_date": "2026-11-22",
+    "article_title": "Ulna fracture",
+    "category": "Science & Tech",
+    "read_time_minutes": 3,
+    "hook": "Did you know that a specific type of forearm break gets its name from the defensive posture of holding an arm up against a club?"
+  },
+  {
+    "wikipedia_page_id": 21555399,
+    "published_date": "2026-11-22",
+    "article_title": "Mons Somby",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "After being executed by beheading in 1854, a Sami rebel leader's skull was kept in a university collection for over a century before relatives finally retrieved it."
+  },
+  {
+    "wikipedia_page_id": 18536315,
+    "published_date": "2026-11-22",
+    "article_title": "Aurin Squire",
+    "category": "Biography",
+    "read_time_minutes": 3,
+    "hook": "Before shaping hit television dramas like This Is Us and The Good Fight, award-winning playwright Aurin Squire built his foundation as a hard-hitting investigative journalist."
+  },
+  {
+    "wikipedia_page_id": 12157397,
+    "published_date": "2026-11-22",
+    "article_title": "Edward Sauerhering",
+    "category": "Biography",
+    "read_time_minutes": 3,
+    "hook": "How did a German Catholic pharmacist defy massive demographic trends in 1890s America to become a trailblazing Republican congressman?"
+  },
+  {
+    "wikipedia_page_id": 11882426,
+    "published_date": "2026-11-22",
+    "article_title": "18th Illinois Infantry Regiment",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "Mustered into service by future president Ulysses S. Grant, the 18th Illinois Infantry suffered devastating casualties yet fought tenaciously across major Civil War theaters."
+  },
+  {
+    "wikipedia_page_id": 5953478,
+    "published_date": "2026-11-22",
+    "article_title": "I Don't Need a Man",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "Inspired by the pursuit of autonomy, this 2000s pop hit brilliantly separates the desire for romance from the necessity of co-dependency."
+  },
+  {
+    "wikipedia_page_id": 5384932,
+    "published_date": "2026-11-22",
+    "article_title": "José Ber Gelbard",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "An immigrant street peddler who once sold belts rose to become the chief economic mastermind behind Argentina's national bourgeoisie and engineered a daring trade defiance of the United States."
+  },
+  {
+    "wikipedia_page_id": 5166631,
+    "published_date": "2026-11-22",
+    "article_title": "Henry Meiggs",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "After fleeing San Francisco for massive financial fraud, this fugitive reinvented himself as the virtual dictator of Peru and built engineering marvels in the Andes."
+  },
+  {
+    "wikipedia_page_id": 4137392,
+    "published_date": "2026-11-22",
+    "article_title": "Elsinore Theatre",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "Imagine a movie palace designed not just for entertainment, but to physically replicate the moody medieval castle from Shakespeare's Hamlet."
+  },
+  {
+    "wikipedia_page_id": 2376777,
+    "published_date": "2026-11-22",
+    "article_title": "Gwanda",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "Did you know that this quiet Zimbabwean provincial capital was originally founded by European gold miners and prospectors in 1900?"
+  },
+  {
+    "wikipedia_page_id": 2276039,
+    "published_date": "2026-11-22",
+    "article_title": "Chai Xianghua",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "Long before her sword was revealed to be the legendary Soulcalibur, game developers actually considered giving Xianghua a disgusting hilt-dwelling 'soul bug' to channel her mystical energy."
+  },
+  {
+    "wikipedia_page_id": 2210864,
+    "published_date": "2026-11-22",
+    "article_title": "Peter Ling",
+    "category": "Biography",
+    "read_time_minutes": 3,
+    "hook": "Before co-creating British television history, this prolific writer published a novel while recovering from tuberculosis in a sanatorium and wrote for a national magazine at just 14 years old."
+  },
+  {
+    "wikipedia_page_id": 1799493,
+    "published_date": "2026-11-22",
+    "article_title": "Sevenoaks (constituency)",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "Despite minor boundary shifts over a century, Sevenoaks has remained an unbroken Conservative stronghold since 1885."
+  },
+  {
+    "wikipedia_page_id": 1732907,
+    "published_date": "2026-11-22",
+    "article_title": "Jesmond Parish Church",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "Most Anglican churches are named after saints or the Trinity, but this historic English church was named to honor a rebellious local pastor instead."
+  },
+  {
+    "wikipedia_page_id": 1703334,
+    "published_date": "2026-11-22",
+    "article_title": "Lake Lemon",
+    "category": "Nature & Space",
+    "read_time_minutes": 3,
+    "hook": "Though created in the 1950s as a primary municipal water source, this 1,650-acre Indiana reservoir was eventually handed over to local landowners to manage itself."
+  },
+  {
+    "wikipedia_page_id": 1702997,
+    "published_date": "2026-11-22",
+    "article_title": "Surface mining",
+    "category": "Science & Tech",
+    "read_time_minutes": 3,
+    "hook": "Surface mining relies on some of the largest machines on Earth, capable of completely reshaping mountainsides to extract minerals hidden underneath."
+  },
+  {
+    "wikipedia_page_id": 1473957,
+    "published_date": "2026-11-22",
+    "article_title": "Marie de Rohan",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "Masterminding high-stakes conspiracies and defying royalty for decades, Marie de Rohan remained the most dangerous and untouchable woman in 17th-century France."
+  },
+  {
+    "wikipedia_page_id": 1422515,
+    "published_date": "2026-11-22",
+    "article_title": "Henry Winter Davis",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "Despite being an inheritor of enslaved people himself, Henry Winter Davis became a fierce Radical Republican and the driving force behind the abolition of slavery in Maryland."
+  },
+  {
+    "wikipedia_page_id": 715496,
+    "published_date": "2026-11-22",
+    "article_title": "Tiritiri Matangi Island",
+    "category": "Nature & Space",
+    "read_time_minutes": 3,
+    "hook": "Once stripped bare into pasture by farming, this small New Zealand island was transformed through human intervention into a thriving sanctuary for some of the world's rarest native birds."
+  },
+  {
+    "wikipedia_page_id": 653385,
+    "published_date": "2026-11-22",
+    "article_title": "Arthur's Pass National Park",
+    "category": "Nature & Space",
+    "read_time_minutes": 3,
+    "hook": "A national park established to protect its native flora actually spent its early years underfunded and entirely unprotected in practice."
+  },
+  {
+    "wikipedia_page_id": 640040,
+    "published_date": "2026-11-22",
+    "article_title": "10.5 (miniseries)",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "While universally panned by geologists for its absurd scientific errors, the 2004 disaster miniseries '10.5' somehow captured massive television ratings by suggesting nuclear bombs could simply weld fractured tectonic faults shut."
+  },
+  {
+    "wikipedia_page_id": 494389,
+    "published_date": "2026-11-22",
+    "article_title": "Oliver Phelps (politician)",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "A future U.S. Congressman began working to support his family at just seven years old, eventually trading a grist mill promise for hundreds of square miles of indigenous land."
+  },
+  {
+    "wikipedia_page_id": 480404,
+    "published_date": "2026-11-22",
+    "article_title": "Empetrum",
+    "category": "Nature & Space",
+    "read_time_minutes": 3,
+    "hook": "How did a tiny evergreen shrub manage to colonize opposite ends of the Earth without ever bridging the tropical gap?"
+  },
+  {
+    "wikipedia_page_id": 415631,
+    "published_date": "2026-11-22",
+    "article_title": "Ida Saxton McKinley",
+    "category": "Biography",
+    "read_time_minutes": 3,
+    "hook": "Despite facing profound personal tragedies and severe physical ailments, Ida Saxton McKinley forged a remarkable path as a pioneering female bank cashier and devoted First Lady."
+  },
+  {
+    "wikipedia_page_id": 319126,
+    "published_date": "2026-11-22",
+    "article_title": "Lenticular galaxy",
+    "category": "Science & Tech",
+    "read_time_minutes": 3,
+    "hook": "Lenticular galaxies are the cosmic ghosts of the universe, possessing the ghostly disk of a spiral galaxy but completely devoid of the star-forming arms."
+  },
+  {
+    "wikipedia_page_id": 234320,
+    "published_date": "2026-11-22",
+    "article_title": "Rutger von Ascheberg",
+    "category": "Biography",
+    "read_time_minutes": 3,
+    "hook": "Starting his military career as a teenage page during the Thirty Years' War, Rutger von Ascheberg rose to become a legendary Field Marshal and mentor to the Swedish king while fathering an astonishing 25 children."
+  },
+  {
+    "wikipedia_page_id": 153068,
+    "published_date": "2026-11-22",
+    "article_title": "Ambassadors of the United States",
+    "category": "Society & Economics",
+    "read_time_minutes": 3,
+    "hook": "While U.S. ambassadors represent the president abroad, eight have tragically lost their lives in the line of duty."
+  },
+  {
+    "wikipedia_page_id": 123623,
+    "published_date": "2026-11-22",
+    "article_title": "Plentywood, Montana",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "Long before McCarthyism gripped America, a remote Montana town elected communists to fill every single local office."
+  },
+  {
+    "wikipedia_page_id": 36647,
+    "published_date": "2026-11-22",
+    "article_title": "Christine McVie",
+    "category": "Biography",
+    "read_time_minutes": 3,
+    "hook": "Before she became the soulful melodic glue of Fleetwood Mac, Christine McVie originally trained as a sculptor and started her musical journey playing the bass."
+  },
+  {
+    "wikipedia_page_id": 18602,
+    "published_date": "2026-11-22",
+    "article_title": "Lester Bangs",
+    "category": "Biography",
+    "read_time_minutes": 3,
+    "hook": "Fired from Rolling Stone for disrespecting musicians, Lester Bangs transformed rock journalism into a volatile art form where insulting the stars was an act of pure egalitarianism."
+  },
+  {
     "wikipedia_page_id": 78543525,
     "published_date": "2026-11-21",
     "article_title": "Obznana",
