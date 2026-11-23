@@ -1,5 +1,405 @@
 [
   {
+    "wikipedia_page_id": 77850913,
+    "published_date": "2026-11-23",
+    "article_title": "The Wandering Earth (collection)",
+    "category": "Science & Tech",
+    "read_time_minutes": 3,
+    "hook": "Liu Cixin’s hard sci-fi short stories prove that humanity's most emotional moments can unfold across vast, unfeeling eons of cosmic time."
+  },
+  {
+    "wikipedia_page_id": 73972483,
+    "published_date": "2026-11-23",
+    "article_title": "Vicente Singson Encarnacion",
+    "category": "Biography",
+    "read_time_minutes": 3,
+    "hook": "Long before modern central banking debates, this Filipino senator and finance chief risked his career trying to decouple his nation's currency from the United States—a visionary move that cost him his political future."
+  },
+  {
+    "wikipedia_page_id": 72739816,
+    "published_date": "2026-11-23",
+    "article_title": "Batalha da Escada",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "What happens when a university hip-hop rap battle evolves into an official for-credit academic course?"
+  },
+  {
+    "wikipedia_page_id": 70060219,
+    "published_date": "2026-11-23",
+    "article_title": "Axel Brown",
+    "category": "Biography",
+    "read_time_minutes": 2,
+    "hook": "How does a British-born athlete become a trailblazer for tropical Trinidad and Tobago in the icy arena of Winter Olympic bobsledding?"
+  },
+  {
+    "wikipedia_page_id": 67840582,
+    "published_date": "2026-11-23",
+    "article_title": "Social Action, Responsibility and Heroism Act 2015",
+    "category": "Society & Economics",
+    "read_time_minutes": 3,
+    "hook": "Would you believe that a famous piece of UK legislation, just 300 words long, went years without a single reported court case applying its provisions?"
+  },
+  {
+    "wikipedia_page_id": 64142642,
+    "published_date": "2026-11-23",
+    "article_title": "Lezgins in Azerbaijan",
+    "category": "Society & Economics",
+    "read_time_minutes": 3,
+    "hook": "Despite historical fears of a secessionist war for an independent 'Lezgistan,' the Lezgin minority in Azerbaijan has predominantly pursued integration over active rebellion."
+  },
+  {
+    "wikipedia_page_id": 62890690,
+    "published_date": "2026-11-23",
+    "article_title": "Noah Urrea",
+    "category": "Biography",
+    "read_time_minutes": 3,
+    "hook": "From appearing in Blake Shelton's music video as a child to global pop stardom, Noah Urrea turned early multi-hyphenate talent into an international career."
+  },
+  {
+    "wikipedia_page_id": 61086777,
+    "published_date": "2026-11-23",
+    "article_title": "Lithoredo",
+    "category": "Nature & Space",
+    "read_time_minutes": 3,
+    "hook": "While most shipworms eat wood to survive, this bizarre freshwater mollusk actively bores into solid limestone rock and eats stone instead."
+  },
+  {
+    "wikipedia_page_id": 55555043,
+    "published_date": "2026-11-23",
+    "article_title": "Giovanni Antonio Lecchi",
+    "category": "Science & Tech",
+    "read_time_minutes": 3,
+    "hook": "An 18th-century Jesuit priest became one of Europe's most sought-after engineering consultants, shaping the flow of rivers for both Austrian Empresses and Roman Popes."
+  },
+  {
+    "wikipedia_page_id": 50541664,
+    "published_date": "2026-11-23",
+    "article_title": "Marcela Del Sol",
+    "category": "Biography",
+    "read_time_minutes": 3,
+    "hook": "A celebrated author and activist who turned her survival of severe trauma and dissociative identity disorder into a powerful megaphone against patriarchal violence."
+  },
+  {
+    "wikipedia_page_id": 50134794,
+    "published_date": "2026-11-23",
+    "article_title": "Tahkenitch Lake",
+    "category": "Nature & Space",
+    "read_time_minutes": 3,
+    "hook": "Created by melting Pleistocene glaciers and trapped behind giant sand dunes, this sprawling Oregon lake resembles a crab with its many branching arms."
+  },
+  {
+    "wikipedia_page_id": 49191552,
+    "published_date": "2026-11-23",
+    "article_title": "Rozina Pátkai",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "Discover how a Hungarian language teacher transformed her love for bossa nova into an international award-winning multidisciplinary art project fusing poetry and electronic music."
+  },
+  {
+    "wikipedia_page_id": 48625645,
+    "published_date": "2026-11-23",
+    "article_title": "Sweet Woman",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "Can an obsession with material comfort and absolute self-centeredness leave someone entirely surrounded by wealth yet completely alone?"
+  },
+  {
+    "wikipedia_page_id": 43017967,
+    "published_date": "2026-11-23",
+    "article_title": "Early 2000 Madagascar floods",
+    "category": "Nature & Space",
+    "read_time_minutes": 3,
+    "hook": "When back-to-back tropical cyclones struck Madagascar in early 2000, they brought catastrophic rainfall to the island's normally sheltered west coast, destroying up to half of the nation's rice harvest."
+  },
+  {
+    "wikipedia_page_id": 42487374,
+    "published_date": "2026-11-23",
+    "article_title": "Romeo Juliet (2015 film)",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "Despite borrowing a legendary title associated with tragic demise, this modern romantic comedy film pivots entirely on financial ambitions before finding its happily ever after."
+  },
+  {
+    "wikipedia_page_id": 42305931,
+    "published_date": "2026-11-23",
+    "article_title": "Only the Brave (1930 film)",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "What happens when a Union spy tries desperately to get arrested by Confederate forces, only for the woman he loves to repeatedly ruin his plans?"
+  },
+  {
+    "wikipedia_page_id": 40258320,
+    "published_date": "2026-11-23",
+    "article_title": "Thomas Agnew & Sons",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "For nearly two centuries, a single family dynasty shaped the global art market by supplying masterpieces to the world's wealthiest billionaires and royalty."
+  },
+  {
+    "wikipedia_page_id": 37643953,
+    "published_date": "2026-11-23",
+    "article_title": "2016 Democratic Party presidential primaries",
+    "category": "Society & Economics",
+    "read_time_minutes": 3,
+    "hook": "What was expected to be an effortless nomination for Hillary Clinton turned into a protracted ideological battle that fundamentally altered Democratic Party politics."
+  },
+  {
+    "wikipedia_page_id": 36727422,
+    "published_date": "2026-11-23",
+    "article_title": "ThinkPad X1 series",
+    "category": "Science & Tech",
+    "read_time_minutes": 3,
+    "hook": "Engineered for maximum portability without sacrificing corporate durability, the ThinkPad X1 series transformed the heavy-duty business laptop into an ultra-light luxury symbol."
+  },
+  {
+    "wikipedia_page_id": 33696251,
+    "published_date": "2026-11-23",
+    "article_title": "Friedrich Stelzner",
+    "category": "Biography",
+    "read_time_minutes": 3,
+    "hook": "What if everything you thought you knew about hemorrhoids was medically wrong?"
+  },
+  {
+    "wikipedia_page_id": 32075963,
+    "published_date": "2026-11-23",
+    "article_title": "Mae Bacon",
+    "category": "Biography",
+    "read_time_minutes": 3,
+    "hook": "Long before her decades-long stage and film career, actress Mae Bacon flew in a pioneering 1914 monoplane and later helped military authorities trap suspected spies in wartime France."
+  },
+  {
+    "wikipedia_page_id": 31195804,
+    "published_date": "2026-11-23",
+    "article_title": "The Tale of Gamelyn",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "Long before Robin Hood took center stage, a fierce 14th-century underdog named Gamelyn was already fighting corrupt courts and tyrannical brothers with a heavy wooden pestle."
+  },
+  {
+    "wikipedia_page_id": 25842037,
+    "published_date": "2026-11-23",
+    "article_title": "United States Post Office (Cooperstown, New York)",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "Hidden inside a quiet 1930s New York post office is a secret artistic tribute to the literary frontier of James Fenimore Cooper."
+  },
+  {
+    "wikipedia_page_id": 22676471,
+    "published_date": "2026-11-23",
+    "article_title": "The Dangerous Summer (band)",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "Named after an Ernest Hemingway book, this Maryland rock band survived internal turbulence, felony arrests, and label departures to release numerous studio albums."
+  },
+  {
+    "wikipedia_page_id": 20982710,
+    "published_date": "2026-11-23",
+    "article_title": "Gardening for Kids with Madi",
+    "category": "History & Culture",
+    "read_time_minutes": 2,
+    "hook": "Who knew an award-winning children's television series could turn preschoolers into master botanists and eco-conscious gardeners?"
+  },
+  {
+    "wikipedia_page_id": 20502577,
+    "published_date": "2026-11-23",
+    "article_title": "Secrets (The Dooleys album)",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "Even when a pop group releases what they think is their final domestic album, corporate takeovers and international markets can give their music an entirely unexpected second life."
+  },
+  {
+    "wikipedia_page_id": 15923236,
+    "published_date": "2026-11-23",
+    "article_title": "Bussang",
+    "category": "Nature & Space",
+    "read_time_minutes": 3,
+    "hook": "Nestled in the Vosges mountains, the French commune of Bussang serves as the birth site of the legendary Moselle River."
+  },
+  {
+    "wikipedia_page_id": 14862364,
+    "published_date": "2026-11-23",
+    "article_title": "Beverly Roberts",
+    "category": "Biography",
+    "read_time_minutes": 3,
+    "hook": "Despite starring alongside screen legends like Al Jolson and Humphrey Bogart in the 1930s, this versatile actress boldly traded Hollywood glamour for a successful career as an entertainment industry executive."
+  },
+  {
+    "wikipedia_page_id": 14275961,
+    "published_date": "2026-11-23",
+    "article_title": "Great ellipse",
+    "category": "Science & Tech",
+    "read_time_minutes": 3,
+    "hook": "Did you know that slicing a planet right through its center reveals an elegant curve that almost perfectly mirrors the shortest path between two distant navigation points?"
+  },
+  {
+    "wikipedia_page_id": 14165310,
+    "published_date": "2026-11-23",
+    "article_title": "Jane Orie",
+    "category": "Society & Economics",
+    "read_time_minutes": 3,
+    "hook": "A promising political career came crashing down not just from misuse of public office, but from trying to fool a judge with a signature so obviously copied that it sparked an instant mistrial."
+  },
+  {
+    "wikipedia_page_id": 12815034,
+    "published_date": "2026-11-23",
+    "article_title": "Hypsicles",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "An ancient Greek mathematician may have been the very first to introduce the 360-degree circle division to Greek geometry."
+  },
+  {
+    "wikipedia_page_id": 10877754,
+    "published_date": "2026-11-23",
+    "article_title": "Joseph Bamina",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "Burundian Prime Minister Joseph Bamina rose to power as a compromise figure to bridge deep ethnic divides, only to be executed in the chaotic aftermath of a military crackdown."
+  },
+  {
+    "wikipedia_page_id": 8998841,
+    "published_date": "2026-11-23",
+    "article_title": "Impulsion",
+    "category": "Science & Tech",
+    "read_time_minutes": 3,
+    "hook": "True equestrian power is never about brute speed, but rather the controlled release of stored energy through a relaxed spine."
+  },
+  {
+    "wikipedia_page_id": 4252068,
+    "published_date": "2026-11-23",
+    "article_title": "Preparing for Emergencies",
+    "category": "Society & Economics",
+    "read_time_minutes": 3,
+    "hook": "When the UK government launched a massive emergency preparedness campaign in 2004, a student's witty parody featuring alien invasion advice forced officials into an unexpected showdown."
+  },
+  {
+    "wikipedia_page_id": 4009850,
+    "published_date": "2026-11-23",
+    "article_title": "Estonian Philharmonic Chamber Choir",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "How did a choir founded during the Soviet era transform into a multi-Grammy-winning global ambassador for modern classical music?"
+  },
+  {
+    "wikipedia_page_id": 3606362,
+    "published_date": "2026-11-23",
+    "article_title": "Congress Radio",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "During the peak of British censorship in 1942, a clandestine radio station operated by a 22-year-old student successfully outwitted the imperial police by constantly shifting locations and broadcasting straight into enemy territory."
+  },
+  {
+    "wikipedia_page_id": 3006408,
+    "published_date": "2026-11-23",
+    "article_title": "St Brendan's Sixth Form College",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "Originally founded in 1896 as an exclusive Catholic boys' grammar school, St Brendan's transformed over a century into a sprawling, state-of-the-art coeducational sixth form college welcoming students of all backgrounds."
+  },
+  {
+    "wikipedia_page_id": 2732672,
+    "published_date": "2026-11-23",
+    "article_title": "John Wockenfuss",
+    "category": "Biography",
+    "read_time_minutes": 3,
+    "hook": "Before becoming a beloved utility player in Major League Baseball, John Wockenfuss nearly quit the sport to run a pizzeria."
+  },
+  {
+    "wikipedia_page_id": 2316847,
+    "published_date": "2026-11-23",
+    "article_title": "Aleksandër Meksi",
+    "category": "Biography",
+    "read_time_minutes": 3,
+    "hook": "Before becoming the first post-communist Prime Minister of Albania, Aleksandër Meksi spent decades as an archaeologist restoring medieval churches and mosques."
+  },
+  {
+    "wikipedia_page_id": 2282054,
+    "published_date": "2026-11-23",
+    "article_title": "Durango–La Plata County Airport",
+    "category": "Society & Economics",
+    "read_time_minutes": 3,
+    "hook": "Before jets could land in Durango, Colorado, the entire airport had to close down in 1977 for a major runway extension."
+  },
+  {
+    "wikipedia_page_id": 1774038,
+    "published_date": "2026-11-23",
+    "article_title": "Mighty Crusaders",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "Before they inspired the legendary graphic novel Watchmen, a forgotten Archie Comics superhero team tried to capture the magic of the Avengers."
+  },
+  {
+    "wikipedia_page_id": 1598103,
+    "published_date": "2026-11-23",
+    "article_title": "Dharam Singh",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "Imagine starting a political career by running against your own brother and eventually rising to lead a major Indian state."
+  },
+  {
+    "wikipedia_page_id": 1159095,
+    "published_date": "2026-11-23",
+    "article_title": "Buona Vista MRT station",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "Did you know that a planned Light Rail Transit line for Buona Vista was completely scrapped because it lacked economic viability?"
+  },
+  {
+    "wikipedia_page_id": 159526,
+    "published_date": "2026-11-23",
+    "article_title": "Anne Fausto-Sterling",
+    "category": "Science & Tech",
+    "read_time_minutes": 3,
+    "hook": "What if the strict biological binary of male and female is actually an oversimplification of a much wider human spectrum?"
+  },
+  {
+    "wikipedia_page_id": 135444,
+    "published_date": "2026-11-23",
+    "article_title": "Lakeside City, Texas",
+    "category": "Society & Economics",
+    "read_time_minutes": 2,
+    "hook": "Nestled along the south shore of Lake Wichita, this tiny Texan town packs a surprisingly tight-knit community of just over a thousand residents into a mere 0.62 square miles."
+  },
+  {
+    "wikipedia_page_id": 133812,
+    "published_date": "2026-11-23",
+    "article_title": "Paint Township, Somerset County, Pennsylvania",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "Long before modern industrial towns took shape, a single body of water named Paint Creek gave this Somerset County township its vibrant identity."
+  },
+  {
+    "wikipedia_page_id": 129981,
+    "published_date": "2026-11-23",
+    "article_title": "Millbury, Ohio",
+    "category": "History & Culture",
+    "read_time_minutes": 2,
+    "hook": "Despite spanning just one square mile, this resilient Ohio village carries a history shaped by distant namesakes and devastating storms."
+  },
+  {
+    "wikipedia_page_id": 129791,
+    "published_date": "2026-11-23",
+    "article_title": "Fremont, Ohio",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "Long before it became famous for manufacturing ketchup, Fremont, Ohio was home to the very first presidential library in the United States."
+  },
+  {
+    "wikipedia_page_id": 98652,
+    "published_date": "2026-11-23",
+    "article_title": "Artis (zoo)",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "Amsterdam's historic Artis zoo unknowingly held the last living quagga on Earth, letting it slip away into extinction without anyone realizing its true rarity."
+  },
+  {
+    "wikipedia_page_id": 24597,
+    "published_date": "2026-11-23",
+    "article_title": "Potsdamer Platz",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "Once Europe's most bustling traffic intersection, Potsdamer Platz completely vanished from maps during the Cold War before rising from the ruins as a modern commercial hub."
+  },
+  {
     "wikipedia_page_id": 82390336,
     "published_date": "2026-11-22",
     "article_title": "R v Hampden",
