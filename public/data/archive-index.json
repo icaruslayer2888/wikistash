@@ -1,5 +1,405 @@
 [
   {
+    "wikipedia_page_id": 83677657,
+    "published_date": "2026-11-28",
+    "article_title": "2026 Bangkok pub fire",
+    "category": "Society & Economics",
+    "read_time_minutes": 3,
+    "hook": "When a midnight fire plunged a packed Bangkok music venue into pitch darkness, trapped patrons tragically fled deeper into the burning building instead of toward the exits."
+  },
+  {
+    "wikipedia_page_id": 78832793,
+    "published_date": "2026-11-28",
+    "article_title": "2013 Kelantan state election",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "Discover how a single historic state election in Malaysia marked both the peak coalition unity and the final alliance standing before an inevitable ideological split."
+  },
+  {
+    "wikipedia_page_id": 76105580,
+    "published_date": "2026-11-28",
+    "article_title": "Gabriele Dietze",
+    "category": "Biography",
+    "read_time_minutes": 3,
+    "hook": "Can feminist critique sometimes overlap with right-wing narratives, or does cultural theory reveal unexpected paradoxes in modern social discourse?"
+  },
+  {
+    "wikipedia_page_id": 70640837,
+    "published_date": "2026-11-28",
+    "article_title": "Homodotis falcata",
+    "category": "Nature & Space",
+    "read_time_minutes": 3,
+    "hook": "Unlike most caterpillars that feed on fresh vegetation, the larvae of this endemic New Zealand moth survive by consuming decaying leaf litter on the forest floor."
+  },
+  {
+    "wikipedia_page_id": 70449906,
+    "published_date": "2026-11-28",
+    "article_title": "Evina Westbrook",
+    "category": "Biography",
+    "read_time_minutes": 3,
+    "hook": "Elite high school phenoms face intense pressure, but navigating the tumultuous transition from college stardom to professional roster volatility requires unprecedented resilience."
+  },
+  {
+    "wikipedia_page_id": 69252570,
+    "published_date": "2026-11-28",
+    "article_title": "1881 Melbourne Cup",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "A 50/1 outsider nicknamed the 'lame pony' shocked the crowds by winning the 1881 Melbourne Cup while chaos unfolded behind him."
+  },
+  {
+    "wikipedia_page_id": 69220440,
+    "published_date": "2026-11-28",
+    "article_title": "William James Webbe",
+    "category": "Biography",
+    "read_time_minutes": 3,
+    "hook": "A 19th-century British painter pushed microscopic detail to such an extreme that art critics described his foregrounds as being painted with an almost insane intensity."
+  },
+  {
+    "wikipedia_page_id": 68296966,
+    "published_date": "2026-11-28",
+    "article_title": "Klimt Villa",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "Gustav Klimt never actually lived in a grand villa, but his humble garden studio was cleverly encased inside one."
+  },
+  {
+    "wikipedia_page_id": 63883130,
+    "published_date": "2026-11-28",
+    "article_title": "Payton Smith",
+    "category": "Biography",
+    "read_time_minutes": 2,
+    "hook": "An impromptu hotel lobby guitar performance can change your life if the right industry veteran is walking past."
+  },
+  {
+    "wikipedia_page_id": 63719370,
+    "published_date": "2026-11-28",
+    "article_title": "Golisano Children's Hospital of Buffalo",
+    "category": "Society & Economics",
+    "read_time_minutes": 3,
+    "hook": "A massive sports fandom once turned grief into a wave of generosity, raising over $300,000 for a children's hospital in unique $17 increments."
+  },
+  {
+    "wikipedia_page_id": 61624488,
+    "published_date": "2026-11-28",
+    "article_title": "Go Min-si",
+    "category": "Biography",
+    "read_time_minutes": 3,
+    "hook": "Before becoming a critically acclaimed award-winning actress, Go Min-si kicked off her entertainment career by winning the Grand Prize at a film festival for her very own directorial debut."
+  },
+  {
+    "wikipedia_page_id": 60616131,
+    "published_date": "2026-11-28",
+    "article_title": "Kazakhstan at the 2020 Summer Olympics",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "Despite sending a diverse delegation across numerous sports to the Tokyo Games, Kazakhstan faced its historically least successful Olympic outing in the post-Soviet era."
+  },
+  {
+    "wikipedia_page_id": 52276506,
+    "published_date": "2026-11-28",
+    "article_title": "Vailoatai, American Samoa",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "The village of Vailoatai was formed through a strategic 1926 merger and traces its political roots to a 16th-century migration from 'Upolu."
+  },
+  {
+    "wikipedia_page_id": 46959902,
+    "published_date": "2026-11-28",
+    "article_title": "Ruins of Loropéni",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "Hidden beneath overgrown shrubbery in Burkina Faso lie the mysterious 6-meter-high stone walls of a thousand-year-old medieval fortress built for the gold trade."
+  },
+  {
+    "wikipedia_page_id": 41378781,
+    "published_date": "2026-11-28",
+    "article_title": "Creand",
+    "category": "Society & Economics",
+    "read_time_minutes": 3,
+    "hook": "Founded in 1950 in a nascent mountain trading hub, this Andorran financial group evolved into a multinational private banking powerhouse with a turnover exceeding €25 billion."
+  },
+  {
+    "wikipedia_page_id": 39279336,
+    "published_date": "2026-11-28",
+    "article_title": "Susan Petigru King",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "Despite being expected to conform to the polite domesticity of the antebellum South, Susan Petigru King used her sharp fiction to ruthlessly expose the hypocrisy and cold-hearted marital calculations of her own aristocratic society."
+  },
+  {
+    "wikipedia_page_id": 37306130,
+    "published_date": "2026-11-28",
+    "article_title": "Suicide of Amanda Todd",
+    "category": "Society & Economics",
+    "read_time_minutes": 3,
+    "hook": "A single manipulated webcam image sparked a relentless chain of digital extortion and school harassment, exposing the lethal dark side of unmonitored online spaces."
+  },
+  {
+    "wikipedia_page_id": 35626826,
+    "published_date": "2026-11-28",
+    "article_title": "Dodd Hall",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "Hidden inside a historic campus building is a monumental stained glass window that took an entire decade just to build."
+  },
+  {
+    "wikipedia_page_id": 34506957,
+    "published_date": "2026-11-28",
+    "article_title": "Christian Bethancourt",
+    "category": "Biography",
+    "read_time_minutes": 3,
+    "hook": "What drives a professional baseball catcher to experiment as a relief pitcher while playing across six different Major League franchises?"
+  },
+  {
+    "wikipedia_page_id": 34285411,
+    "published_date": "2026-11-28",
+    "article_title": "Deadline (Grant novel)",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "In Mira Grant's chilling post-apocalyptic thriller, the deadliest monster isn't the zombie—it's the government conspiracy engineering the outbreaks to keep humanity compliant."
+  },
+  {
+    "wikipedia_page_id": 32649367,
+    "published_date": "2026-11-28",
+    "article_title": "Portrait of Giovanna Tornabuoni",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "Commissioned by a grieving husband two years after her tragic death, this iconic Renaissance masterpiece features a poignant poetic inscription wishing that art could capture the soul, not just the face."
+  },
+  {
+    "wikipedia_page_id": 28725198,
+    "published_date": "2026-11-28",
+    "article_title": "Galerie Neue Meister",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "Born out of a modest contemporary acquisition fund in 1843, Dresden's New Masters Gallery survived Nazi censorship and catastrophic wartime bombings to house some of the greatest 19th and 20th-century masterpieces."
+  },
+  {
+    "wikipedia_page_id": 20646911,
+    "published_date": "2026-11-28",
+    "article_title": "Brahma",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "Despite being one of the supreme trinity in Hinduism, the creator god Brahma is rarely worshipped today due to ancient mythological curses and shifts in theological dominance."
+  },
+  {
+    "wikipedia_page_id": 17682708,
+    "published_date": "2026-11-28",
+    "article_title": "Lewis Fry",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "Long before politics defined his career, this scion of a famous chocolate empire quietly laid the institutional foundation for the University of Bristol."
+  },
+  {
+    "wikipedia_page_id": 16749103,
+    "published_date": "2026-11-28",
+    "article_title": "Scania",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "Though it covers less than 3% of Sweden's area, this southernmost province spent centuries under Danish rule before a 17th-century treaty changed its destiny forever."
+  },
+  {
+    "wikipedia_page_id": 15019089,
+    "published_date": "2026-11-28",
+    "article_title": "Bill Stewart (gridiron football)",
+    "category": "Biography",
+    "read_time_minutes": 3,
+    "hook": "Thrust into an interim role after a sudden coaching departure, Bill Stewart led an underdog squad to a stunning Fiesta Bowl upset before claiming the permanent head job."
+  },
+  {
+    "wikipedia_page_id": 12683932,
+    "published_date": "2026-11-28",
+    "article_title": "Robert Zirkin",
+    "category": "Society & Economics",
+    "read_time_minutes": 3,
+    "hook": "A lifelong centrist Democrat who frequently teamed up with Republican governors, Robert Zirkin eventually walked away from politics because modern partisanship became too toxic."
+  },
+  {
+    "wikipedia_page_id": 12056581,
+    "published_date": "2026-11-28",
+    "article_title": "Hoa Hakananai'a",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "Stripped from its sacred volcanic home on Easter Island, this 4.2-tonne masterpiece holds secret carvings that tell the story of a dying religion."
+  },
+  {
+    "wikipedia_page_id": 8903228,
+    "published_date": "2026-11-28",
+    "article_title": "Jimi Jamison",
+    "category": "Biography",
+    "read_time_minutes": 3,
+    "hook": "Before giving voice to iconic 1980s cinematic anthems like Rocky IV and Baywatch, Jimi Jamison was already touring the country as a professional recording artist at just 12 years old."
+  },
+  {
+    "wikipedia_page_id": 7847065,
+    "published_date": "2026-11-28",
+    "article_title": "Cape Cod Rail Trail",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "What once carried steam locomotives and freight across Cape Cod now serves as a 25.5-mile ribbon for cyclists and nature lovers."
+  },
+  {
+    "wikipedia_page_id": 7123007,
+    "published_date": "2026-11-28",
+    "article_title": "Constitutional Democratic Party (Japan)",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "Before pre-war Japan descended into full military rule, a major political party boldly championed parliamentary supremacy and international cooperation before being violently suppressed and dissolved."
+  },
+  {
+    "wikipedia_page_id": 5709373,
+    "published_date": "2026-11-28",
+    "article_title": "Warren Delano Robbins",
+    "category": "Biography",
+    "read_time_minutes": 2,
+    "hook": "An elite American diplomat linked directly to U.S. presidents and Pilgrim roots, Warren Delano Robbins shaped global protocol during a turbulent early 20th century."
+  },
+  {
+    "wikipedia_page_id": 3821214,
+    "published_date": "2026-11-28",
+    "article_title": "UV filter",
+    "category": "Science & Tech",
+    "read_time_minutes": 3,
+    "hook": "While UV filters protect human skin from harmful radiation, tiny amounts washing off swimmers in tropical waters can trigger severe coral bleaching within just 96 hours."
+  },
+  {
+    "wikipedia_page_id": 3483826,
+    "published_date": "2026-11-28",
+    "article_title": "Kosta Hakman",
+    "category": "Biography",
+    "read_time_minutes": 3,
+    "hook": "Imprisoned at age fifteen for political affiliations tied to the Young Bosnia movement, Kosta Hakman survived early Austro-Hungarian persecution to emerge as a celebrated Yugoslav and Bosnian painter."
+  },
+  {
+    "wikipedia_page_id": 3109395,
+    "published_date": "2026-11-28",
+    "article_title": "Korea Coast Guard",
+    "category": "Society & Economics",
+    "read_time_minutes": 3,
+    "hook": "Even after being entirely dissolved following a tragic national disaster, South Korea's maritime security agency rose from the ashes to resume its vital coastal defense role."
+  },
+  {
+    "wikipedia_page_id": 2668409,
+    "published_date": "2026-11-28",
+    "article_title": "Sonic Pinball Party",
+    "category": "Science & Tech",
+    "read_time_minutes": 2,
+    "hook": "Did you know that a 2003 Game Boy Advance Sonic game was sold exclusively at Target stores in the United States upon release?"
+  },
+  {
+    "wikipedia_page_id": 2151706,
+    "published_date": "2026-11-28",
+    "article_title": "James Tilton",
+    "category": "Biography",
+    "read_time_minutes": 3,
+    "hook": "Long before leading America's military medicine, a battlefield surgeon witnessed firsthand how poor hospital conditions killed more soldiers than enemy bullets."
+  },
+  {
+    "wikipedia_page_id": 2065229,
+    "published_date": "2026-11-28",
+    "article_title": "German Wine Route",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "Born out of a desperate economic marketing scheme to solve a massive wine surplus, the world's oldest wine route accidentally created a thriving Mediterranean microclimate in the heart of Germany."
+  },
+  {
+    "wikipedia_page_id": 1740130,
+    "published_date": "2026-11-28",
+    "article_title": "Fallen Angels (Myers novel)",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "Despite winning prestigious awards, this acclaimed Vietnam War novel became one of the most frequently challenged books in America due to its unflinching realism."
+  },
+  {
+    "wikipedia_page_id": 1363302,
+    "published_date": "2026-11-28",
+    "article_title": "Oberhaching",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "Beneath its quiet, upmarket rural charm, Oberhaching boasts a 1,250-year history intertwined with Romanesque roots, royal mansions, and unexpected global spotlights like hosting a World Cup national football team."
+  },
+  {
+    "wikipedia_page_id": 1262398,
+    "published_date": "2026-11-28",
+    "article_title": "Dephasing",
+    "category": "Science & Tech",
+    "read_time_minutes": 3,
+    "hook": "Even without losing any energy at all, a quantum system can completely forget its own quantum nature just by interacting with its environment."
+  },
+  {
+    "wikipedia_page_id": 810649,
+    "published_date": "2026-11-28",
+    "article_title": "Renault 25",
+    "category": "Science & Tech",
+    "read_time_minutes": 3,
+    "hook": "Despite being an engineering marvel with record-breaking aerodynamics, the Renault 25 is remembered today primarily because a single faulty component wiped out almost all of its automatic variants."
+  },
+  {
+    "wikipedia_page_id": 652402,
+    "published_date": "2026-11-28",
+    "article_title": "Dave Bautista",
+    "category": "Biography",
+    "read_time_minutes": 3,
+    "hook": "Before becoming a blockbuster movie star and WWE legend, Dave Bautista started his professional wrestling journey at age 30 after being told he would never make it in the business."
+  },
+  {
+    "wikipedia_page_id": 532405,
+    "published_date": "2026-11-28",
+    "article_title": "Quantum number",
+    "category": "Science & Tech",
+    "read_time_minutes": 3,
+    "hook": "Even though subatomic particles lack classical counterparts, physicists use abstract quantum numbers like quark flavor to completely decode their hidden properties."
+  },
+  {
+    "wikipedia_page_id": 172609,
+    "published_date": "2026-11-28",
+    "article_title": "Allen Dulles",
+    "category": "Biography",
+    "read_time_minutes": 3,
+    "hook": "Imagine being fired by the President for a failed invasion, only to be immediately appointed to investigate his assassination."
+  },
+  {
+    "wikipedia_page_id": 151039,
+    "published_date": "2026-11-28",
+    "article_title": "Batesburg-Leesville, South Carolina",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "A brutal 1946 racially motivated assault on a returning Black WWII veteran in a small South Carolina town inadvertently became the catalyst for President Harry S. Truman to desegregate the U.S. Armed Forces."
+  },
+  {
+    "wikipedia_page_id": 137961,
+    "published_date": "2026-11-28",
+    "article_title": "Westport, Washington",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "Long before European settlers arrived, the Lower Chehalis people called Westport 'ts-a-lis,' which beautifully translates to 'place of sand.'"
+  },
+  {
+    "wikipedia_page_id": 133346,
+    "published_date": "2026-11-28",
+    "article_title": "Bryn Athyn, Pennsylvania",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "Founded for religious reasons, the name 'Bryn Athyn' was crafted using a newly coined Welsh term that supposedly meant 'tenacious' or 'cohesive.'"
+  },
+  {
+    "wikipedia_page_id": 70655,
+    "published_date": "2026-11-28",
+    "article_title": "Alfred Binet",
+    "category": "Biography",
+    "read_time_minutes": 3,
+    "hook": "The world's first intelligence test was never meant to measure innate smarts, but rather to keep struggling school kids out of insane asylums."
+  },
+  {
+    "wikipedia_page_id": 53357,
+    "published_date": "2026-11-28",
+    "article_title": "AMC Gremlin",
+    "category": "History & Culture",
+    "read_time_minutes": 3,
+    "hook": "Born from a sketch on an airplane air sickness bag, the AMC Gremlin became a cultural icon by unapologetically embracing its quirky, sawed-off design."
+  },
+  {
     "wikipedia_page_id": 81608138,
     "published_date": "2026-11-27",
     "article_title": "Margiela (song)",
